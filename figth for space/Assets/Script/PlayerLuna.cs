@@ -10,7 +10,8 @@ public class PlayerLuna : MonoBehaviour
 
     public float velocidadeDaNave;
     public bool temLaserDuplo;
-
+    public float balasPorSegundo = 5;
+    private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
 
     // Start is called before the first frame update
@@ -35,12 +36,18 @@ public class PlayerLuna : MonoBehaviour
 
     private void AtirarLaser()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKey(KeyCode.X))
         {
-            if(temLaserDuplo == false)
-        {
-            Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
-        }
+            cooldownTiro -= Time.deltaTime;
+            if(cooldownTiro <0)
+            {
+                if(temLaserDuplo == false)
+                {
+                    Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+                }
+                cooldownTiro += 1/balasPorSegundo;
+            }
+
         }
 
     }
