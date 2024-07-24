@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8600966199440182181}
   - component: {fileID: -1650987593813694471}
   - component: {fileID: -7250719869755279051}
+  - component: {fileID: 3043543789202567035}
   m_Layer: 0
   m_Name: Laser Do Inimigo amarelo
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3769485814960482065
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -163,7 +164,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeDoLaser: 10
+  danoParaDar: 2
 --- !u!114 &-7250719869755279051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894382884657733784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 2.5
+--- !u!114 &3043543789202567035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
