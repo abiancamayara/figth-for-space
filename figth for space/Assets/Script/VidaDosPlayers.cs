@@ -12,7 +12,7 @@ public class VidaDosPlayers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        vidaAtualDojogador = vidaMaximaDoJogador;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class VidaDosPlayers : MonoBehaviour
 
             if(vidaAtualDojogador <= 0)
             {
-                
+                Debug.Log("Game Over");
             }
         }
     }

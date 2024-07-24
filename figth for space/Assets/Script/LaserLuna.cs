@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserLuna : MonoBehaviour
@@ -22,5 +23,13 @@ public class LaserLuna : MonoBehaviour
     private void MovimentarLaser()
     {
         transform.Translate(Vector3.up * velocidadeDoLaser * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag(""))
+        {
+            
+        }
     }
 }
