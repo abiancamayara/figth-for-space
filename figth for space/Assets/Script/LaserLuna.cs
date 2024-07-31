@@ -6,6 +6,7 @@ using UnityEngine;
 public class LaserLuna : MonoBehaviour
 {
     public float velocidadeDoLaser; 
+    public int danoParaDar;
 
 
     // Start is called before the first frame update
@@ -27,9 +28,10 @@ public class LaserLuna : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(""))
+        if(other.gameObject.CompareTag("Inimigo"))
         {
-            
+            other.gameObject.GetComponent<Inimigos>().MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject);
         }
     }
 }

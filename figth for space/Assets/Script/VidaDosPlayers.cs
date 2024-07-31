@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidaDosPlayers : MonoBehaviour
 {
+    public Slider barraDeVidaDoJogador;
     public int vidaMaximaDoJogador;
     public int vidaAtualDojogador;
 
@@ -13,6 +15,8 @@ public class VidaDosPlayers : MonoBehaviour
     void Start()
     {
         vidaAtualDojogador = vidaMaximaDoJogador;
+        barraDeVidaDoJogador.maxValue = vidaMaximaDoJogador;
+        barraDeVidaDoJogador.value = vidaAtualDojogador;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class VidaDosPlayers : MonoBehaviour
         if(temEscudo == false)
         {
             vidaAtualDojogador -= danoParaReceber;
+            barraDeVidaDoJogador.value = vidaAtualDojogador;
 
             if(vidaAtualDojogador <= 0)
             {
