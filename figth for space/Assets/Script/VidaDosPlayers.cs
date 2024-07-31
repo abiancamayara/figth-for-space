@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class VidaDosPlayers : MonoBehaviour
 {
     public Slider barraDeVidaDoJogador;
-    /// public GameObject escudoDoJogador; 
+    public GameObject escudoDoJogador; 
    
 
 
     public int vidaMaximaDoJogador;
     public int vidaAtualDojogador;
-    //public int vidaMaximaDoEscudo; 
-    //public int vidaAtualDoEscudo; 
+    public int vidaMaximaDoEscudo; 
+    public int vidaAtualDoEscudo; 
 
     public bool temEscudo; 
 
@@ -25,7 +25,8 @@ public class VidaDosPlayers : MonoBehaviour
         barraDeVidaDoJogador.value = vidaAtualDojogador;
 
         //escudoDoJogador.SetActive(false);
-        //temEscudo = false; 
+        temEscudo = false; 
+        AtivarEscudo();
     }
 
     // Update is called once per frame
@@ -34,13 +35,18 @@ public class VidaDosPlayers : MonoBehaviour
         
     }
 
-    /*public void AtivarEscudo()
+    public void AtivarEscudo()
     {
-        //vidaAtualDoEscudo = vidaMaximaDoEscudo;
+        vidaAtualDoEscudo = vidaMaximaDoEscudo;
 
-        //escudoDoJogador.SetActive(true);
+        escudoDoJogador.SetActive(true);
         temEscudo = true;
-    }*/
+    }
+    public void DesativarEscudo()
+    {
+        escudoDoJogador.SetActive(false);
+        temEscudo = false;
+    }
 
     public void MachucarJogador(int danoParaReceber)
     {
@@ -54,15 +60,14 @@ public class VidaDosPlayers : MonoBehaviour
                 Debug.Log("Game Over");
             }
         }
-        /*else
+        else
         {
             vidaAtualDoEscudo -= danoParaReceber;
 
             if(vidaAtualDoEscudo <= 0)
             {
-                //escudoDoJogador.SetActive(false);
-                temEscudo = false;
+                DesativarEscudo();
             }
-        }*/
+        }
     }
 }

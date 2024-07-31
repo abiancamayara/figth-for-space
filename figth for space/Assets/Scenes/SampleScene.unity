@@ -631,12 +631,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraDeVidaDoJogador: {fileID: 1265166324}
-  escudoDoJogador: {fileID: 0}
+  escudoDoJogador: {fileID: 1964496764}
   vidaMaximaDoJogador: 20
   vidaAtualDojogador: 0
   vidaMaximaDoEscudo: 5
   vidaAtualDoEscudo: 0
-  temEscudo: 1
+  temEscudo: 0
 --- !u!1 &1412644257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1964496765
 Transform:
   m_ObjectHideFlags: 0
