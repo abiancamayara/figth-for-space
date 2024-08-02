@@ -7,6 +7,8 @@ public class PlayerLuna : MonoBehaviour
     public Rigidbody2D rig;
     public GameObject laserDoJogador;
     public Transform localDoDisparoUnico; 
+    public Transform localDoDisparoDaEsquerda;
+    public Transform localDoDisparoDaDireita;
 
     public float velocidadeDaNave;
     public bool temLaserDuplo;
@@ -45,6 +47,10 @@ public class PlayerLuna : MonoBehaviour
                 {
                     Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
                 }
+                else
+                {
+                    Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
+                }   Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
                 cooldownTiro += 1/balasPorSegundo;
             }
 

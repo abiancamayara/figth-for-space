@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class VidaDosPlayers : MonoBehaviour
 {
     public Slider barraDeVidaDoJogador;
+    public Slider barraDeEnergiaDoEscudo;
     public GameObject escudoDoJogador; 
    
 
@@ -21,8 +22,15 @@ public class VidaDosPlayers : MonoBehaviour
     void Start()
     {
         vidaAtualDojogador = vidaMaximaDoJogador;
+        vidaAtualDoEscudo = vidaMaximaDoEscudo;
+
         barraDeVidaDoJogador.maxValue = vidaMaximaDoJogador;
         barraDeVidaDoJogador.value = vidaAtualDojogador;
+
+        barraDeEnergiaDoEscudo.maxValue = vidaMaximaDoEscudo;
+        barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
+
+        barraDeEnergiaDoEscudo.gameObject.SetActive(false);
 
         //escudoDoJogador.SetActive(false);
         temEscudo = false; 
@@ -37,16 +45,36 @@ public class VidaDosPlayers : MonoBehaviour
 
     public void AtivarEscudo()
     {
+        barraDeEnergiaDoEscudo.gameObject.SetActive(true);
+
         vidaAtualDoEscudo = vidaMaximaDoEscudo;
+
+        barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
 
         escudoDoJogador.SetActive(true);
         temEscudo = true;
     }
+
     public void DesativarEscudo()
     {
         escudoDoJogador.SetActive(false);
         temEscudo = false;
     }
+
+    public void GanharVida(int vidaParaReceber)
+    {
+        if(vidaAtualDoEscudo + vidaParaReceber <= vidaMaximaDoJogador)
+        {
+            vidaAtualDoEscudo += vidaParaReceber;
+        }
+        else
+        {
+            vidaAtualDojogador = vidaMaximaDoJogador;
+        }
+
+        barraDeVidaDoJogador.value = vidaAtualDojogador;
+    }
+
 
     public void MachucarJogador(int danoParaReceber)
     {
@@ -63,10 +91,12 @@ public class VidaDosPlayers : MonoBehaviour
         else
         {
             vidaAtualDoEscudo -= danoParaReceber;
+            barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
 
             if(vidaAtualDoEscudo <= 0)
             {
                 DesativarEscudo();
+                barraDeEnergiaDoEscudo.gameObject.SetActive(false);
             }
         }
     }
