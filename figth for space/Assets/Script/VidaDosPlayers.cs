@@ -34,7 +34,6 @@ public class VidaDosPlayers : MonoBehaviour
 
         //escudoDoJogador.SetActive(false);
         temEscudo = false; 
-        AtivarEscudo();
     }
 
     // Update is called once per frame

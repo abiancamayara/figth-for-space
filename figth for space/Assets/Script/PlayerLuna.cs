@@ -11,6 +11,7 @@ public class PlayerLuna : MonoBehaviour
     public Transform localDoDisparoDaDireita;
 
     public float velocidadeDaNave;
+    public float velocidadeFase = 5;
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
     private float cooldownTiro = 0;
@@ -19,7 +20,7 @@ public class PlayerLuna : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        temLaserDuplo = false;
+        temLaserDuplo = true;
     }
 
     // Update is called once per frame
