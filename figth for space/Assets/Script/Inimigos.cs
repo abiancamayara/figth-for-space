@@ -7,20 +7,27 @@ using UnityEngine;
 public class Inimigos : MonoBehaviour
 {
     public GameObject laserDoInimigo; 
-    public Transform localDoDisparo; 
+    public Transform localDoDisparo;
+    
 
     public float velocidadeDoInimigo;
     public int vidaMaximaDoInimigo;
-    public int vidaAtualDoInimigo; 
+    public int vidaAtualDoInimigo;
+    
 
     public float tempoMaximoEntreOsLasers; 
     public float tempoAtualDosLasers; 
 
     public bool inimigoAtirador; 
+    public bool inimigoAtivado;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        inimigoAtivado = false;
+
         vidaAtualDoInimigo = vidaMaximaDoInimigo;
     }
 
@@ -28,11 +35,16 @@ public class Inimigos : MonoBehaviour
     void Update()
     {
         MovimentarInimigo();
-        if(inimigoAtirador == true)
+        if(inimigoAtirador == true && inimigoAtivado == true)
         {
            AtirarLaser(); 
         }
         
+    }
+
+    public void AtivarInimigo()
+    {
+        inimigoAtivado = true;
     }
 
     private void MovimentarInimigo()
@@ -57,6 +69,7 @@ public class Inimigos : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
+
             Destroy(this.gameObject);
         }
     }
