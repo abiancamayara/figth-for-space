@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GeradorDeObjetos : MonoBehaviour
 {
-    /*public GameObject[] objetosParaSpawnar; 
+    public GameObject[] objetosParaSpawnar; 
     public Transform[] pontosDeSpawn;
 
     public float tempoMaximoEntreOsSpawns;
@@ -14,10 +14,10 @@ public class GeradorDeObjetos : MonoBehaviour
     void Start()
     {
         tempoAtualDosSpawns = tempoMaximoEntreOsSpawns;
-    }*/
+    }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
         tempoAtualDosSpawns -= Time.deltaTime;
 
@@ -25,9 +25,9 @@ public class GeradorDeObjetos : MonoBehaviour
         {
             SpawnarObjeto();
         }
-    }*/
+    }
 
-    /*private void SpawnarObjeto()
+    private void SpawnarObjeto()
     {
         int objetoAleatorio = Random.Range(0, objetosParaSpawnar.Length);
         int pontoAleatorio = Random.Range(0, pontosDeSpawn.Length);
@@ -35,5 +35,5 @@ public class GeradorDeObjetos : MonoBehaviour
         Instantiate(objetosParaSpawnar[objetoAleatorio], pontosDeSpawn[pontoAleatorio].position, Quaternion.Euler(0f, 0f, -90f));
         tempoAtualDosSpawns = tempoMaximoEntreOsSpawns;
 
-    }*/
+    }
 }

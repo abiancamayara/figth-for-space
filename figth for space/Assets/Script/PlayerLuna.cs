@@ -16,6 +16,7 @@ public class PlayerLuna : MonoBehaviour
     public float balasPorSegundo = 5;
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
+    public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerLuna : MonoBehaviour
     {
         MovimentarJogador();
         AtirarLaser();
+        LimiteDoJogador();
     }
 
 
@@ -55,6 +57,30 @@ public class PlayerLuna : MonoBehaviour
                 cooldownTiro += 1/balasPorSegundo;
             }
 
+        }
+
+    }
+
+    public void LimiteDoJogador()
+    {
+        if(transform.position.x < limiteSuperiorEsquerdo.position.x)
+        {
+            transform.position = new Vector2 (limiteSuperiorEsquerdo.position.x, transform.position.y);
+        }
+
+        if(transform.position.y > limiteSuperiorEsquerdo.position.y)
+        {
+            transform.position = new Vector2 (transform.position.x, limiteSuperiorEsquerdo.position.y);
+        }
+
+        if(transform.position.x > limiteInferiorDireito.position.x)
+        {
+            transform.position = new Vector2 (limiteInferiorDireito.position.x, transform.position.y);
+        }
+
+        if(transform.position.y < limiteInferiorDireito.position.y)
+        {
+            transform.position = new Vector2 (transform.position.x, limiteInferiorDireito.position.y);
         }
 
     }
