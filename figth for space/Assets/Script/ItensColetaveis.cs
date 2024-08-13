@@ -16,11 +16,6 @@ public class ItensColetaveis : MonoBehaviour
                 other.gameObject.GetComponent<VidaDosPlayers>().AtivarEscudo();
             }
 
-            if(itemDaBomba == true)
-            {
-
-            }
-
             Destroy(this.gameObject);
 
         }

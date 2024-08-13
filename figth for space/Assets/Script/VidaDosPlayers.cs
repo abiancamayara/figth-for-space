@@ -54,6 +54,7 @@ public class VidaDosPlayers : MonoBehaviour
         temEscudo = true;
     }
 
+
     public void DesativarEscudo()
     {
         escudoDoJogador.SetActive(false);
@@ -73,6 +74,7 @@ public class VidaDosPlayers : MonoBehaviour
 
         barraDeVidaDoJogador.value = vidaAtualDojogador;
     }
+
 
 
     public void MachucarJogador(int danoParaReceber)
