@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLuna : MonoBehaviour
 {
     public Rigidbody2D rig;
+
     public GameObject laserDoJogador;
     public Transform localDoDisparoUnico; 
     public Transform localDoDisparoDaEsquerda;
@@ -14,6 +15,12 @@ public class PlayerLuna : MonoBehaviour
     public float velocidadeFase = 5;
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
+
+
+    [SerializeField]
+    private Dash dash;
+
+
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
@@ -27,9 +34,14 @@ public class PlayerLuna : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovimentarJogador();
-        AtirarLaser();
-        LimiteDoJogador();
+        if(!this.dash.Usado)
+        {
+            MovimentarJogador();
+            AtirarLaser();
+            LimiteDoJogador();
+            AplicarDash();  
+        }
+
     }
 
 
@@ -83,5 +95,13 @@ public class PlayerLuna : MonoBehaviour
             transform.position = new Vector2 (transform.position.x, limiteInferiorDireito.position.y);
         }
 
+    }
+
+    private void AplicarDash()
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            this.dash.Aplicar();
+        }
     }
 }
