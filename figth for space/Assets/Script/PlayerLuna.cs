@@ -102,6 +102,7 @@ public class PlayerLuna : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q))
         {
             this.dash.Aplicar();
+            ParticleObserver.OnParticleSpawnEvent(transform.position);
         }
     }
 }

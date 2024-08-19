@@ -1,94 +1,99 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class InimigoKamikaze : MonoBehaviour
 {
-    public GameObject laserDoInimigo; 
+    public GameObject laserDoInimigo;
     public Transform localDoDisparo;
-    
 
     public float velocidadeDoInimigo;
     public int vidaMaximaDoInimigo;
     public int vidaAtualDoInimigo;
-    
 
-    public float tempoMaximoEntreOsLasers; 
-    public float tempoAtualDosLasers; 
+    public float tempoMaximoEntreOsLasers;
+    public float tempoAtualDosLasers;
 
-    public bool inimigoAtirador; 
+    public bool inimigoAtirador;
     public bool inimigoAtivado;
 
     public string estado = "parado";
+    public Transform player;  // Referência ao jogador
+    public float distanciaParaSeguir = 10f;  // Distância para começar a seguir o jogador
+    public float distanciaParaColidir = 1f;  // Distância em que o inimigo colide e morre
+    public float tempoParaSeguir = 2f;  // Tempo que o inimigo fica seguindo o jogador antes de ir em linha reta
 
+    private float tempoDeSeguir = 0f;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         inimigoAtivado = false;
-
         vidaAtualDoInimigo = vidaMaximaDoInimigo;
+        estado = "parado";
     }
 
-    // Update is called once per frame
-    /*void Update()
+    void Update()
     {
+        if (!inimigoAtivado) return;
 
-        if(estado == "parado")
+        switch (estado)
         {
-                MovimentarInimigo();
-                if(inimigoAtirador == true && inimigoAtivado == true)
+            case "parado":
+                if (Vector3.Distance(transform.position, player.position) < distanciaParaSeguir)
                 {
-                    AtirarLaser();
-                     estado = "seguindo";
+                    estado = "seguindo";
                 }
-        }
-        else if(estado == "seguindo")
-        {
-            if(inimigoAtirador == true && inimigoAtivado == true)
-                {
-                    AtirarLaser(); 
-                }
-        }
-        else if (estado == "reto")
-        {
+                break;
 
-        }
-        else if(estado == "morrendo")
-        {
+            case "seguindo":
+                SeguirJogador();
+                break;
 
+            case "reto":
+                MovimentarReto();
+                break;
 
+            case "morrendo":
+                // Adicione aqui lógica para morte se necessário (efeitos, animações, etc.)
+                Destroy(this.gameObject, 0.5f); // Tempo para destruir o objeto após a morte
+                break;
         }
 
-        if(Input.GetKeyDown(KeyCode.K))
+        // Verifica se o inimigo deve morrer ao colidir com o jogador
+        if (Vector3.Distance(transform.position, player.position) < distanciaParaColidir)
         {
-            estado = "seguindo";
+            estado = "morrendo";
         }
-       
-        
-    }*/
+    }
 
     public void AtivarInimigo()
     {
         inimigoAtivado = true;
+        estado = "parado"; // Começa parado
     }
 
-    private void MovimentarInimigo()
+    private void SeguirJogador()
     {
-        transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
-    }
+        // Movimento em direção ao jogador
+        transform.position = Vector3.MoveTowards(transform.position, player.position, velocidadeDoInimigo * Time.deltaTime);
+        tempoDeSeguir += Time.deltaTime;
 
-    private void AtirarLaser()
-    {
-        tempoAtualDosLasers -= Time.deltaTime; 
-
-        if(tempoAtualDosLasers <= 0)
+        // Se o inimigo seguiu por um tempo suficiente ou chegou muito perto, muda para o estado reto
+        if (tempoDeSeguir >= tempoParaSeguir || Vector3.Distance(transform.position, player.position) < distanciaParaColidir)
         {
-            Instantiate(laserDoInimigo, localDoDisparo.position, Quaternion.Euler(0f, 0f, 90f));
-            tempoAtualDosLasers = tempoMaximoEntreOsLasers;
+            estado = "reto";
+        }
+    }
+
+    private void MovimentarReto()
+    {
+        // Movimento em linha reta em direção ao jogador
+        transform.position = Vector3.MoveTowards(transform.position, player.position, velocidadeDoInimigo * Time.deltaTime);
+        
+        // O inimigo morre se atingir o jogador
+        if (Vector3.Distance(transform.position, player.position) < distanciaParaColidir)
+        {
+            estado = "morrendo";
         }
     }
 
@@ -96,11 +101,11 @@ public class InimigoKamikaze : MonoBehaviour
     {
         vidaAtualDoInimigo -= danoParaReceber;
 
-        if(vidaAtualDoInimigo <= 0)
+        if (vidaAtualDoInimigo <= 0)
         {
-
-            Destroy(this.gameObject);
+            estado = "morrendo";  // Mudar para estado de morte
         }
     }
-
 }
+
+
