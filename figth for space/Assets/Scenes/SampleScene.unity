@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 2251486542833426300}
   - component: {fileID: 2041288305528529497}
   - component: {fileID: 2282509044227179014}
-  - component: {fileID: 4595127860168044251}
+  - component: {fileID: 4595127860168044252}
   m_Layer: 0
   m_Name: Inimigo Laranja (1)
   m_TagString: Inimigo
@@ -2385,7 +2385,7 @@ Transform:
   - {fileID: 8515214466634543680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &4595127860168044251
+--- !u!114 &4595127860168044252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2394,23 +2394,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2153863398160295793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcf385e968387de4489b9b4eb7c99a58, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c534ba51bfbe941a73aedb0292099d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserDoInimigo: {fileID: 3894382884657733784, guid: dd28199599ce43b40b39455c5c90eb5a, type: 3}
-  localDoDisparo: {fileID: 8515214466634543680}
   velocidadeDoInimigo: 10
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
-  tempoMaximoEntreOsLasers: 0
-  tempoAtualDosLasers: 0
-  inimigoAtirador: 0
   inimigoAtivado: 0
-  estado: parado
-  player: {fileID: 0}
-  distanciaParaSeguir: 10
-  distanciaParaColidir: 1
-  tempoParaSeguir: 2
 --- !u!1001 &5074717258470641618
 PrefabInstance:
   m_ObjectHideFlags: 0

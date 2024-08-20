@@ -14,7 +14,6 @@ public class InimigoKamikaze : MonoBehaviour
     public float tempoMaximoEntreOsLasers;
     public float tempoAtualDosLasers;
 
-    public bool inimigoAtirador;
     public bool inimigoAtivado;
 
     public string estado = "parado";
@@ -34,6 +33,9 @@ public class InimigoKamikaze : MonoBehaviour
 
     void Update()
     {
+
+
+
         if (!inimigoAtivado) return;
 
         switch (estado)
