@@ -33,5 +33,10 @@ public class LaserLuna : MonoBehaviour
             other.gameObject.GetComponent<Inimigos>().MachucarInimigo(danoParaDar);
             Destroy(this.gameObject);
         }
+        if(other.gameObject.CompareTag("Kamikaze"))
+        {
+            other.gameObject.GetComponent<Kamikaze>().MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject);
+        }
     }
 }

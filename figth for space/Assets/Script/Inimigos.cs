@@ -69,7 +69,6 @@ public class Inimigos : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
-
             Destroy(this.gameObject);
         }
     }

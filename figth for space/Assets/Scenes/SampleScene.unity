@@ -1203,6 +1203,29 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1286661366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5081637475067893584, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+  m_PrefabInstance: {fileID: 3800558729950369772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1286661372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286661366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41176aaaaa857cb489961df36a3af8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplicador: 5
+  velocidadeDoInimigo: 8
+  angulo: 0
+  alturaOriginal: 0
+  amplitude: 1
+  velocidadeDaOscilacao: 10
 --- !u!1 &1295138906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2131,7 @@ GameObject:
   - component: {fileID: 4595127860168044252}
   m_Layer: 0
   m_Name: Inimigo Laranja (1)
-  m_TagString: Inimigo
+  m_TagString: Kamikaze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2257,17 +2280,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4926786335011499869, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5081637475067893584, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
       propertyPath: m_Name
       value: Inimigo Laranja
       objectReference: {fileID: 0}
+    - target: {fileID: 5131158960582988408, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.28866667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131158960582988408, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131158960582988408, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252125208618884859, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: -12.67
       objectReference: {fileID: 0}
     - target: {fileID: 7252125208618884859, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.68
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 7252125208618884859, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2301,10 +2340,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8567406680700475661, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5081637475067893584, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1286661372}
   m_SourcePrefab: {fileID: 100100000, guid: fe4684bc89babf942b3a79d1b77e498b, type: 3}
 --- !u!1001 &3885925405989878508
 PrefabInstance:
@@ -2398,9 +2444,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeDoInimigo: 10
+  danoParaDar: 10
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
-  inimigoAtivado: 0
 --- !u!1001 &5074717258470641618
 PrefabInstance:
   m_ObjectHideFlags: 0

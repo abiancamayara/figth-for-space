@@ -6,18 +6,17 @@ public class Kamikaze : MonoBehaviour
 {
     
     public float velocidadeDoInimigo;
+    public int danoParaDar;
     public int vidaMaximaDoInimigo;
     public int vidaAtualDoInimigo;
     
     private Transform Target;
     private Rigidbody2D inimigoRb;
     private GameObject jogador;
+    
 
-    public bool inimigoAtivado;
-
-    /*void Start()
+    void Start()
     {
-        inimigoAtivado = false;
         vidaAtualDoInimigo = vidaMaximaDoInimigo;
 
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -29,20 +28,18 @@ public class Kamikaze : MonoBehaviour
         MovimentarInimigo();
         transform.position = Vector2.MoveTowards(transform.position, Target.position, velocidadeDoInimigo * Time.deltaTime);
     }
-    public void AtivarInimigo()
-    {
-        inimigoAtivado = true;
-    }
 
     private void MovimentarInimigo()
     {
         transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collider2D col)
+
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.CompareTag("Player"))
         {
+            col.gameObject.GetComponent<VidaDosPlayers>().MachucarJogador(danoParaDar);
             Destroy(this.gameObject);
         }
     }
@@ -53,10 +50,9 @@ public class Kamikaze : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
-
             Destroy(this.gameObject);
         }
-    }*/
+    }
 
   
 }

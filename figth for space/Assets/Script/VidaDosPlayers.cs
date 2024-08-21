@@ -86,6 +86,7 @@ public class VidaDosPlayers : MonoBehaviour
 
             if(vidaAtualDojogador <= 0)
             {
+                Destroy(gameObject);
                 Debug.Log("Game Over");
             }
         }
