@@ -23,11 +23,11 @@ public class Kamikaze : MonoBehaviour
 
     }
 
-    void Update()
+    /*void Update()
     {
         MovimentarInimigo();
-        transform.position = Vector2.MoveTowards(transform.position, Target.position, velocidadeDoInimigo * Time.deltaTime);
-    }
+        //transform.position = Vector2.MoveTowards(transform.position, Target.position, velocidadeDoInimigo * Time.deltaTime);
+    }*/
 
     private void MovimentarInimigo()
     {
