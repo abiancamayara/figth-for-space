@@ -39,7 +39,7 @@ public class ZigZag : MonoBehaviour
    {
        Vector3 movimentar = new Vector3(transform.position.x, Target.position.y);
        transform.position = Vector3.Lerp(transform.position, movimentar, multiplicador * Time.deltaTime);
-       //transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
+       transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
    }
 
 
