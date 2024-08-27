@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLuna : MonoBehaviour
+public class PlayerLuca : MonoBehaviour
 {
     public Rigidbody2D rig;
 

@@ -6,7 +6,7 @@ public class DestroidorDeInimigos : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Inimigo"))
+        if(other.gameObject.CompareTag("Inimigo") || other.gameObject.CompareTag("Kamikaze"))
         {
             Destroy(other.gameObject);
         }

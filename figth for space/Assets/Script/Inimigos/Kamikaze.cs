@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Kamikaze : MonoBehaviour
@@ -33,9 +34,9 @@ public class Kamikaze : MonoBehaviour
     {
         transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
     }
+    
 
-
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.CompareTag("Player"))
         {

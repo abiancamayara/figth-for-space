@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 628243475492197383}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2626756147746324304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747842205169007156}
+  m_Layer: 0
+  m_Name: Local do disparo para cima
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747842205169007156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2626756147746324304}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000874775, y: -0.0018323851, z: -0.70623213, w: 0.7079775}
+  m_LocalPosition: {x: 3.384, y: -0.957, z: -0.046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 628243475492197383}
+  m_LocalEulerAnglesHint: {x: -0.219, y: -0.078, z: -89.858}
 --- !u!1 &4657646740978328802
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +124,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 628243475492197383}
   m_LocalEulerAnglesHint: {x: -0.215, y: 2.176, z: -90.246}
+--- !u!1 &6540729352122204162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4158325580069386285}
+  m_Layer: 0
+  m_Name: Local do disparo para baixo
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4158325580069386285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6540729352122204162}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0020304818, y: -0.0000052571727, z: -0.9440235, w: -0.329872}
+  m_LocalPosition: {x: 3.375999, y: -2.298, z: -0.04600001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 628243475492197383}
+  m_LocalEulerAnglesHint: {x: 0.076, y: 0.22, z: -218.522}
 --- !u!1 &6559708719667562532
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +236,7 @@ SpriteRenderer:
   m_Size: {x: 7.2, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8763380407099546656
@@ -191,6 +253,7 @@ GameObject:
   - component: {fileID: 3450152229459819281}
   - component: {fileID: 1959501139041159153}
   - component: {fileID: 6195078326912720567}
+  - component: {fileID: 2158395579838633034}
   m_Layer: 0
   m_Name: Luna
   m_TagString: Player
@@ -215,6 +278,8 @@ Transform:
   - {fileID: 5626723505838272014}
   - {fileID: 2976864231531059974}
   - {fileID: 6212446681464736572}
+  - {fileID: 4158325580069386285}
+  - {fileID: 747842205169007156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5936088485487658806
@@ -358,10 +423,14 @@ MonoBehaviour:
   localDoDisparoUnico: {fileID: 150236882292778613}
   localDoDisparoDaEsquerda: {fileID: 2976864231531059974}
   localDoDisparoDaDireita: {fileID: 6212446681464736572}
+  localDoDisparoParaCima: {fileID: 0}
+  localDoDisparoParaBaixo: {fileID: 0}
   velocidadeDaNave: 10
-  velocidadeFase: 5
   temLaserDuplo: 0
   balasPorSegundo: 12
+  dash: {fileID: 0}
+  limiteSuperiorEsquerdo: {fileID: 0}
+  limiteInferiorDireito: {fileID: 0}
 --- !u!114 &6195078326912720567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,3 +451,19 @@ MonoBehaviour:
   vidaMaximaDoEscudo: 5
   vidaAtualDoEscudo: 0
   temEscudo: 0
+--- !u!114 &2158395579838633034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763380407099546656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df89d4f837d886c4a84bf117cbf79224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 70
+  rigi: {fileID: 3450152229459819281}
+  duracao: 0.2
+  contTempoDeUso: 0
