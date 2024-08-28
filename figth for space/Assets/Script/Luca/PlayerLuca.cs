@@ -11,9 +11,6 @@ public class PlayerLuca : MonoBehaviour
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
 
-    public Transform localDoDisparoParaCima;
-    public Transform localDoDisparoParaBaixo;
-
     public float velocidadeDaNave;
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
@@ -51,7 +48,7 @@ public class PlayerLuca : MonoBehaviour
         
         if (Input.GetKey(KeyCode.X))
         {
-            AtirarLaserQuadruplo();
+           
         }
         else
         {
@@ -83,16 +80,6 @@ public class PlayerLuca : MonoBehaviour
                 }   Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
                 cooldownTiro += 1/balasPorSegundo;
             }
-    }
-
-    private void AtirarLaserQuadruplo()
-    {
-        if (cooldownTiro < 0)
-        {
-            Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation); 
-            Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation); 
-            cooldownTiro += 1 / balasPorSegundo;
-        }
     }
 
 
