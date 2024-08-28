@@ -1356,6 +1356,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: velocidadeDaNave
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: localDoDisparoUnico
+      value: 
+      objectReference: {fileID: 1374049148}
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: limiteInferiorDireito
+      value: 
+      objectReference: {fileID: 1829622688}
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: limiteSuperiorEsquerdo
+      value: 
+      objectReference: {fileID: 1348901459}
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: localDoDisparoDaDireita
+      value: 
+      objectReference: {fileID: 1374049146}
+    - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: localDoDisparoDaEsquerda
+      value: 
+      objectReference: {fileID: 1374049147}
+    - target: {fileID: 587345504264234978, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2001462395413558055, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: m_Name
       value: Player Luca
@@ -1400,11 +1428,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3211258784422513043, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211258784422513043, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517178945911124499, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7482799635822732326, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.362
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+--- !u!4 &1374049146 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3211258784422513043, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+  m_PrefabInstance: {fileID: 1374049145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1374049147 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7482799635822732326, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+  m_PrefabInstance: {fileID: 1374049145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1374049148 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7076465469236640877, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+  m_PrefabInstance: {fileID: 1374049145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1490369792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,6 +2650,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1374049145}
   - {fileID: 3349774756186685329}
   - {fileID: 794170533094058068}
   - {fileID: 903003935}
@@ -2608,4 +2668,3 @@ SceneRoots:
   - {fileID: 5044211347800398230}
   - {fileID: 5074717258470641618}
   - {fileID: 149502539}
-  - {fileID: 1374049145}
