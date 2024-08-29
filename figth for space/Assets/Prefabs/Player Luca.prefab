@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: -7093691505720289403}
   - component: {fileID: 6503102286389557338}
   - component: {fileID: -5124265813786780059}
+  - component: {fileID: 6264937256274586613}
   m_Layer: 0
   m_Name: Player Luca
   m_TagString: Player
@@ -216,6 +217,26 @@ MonoBehaviour:
   dash: {fileID: 0}
   limiteSuperiorEsquerdo: {fileID: 0}
   limiteInferiorDireito: {fileID: 0}
+--- !u!114 &6264937256274586613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001462395413558055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a96074ed6be2940aa6011a28f16a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barraDeVidaDoJogador: {fileID: 0}
+  barraDeEnergiaDoEscudo: {fileID: 0}
+  escudoDoJogador: {fileID: 0}
+  vidaMaximaDoJogador: 0
+  vidaAtualDojogador: 0
+  vidaMaximaDoEscudo: 0
+  vidaAtualDoEscudo: 0
+  temEscudo: 0
 --- !u!1 &3991839354480641287
 GameObject:
   m_ObjectHideFlags: 0
