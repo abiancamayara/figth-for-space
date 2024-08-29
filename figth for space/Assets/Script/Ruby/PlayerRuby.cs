@@ -46,14 +46,15 @@ public class PlayerRuby : MonoBehaviour
             AplicarDash();  
         }
         
-        if (Input.GetKey(KeyCode.X))
+        /*if (Input.GetKey(KeyCode.X))
         {
             
         }
         else
         {
-            AtirarLaser();
-        }
+            
+        }*/
+        AtirarLaser();
 
        
     }
