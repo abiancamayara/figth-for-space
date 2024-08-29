@@ -41,20 +41,20 @@ public class PlayerLuca : MonoBehaviour
         if(!this.dash.Usado)
         {
             MovimentarJogador();
-            
+           
             LimiteDoJogador();
             AplicarDash();  
         }
         
-        if (Input.GetKey(KeyCode.X))
+        /*if (Input.GetKey(KeyCode.X))
         {
            
         }
         else
         {
-            AtirarLaser();
-        }
-
+    
+        }*/
+        AtirarLaser();
        
     }
 
