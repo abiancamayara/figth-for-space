@@ -207,6 +207,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &28558320 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -6992494349271044419, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+  m_PrefabInstance: {fileID: 1983308231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120692924
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +484,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1295138907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &367817221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2835582426614483874, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+  m_PrefabInstance: {fileID: 1983308231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &441947927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 323436224922121854, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+  m_PrefabInstance: {fileID: 1983308231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1182,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1232125774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5251980030125958631, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+  m_PrefabInstance: {fileID: 1983308231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265166322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,6 +1954,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5536096589873418643, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Size.x
+      value: 4.145856
+      objectReference: {fileID: 0}
+    - target: {fileID: -5536096589873418643, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Size.y
+      value: 2.4859583
+      objectReference: {fileID: 0}
+    - target: {fileID: -5536096589873418643, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.22707224
+      objectReference: {fileID: 0}
+    - target: {fileID: -5536096589873418643, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.11353576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: rig
+      value: 
+      objectReference: {fileID: 28558320}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: laserDoJogador
+      value: 
+      objectReference: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: velocidadeDaNave
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: localDoDisparoUnico
+      value: 
+      objectReference: {fileID: 441947927}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: limiteInferiorDireito
+      value: 
+      objectReference: {fileID: 1829622688}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: limiteSuperiorEsquerdo
+      value: 
+      objectReference: {fileID: 1348901459}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: localDoDisparoDaDireita
+      value: 
+      objectReference: {fileID: 1232125774}
+    - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: localDoDisparoDaEsquerda
+      value: 
+      objectReference: {fileID: 367817221}
+    - target: {fileID: 2650285488125539978, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Color.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650285488125539978, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835582426614483874, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136216643945748887, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3861046427399399778, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_Name
       value: Player Ruby
@@ -1977,6 +2061,70 @@ PrefabInstance:
     - target: {fileID: 4747273926233492891, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251980030125958631, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251980030125958631, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: temEscudo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: escudoDoJogador
+      value: 
+      objectReference: {fileID: 5347841466703128307, guid: b2972786b37000846a13bc3e3e044d94, type: 3}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: vidaAtualDoEscudo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: vidaAtualDojogador
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: vidaMaximaDoEscudo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: vidaMaximaDoJogador
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: barraDeVidaDoJogador
+      value: 
+      objectReference: {fileID: 1265166324}
+    - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: barraDeEnergiaDoEscudo
+      value: 
+      objectReference: {fileID: 953409919}
+    - target: {fileID: 8265324020764678310, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: rigi
+      value: 
+      objectReference: {fileID: 28558320}
+    - target: {fileID: 8506646797539014053, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.156107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506646797539014053, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.156107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506646797539014053, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.156107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506646797539014053, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506646797539014053, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
