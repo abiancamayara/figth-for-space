@@ -2836,6 +2836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Luna
       objectReference: {fileID: 0}
+    - target: {fileID: 8763380407099546656, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
