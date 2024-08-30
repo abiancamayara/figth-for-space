@@ -23,6 +23,11 @@ public class PlayerRuby : MonoBehaviour
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
+    
+    public GameObject bombaPrefab; // O prefab da bomba
+    public Transform localDoLancamento; // O local onde a bomba será lançada
+    public float cooldownBomb = 5f; // Tempo entre lançamentos de bomba
+    private float cooldownBombaAtual = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +36,10 @@ public class PlayerRuby : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
-         // Verifique o cooldown do tiro atual, caso você queira manter a lógica do cooldown do tiro.
-                cooldownTiro -= Time.deltaTime;
-
-        
+        cooldownBombaAtual -= Time.deltaTime;
         
         if(!this.dash.Usado)
         {
@@ -46,17 +49,15 @@ public class PlayerRuby : MonoBehaviour
             AplicarDash();  
         }
         
-        if (Input.GetKey(KeyCode.X))
+        AtirarLaser();
+        
+        // Lógica para disparar a bomba
+        if (Input.GetKeyDown(KeyCode.X) && cooldownBombaAtual <= 0)
         {
-            
+            LançarBomba();
         }
-        else
-        {
-            AtirarLaser();
-        }
-
-       
     }
+       
 
 
     private void MovimentarJogador()
@@ -81,6 +82,14 @@ public class PlayerRuby : MonoBehaviour
                 cooldownTiro += 1/balasPorSegundo;
             }
     }
+    
+    private void LançarBomba()
+    {
+        // Cria a bomba na posição especificada
+        Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
+        cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
+    }
+
 
     public void LimiteDoJogador()
     {
@@ -115,3 +124,5 @@ public class PlayerRuby : MonoBehaviour
         }
     }
 }
+
+

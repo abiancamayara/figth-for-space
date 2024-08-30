@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6503102286389557338}
   - component: {fileID: -5124265813786780059}
   - component: {fileID: 6264937256274586613}
+  - component: {fileID: 3196563731714875106}
   m_Layer: 0
   m_Name: Player Luca
   m_TagString: Player
@@ -208,13 +209,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: -7093691505720289403}
-  laserDoJogador: {fileID: 0}
+  laserDoJogador: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
+  ondaSonora: {fileID: 5303591375719657853, guid: 9629b5cc90cc9a2459f42e9b8358a9bb, type: 3}
   localDoDisparoUnico: {fileID: 0}
   localDoDisparoDaEsquerda: {fileID: 0}
   localDoDisparoDaDireita: {fileID: 0}
   velocidadeDaNave: 0
   temLaserDuplo: 0
   balasPorSegundo: 5
+  cooldownOndaSonora: 5
   dash: {fileID: 0}
   limiteSuperiorEsquerdo: {fileID: 0}
   limiteInferiorDireito: {fileID: 0}
@@ -232,12 +235,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraDeVidaDoJogador: {fileID: 0}
   barraDeEnergiaDoEscudo: {fileID: 0}
-  escudoDoJogador: {fileID: 0}
-  vidaMaximaDoJogador: 0
+  escudoDoJogador: {fileID: 5347841466703128307, guid: b2972786b37000846a13bc3e3e044d94, type: 3}
+  vidaMaximaDoJogador: 50
   vidaAtualDojogador: 0
-  vidaMaximaDoEscudo: 0
+  vidaMaximaDoEscudo: 20
   vidaAtualDoEscudo: 0
   temEscudo: 0
+--- !u!114 &3196563731714875106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001462395413558055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df89d4f837d886c4a84bf117cbf79224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 70
+  rigi: {fileID: -7093691505720289403}
+  duracao: 0.2
+  contTempoDeUso: 0
 --- !u!1 &3991839354480641287
 GameObject:
   m_ObjectHideFlags: 0

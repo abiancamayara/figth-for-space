@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomba : MonoBehaviour
+public partial class Bomba : MonoBehaviour
 {
     public bool itemDaBomba; 
      public void AtivarBomba()

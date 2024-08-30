@@ -208,12 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6730dda18570da047a54afa18a5245d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rig: {fileID: 0}
-  laserDoJogador: {fileID: 0}
+  rig: {fileID: -6992494349271044419}
+  laserDoJogador: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
   localDoDisparoUnico: {fileID: 0}
   localDoDisparoDaEsquerda: {fileID: 0}
   localDoDisparoDaDireita: {fileID: 0}
-  velocidadeDaNave: 0
+  velocidadeDaNave: 10
   temLaserDuplo: 0
   balasPorSegundo: 5
   dash: {fileID: 0}
@@ -233,10 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraDeVidaDoJogador: {fileID: 0}
   barraDeEnergiaDoEscudo: {fileID: 0}
-  escudoDoJogador: {fileID: 0}
-  vidaMaximaDoJogador: 0
+  escudoDoJogador: {fileID: 5347841466703128307, guid: b2972786b37000846a13bc3e3e044d94, type: 3}
+  vidaMaximaDoJogador: 50
   vidaAtualDojogador: 0
-  vidaMaximaDoEscudo: 0
+  vidaMaximaDoEscudo: 20
   vidaAtualDoEscudo: 0
   temEscudo: 0
 --- !u!114 &8265324020764678310

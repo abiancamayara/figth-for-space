@@ -7,6 +7,7 @@ public class PlayerLuca : MonoBehaviour
     public Rigidbody2D rig;
 
     public GameObject laserDoJogador;
+    public GameObject ondaSonora; // Adicionado para o ataque secundário
     public Transform localDoDisparoUnico; 
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
@@ -14,6 +15,8 @@ public class PlayerLuca : MonoBehaviour
     public float velocidadeDaNave;
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
+    public float cooldownOndaSonora = 5f; // Configuração do cooldown para o ataque secundário
+
 
 
     [SerializeField]
@@ -23,6 +26,8 @@ public class PlayerLuca : MonoBehaviour
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
+    private float cooldownOndaSonoraAtual = 0; // Controle do cooldown da onda sonora
+  
 
     // Start is called before the first frame update
     void Start()
@@ -33,29 +38,25 @@ public class PlayerLuca : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         // Verifique o cooldown do tiro atual, caso você queira manter a lógica do cooldown do tiro.
-                cooldownTiro -= Time.deltaTime;
+        // Verifique o cooldown do tiro atual, caso você queira manter a lógica do cooldown do tiro.
+        cooldownTiro -= Time.deltaTime;
+        cooldownOndaSonoraAtual -= Time.deltaTime; // Atualiza o cooldown da onda sonora
 
-        
-        
         if(!this.dash.Usado)
         {
             MovimentarJogador();
-           
             LimiteDoJogador();
             AplicarDash();  
         }
-        
-        /*if (Input.GetKey(KeyCode.X))
+        if(Input.GetKey(KeyCode.X))
         {
-           
+            AtirarOndaSonora();
         }
         else
         {
-    
-        }*/
-        AtirarLaser();
-       
+            AtirarLaser();
+        }
+        
     }
 
 
@@ -80,6 +81,18 @@ public class PlayerLuca : MonoBehaviour
                 }   Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
                 cooldownTiro += 1/balasPorSegundo;
             }
+    }
+    
+    private void AtirarOndaSonora()
+    {
+        if (cooldownOndaSonoraAtual <= 0)
+        {
+            // Instancia a onda sonora em uma posição de disparo
+            Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+        
+            // Reseta o cooldown da onda sonora
+            cooldownOndaSonoraAtual = cooldownOndaSonora;
+        }
     }
 
 
