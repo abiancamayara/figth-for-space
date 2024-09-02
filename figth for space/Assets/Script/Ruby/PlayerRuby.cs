@@ -39,22 +39,27 @@ public class PlayerRuby : MonoBehaviour
     
     void Update()
     {
+        // Atualiza cooldown da bomba
         cooldownBombaAtual -= Time.deltaTime;
         
-        if(!this.dash.Usado)
+        // Se o dash não está sendo usado, podemos movimentar o jogador
+        if (!this.dash.Usado)
         {
             MovimentarJogador();
-            
             LimiteDoJogador();
-            AplicarDash();  
         }
         
-        AtirarLaser();
+        AplicarDash();  
         
         // Lógica para disparar a bomba
         if (Input.GetKeyDown(KeyCode.X) && cooldownBombaAtual <= 0)
         {
             LançarBomba();
+            cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
+        }
+        else
+        {
+            AtirarLaser();
         }
     }
        
@@ -87,7 +92,7 @@ public class PlayerRuby : MonoBehaviour
     {
         // Cria a bomba na posição especificada
         Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
-        cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
+        //cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
     }
 
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public partial class Bomba : MonoBehaviour
 {
-    public bool itemDaBomba; 
-     public void AtivarBomba()
+    //public bool itemDaBomba; 
+    public void AtivarBomba()
     {
             //instantitate explosao
             
