@@ -38,8 +38,8 @@ public class ZigZag : MonoBehaviour
    private void MovimentarInimigo()
    {
        Vector3 movimentar = new Vector3(transform.position.x, Target.position.y);
-       transform.position = Vector3.Lerp(transform.position, movimentar, multiplicador * Time.deltaTime);
-       transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
+       transform!.position = Vector3.Lerp(transform.position, movimentar, multiplicador * Time.deltaTime);
+       transform!.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime);
    }
 
 

@@ -9,6 +9,7 @@ public class GeradorDeObjetos : MonoBehaviour
 
     public float tempoMaximoEntreOsSpawns;
     public float tempoAtualDosSpawns;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,13 @@ public class GeradorDeObjetos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.gameOver)
+        {
+            return;
+        }
+        
+        
+        
         tempoAtualDosSpawns -= Time.deltaTime;
 
         if(tempoAtualDosSpawns <= 0)

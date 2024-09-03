@@ -234,7 +234,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-5536096589873418643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.6666665, y: 7.2}
+    oldSize: {x: 6.571429, y: 6.1714287}
     newSize: {x: 7.1875, y: 6.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

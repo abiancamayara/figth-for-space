@@ -19,15 +19,15 @@ public class PlayerRuby : MonoBehaviour
     [SerializeField]
     private Dash dash;
 
-
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
     
     public GameObject bombaPrefab; // O prefab da bomba
     public Transform localDoLancamento; // O local onde a bomba será lançada
-    public float cooldownBomb = 5f; // Tempo entre lançamentos de bomba
-    private float cooldownBombaAtual = 0;
+
+    private bool lançandoBomba = false; // Flag para verificar se a bomba está sendo lançada
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +36,8 @@ public class PlayerRuby : MonoBehaviour
     }
 
     // Update is called once per frame
-    
     void Update()
     {
-        // Atualiza cooldown da bomba
-        cooldownBombaAtual -= Time.deltaTime;
-        
         // Se o dash não está sendo usado, podemos movimentar o jogador
         if (!this.dash.Usado)
         {
@@ -52,18 +48,24 @@ public class PlayerRuby : MonoBehaviour
         AplicarDash();  
         
         // Lógica para disparar a bomba
-        if (Input.GetKeyDown(KeyCode.X) && cooldownBombaAtual <= 0)
+        if (Input.GetKeyDown(KeyCode.X))
         {
             LançarBomba();
-            cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
+            lançandoBomba = true; // Ativa a flag enquanto está lançando a bomba
         }
-        else
+        
+        // Se não estiver lançando bomba, atira 
+        if (!lançandoBomba)
         {
             AtirarLaser();
         }
+        else
+        {
+            // Se a bomba foi lançada, desativa a flag após um pequeno delay
+            // Para evitar disparar lasers imediatamente após lançar a bomba
+            Invoke("ResetarLancamento", 0.1f);
+        }
     }
-       
-
 
     private void MovimentarJogador()
     {
@@ -73,51 +75,53 @@ public class PlayerRuby : MonoBehaviour
 
     private void AtirarLaser()
     {
-            cooldownTiro -= Time.deltaTime;
-            if(cooldownTiro <0)
+        cooldownTiro -= Time.deltaTime;
+        if(cooldownTiro < 0)
+        {
+            if(temLaserDuplo == false)
             {
-                if(temLaserDuplo == false)
-                {
-                    Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
-                }
-                else
-                {
-                    Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
-                }   Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
-                cooldownTiro += 1/balasPorSegundo;
+                Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
             }
+            else
+            {
+                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
+            }
+            Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
+            cooldownTiro += 1 / balasPorSegundo;
+        }
     }
     
     private void LançarBomba()
     {
-        // Cria a bomba na posição especificada
         Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
-        //cooldownBombaAtual = cooldownBomb; // Reinicia o cooldown
     }
 
+    private void ResetarLancamento()
+    {
+        lançandoBomba = false; // Reinicia a flag para permitir disparo novamente
+    }
 
     public void LimiteDoJogador()
     {
         if(transform.position.x < limiteSuperiorEsquerdo.position.x)
         {
-            transform.position = new Vector2 (limiteSuperiorEsquerdo.position.x, transform.position.y);
+            transform.position = new Vector2(limiteSuperiorEsquerdo.position.x, transform.position.y);
         }
 
         if(transform.position.y > limiteSuperiorEsquerdo.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteSuperiorEsquerdo.position.y);
+            transform.position = new Vector2(transform.position.x, limiteSuperiorEsquerdo.position.y);
         }
 
         if(transform.position.x > limiteInferiorDireito.position.x)
         {
-            transform.position = new Vector2 (limiteInferiorDireito.position.x, transform.position.y);
+            transform.position = new Vector2(limiteInferiorDireito.position.x, transform.position.y);
         }
 
         if(transform.position.y < limiteInferiorDireito.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteInferiorDireito.position.y);
+            transform.position = new Vector2(transform.position.x, limiteInferiorDireito.position.y);
         }
-
     }
 
     private void AplicarDash()
@@ -129,5 +133,3 @@ public class PlayerRuby : MonoBehaviour
         }
     }
 }
-
-

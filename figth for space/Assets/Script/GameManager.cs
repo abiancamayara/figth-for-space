@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject painelDeGameOver;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameOver = true;
         painelDeGameOver.SetActive(true);
     }
 }

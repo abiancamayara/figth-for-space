@@ -17,6 +17,10 @@ public class Horda : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.gameOver)
+        {
+            return;
+        }
         // Verifica se é hora de instanciar um novo inimigo
         if (Time.time >= nextSpawnTime)
         {

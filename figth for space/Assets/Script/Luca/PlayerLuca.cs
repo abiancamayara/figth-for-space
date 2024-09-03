@@ -15,7 +15,6 @@ public class PlayerLuca : MonoBehaviour
     public float velocidadeDaNave;
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
-    public float cooldownOndaSonora = 5f; // Configuração do cooldown para o ataque secundário
 
 
 
@@ -38,10 +37,7 @@ public class PlayerLuca : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Verifique o cooldown do tiro atual, caso você queira manter a lógica do cooldown do tiro.
-        cooldownTiro -= Time.deltaTime;
-        cooldownOndaSonoraAtual -= Time.deltaTime; // Atualiza o cooldown da onda sonora
-
+        
         if(!this.dash.Usado)
         {
             MovimentarJogador();
@@ -85,14 +81,7 @@ public class PlayerLuca : MonoBehaviour
     
     private void AtirarOndaSonora()
     {
-        if (cooldownOndaSonoraAtual <= 0)
-        {
-            // Instancia a onda sonora em uma posição de disparo
-            Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
-        
-            // Reseta o cooldown da onda sonora
-            cooldownOndaSonoraAtual = cooldownOndaSonora;
-        }
+        Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
     }
 
 
