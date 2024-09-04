@@ -27,6 +27,8 @@ public class PlayerRuby : MonoBehaviour
     public Transform localDoLancamento; // O local onde a bomba será lançada
 
     private bool lançandoBomba = false; // Flag para verificar se a bomba está sendo lançada
+    public bool lancou;
+    public float variacaoangulo = 3;
     
 
     // Start is called before the first frame update
@@ -48,10 +50,16 @@ public class PlayerRuby : MonoBehaviour
         AplicarDash();  
         
         // Lógica para disparar a bomba
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && !lancou)
         {
             LançarBomba();
             lançandoBomba = true; // Ativa a flag enquanto está lançando a bomba
+            lancou = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            lançandoBomba = false;
         }
         
         // Se não estiver lançando bomba, atira 
@@ -63,7 +71,7 @@ public class PlayerRuby : MonoBehaviour
         {
             // Se a bomba foi lançada, desativa a flag após um pequeno delay
             // Para evitar disparar lasers imediatamente após lançar a bomba
-            Invoke("ResetarLancamento", 0.1f);
+           Invoke("ResetarLancamento", 0.1f);
         }
     }
 
@@ -80,20 +88,23 @@ public class PlayerRuby : MonoBehaviour
         {
             if(temLaserDuplo == false)
             {
-                Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+                Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation).transform.Rotate(Vector3.forward*Random.Range(-variacaoangulo,variacaoangulo));
             }
             else
             {
-                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
+                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation).transform.Rotate(Vector3.forward*Random.Range(-variacaoangulo,variacaoangulo));
+                
             }
-            Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
+            Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward*Random.Range(-variacaoangulo,variacaoangulo));
+            
             cooldownTiro += 1 / balasPorSegundo;
         }
     }
     
     private void LançarBomba()
     {
-        Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
+        GameObject bomba = Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
+        bomba.GetComponent<AtaqueRuby>().player = this;
     }
 
     private void ResetarLancamento()
