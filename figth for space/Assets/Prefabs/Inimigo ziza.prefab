@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4801373811518255664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5081605067468820796}
+  m_Layer: 0
+  m_Name: 'Local Do Disparo da direita '
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5081605067468820796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4801373811518255664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.435, y: -0.738, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3189162145060787718}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4995111085020860458
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +66,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5382575641736598986}
+  - {fileID: 6912328823741189138}
+  - {fileID: 5081605067468820796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &2875260032019440789
@@ -125,7 +158,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.53125, y: 1.46875}
+    oldSize: {x: 1.4, y: 1.3428571}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -171,7 +204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4995111085020860458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe0bc30676109084a8939a5b021db0e4, type: 3}
   m_Name: 
@@ -197,12 +230,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41176aaaaa857cb489961df36a3af8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserDoInimigo: {fileID: 3894382884657733784, guid: dd28199599ce43b40b39455c5c90eb5a, type: 3}
+  laserDoJogador: {fileID: 3894382884657733784, guid: dd28199599ce43b40b39455c5c90eb5a, type: 3}
+  localDoDisparo: {fileID: 5382575641736598986}
+  localDoDisparoDaEsquerda: {fileID: 0}
+  localDoDisparoDaDireita: {fileID: 0}
   multiplicador: 5
   velocidadeDoInimigo: 8
+  vidaMaximaDoInimigo: 10
+  vidaAtualDoInimigo: 0
   angulo: 0
+  balasPorSegundo: 30
   alturaOriginal: 0
-  amplitude: 1
+  amplitude: 3
   velocidadeDaOscilacao: 10
+  inimigoAtirador: 1
+  inimigoAtivado: 0
 --- !u!1 &6862438781105308597
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +272,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.738, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3189162145060787718}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7345756677462572098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6912328823741189138}
+  m_Layer: 0
+  m_Name: Local Do Disparo da esquerda
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6912328823741189138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345756677462572098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.293, y: -0.738, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

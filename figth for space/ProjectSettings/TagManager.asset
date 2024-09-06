@@ -8,6 +8,7 @@ TagManager:
   - Laser
   - Kamikaze
   - Dracon
+  - zigzag
   layers:
   - Default
   - TransparentFX
