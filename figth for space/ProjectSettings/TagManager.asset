@@ -7,6 +7,7 @@ TagManager:
   - Inimigo
   - Laser
   - Kamikaze
+  - Dracon
   layers:
   - Default
   - TransparentFX
