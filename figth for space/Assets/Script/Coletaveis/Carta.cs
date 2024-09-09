@@ -9,7 +9,6 @@ public class Carta : MonoBehaviour
     public int danoPorHit;
     
     public GameObject cartaPrefab; // Prefab da carta que você quer coletar
-    public TextMeshProUGUI quantidadeCartasText; // Text UI para mostrar a quantidade de cartas
 
     private int quantidadeCartas = 0;
 
@@ -28,7 +27,6 @@ public class Carta : MonoBehaviour
         // Aqui você pode instanciar a carta
         InstanciarCarta();
         // Atualiza a UI para mostrar a quantidade de cartas
-        AtualizarQuantidadeCartasUI();
         Destroy(this.gameObject);
     }
 
@@ -38,11 +36,16 @@ public class Carta : MonoBehaviour
         Instantiate(cartaPrefab, transform.position, Quaternion.identity);
 
         // Aumenta a quantidade de cartas coletadas
-        quantidadeCartas++;
+        
     }
-
-    private void AtualizarQuantidadeCartasUI()
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        quantidadeCartasText.text = "Carta: " + quantidadeCartas.ToString();
+        if(other.gameObject.CompareTag("Player"))
+        {
+            quantidadeCartas++;
+            GameManager.instance.AtualizarQuantidadeCartasUI(quantidadeCartas);
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -179,13 +179,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDoInimigo: {fileID: 3894382884657733784, guid: dd28199599ce43b40b39455c5c90eb5a, type: 3}
+  itemParaDropar: {fileID: 6068371878898650412, guid: 5f758fc574a348142936d97bd1781197, type: 3}
   localDoDisparo: {fileID: 5627280073940237095}
-  localDoDisparoDaEsquerda: {fileID: 0}
-  localDoDisparoDaDireita: {fileID: 0}
   velocidadeDoInimigo: 15
-  balasPorSegundo: 20
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
+  chanceParaDropar: 80
+  tempoMaximoEntreOsLasers: 0.4
+  tempoAtualDosLasers: 0
   inimigoAtirador: 1
   inimigoAtivado: 0
 --- !u!95 &2207757177949865153

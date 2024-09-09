@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Inimigos : MonoBehaviour
 {
-    public GameObject laserDoInimigo; 
+    public GameObject laserDoInimigo;
+    public GameObject itemParaDropar;
     public Transform localDoDisparo;
     
 
     public float velocidadeDoInimigo;
     public int vidaMaximaDoInimigo;
     public int vidaAtualDoInimigo;
+    public int chanceParaDropar;
     
 
     public float tempoMaximoEntreOsLasers; 
@@ -69,6 +72,13 @@ public class Inimigos : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
+            int numeroAleatorio = Random.Range(0, 100);
+
+            if (numeroAleatorio <= chanceParaDropar)
+            {
+                Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
+            
             Destroy(this.gameObject);
         }
     }

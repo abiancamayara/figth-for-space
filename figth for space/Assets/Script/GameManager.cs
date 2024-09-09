@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject painelDeGameOver;
     public bool gameOver;
+    public TextMeshProUGUI quantidadeCartasText;
+    public TextMeshProUGUI contadorLixoText;
+
+    public int Lvalor;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +36,16 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void AtualizarQuantidadeCartasUI(int value)
+    {
+        quantidadeCartasText.text = "Carta: " + value.ToString();
+    }
+    
+    public void AtualizarContadorTexto(int LixoV)
+    {
+        Lvalor += LixoV;
+        contadorLixoText.text ="Lixo: " + Lvalor.ToString();
+    }
     public void GameOver()
     {
         gameOver = true;
