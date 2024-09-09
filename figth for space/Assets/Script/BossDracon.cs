@@ -41,7 +41,7 @@ public class BossDracon : MonoBehaviour
     private void VerificarEstado()
     {
         // Verifica se a vida do inimigo está abaixo de 70% da vida máxima
-        if (vidaAtualDracon <= vidaMaximaDracon * 0.7f && estadoAtual != EstadoInimigo.EstadoDois)
+        if (vidaAtualDracon <= vidaMaximaDracon * 0.5f && estadoAtual != EstadoInimigo.EstadoDois)
         {
             estadoAtual = EstadoInimigo.EstadoDois; // Muda para estado dois
         }
