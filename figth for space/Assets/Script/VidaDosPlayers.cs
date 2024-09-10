@@ -21,6 +21,7 @@ public class VidaDosPlayers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.vidaDosPlayers = this;
         vidaAtualDojogador = vidaMaximaDoJogador;
         vidaAtualDoEscudo = vidaMaximaDoEscudo;
 
@@ -63,9 +64,9 @@ public class VidaDosPlayers : MonoBehaviour
 
     public void GanharVida(int vidaParaReceber)
     {
-        if(vidaAtualDoEscudo + vidaParaReceber <= vidaMaximaDoJogador)
+        if(vidaAtualDojogador + vidaParaReceber <= vidaMaximaDoJogador)
         {
-            vidaAtualDoEscudo += vidaParaReceber;
+            vidaAtualDojogador += vidaParaReceber;
         }
         else
         {

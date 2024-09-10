@@ -6,6 +6,7 @@ public class LookAtTarget : MonoBehaviour
 {
 
     public Transform alvo;
+    public int Anguloajuste;
    
 
     // Update is called once per frame
@@ -13,5 +14,7 @@ public class LookAtTarget : MonoBehaviour
     {
         transform.LookAt(alvo);
         transform.Rotate(Vector3.up * 90);
+        transform.Rotate(Vector3.forward * Anguloajuste);
+        
     }
 }

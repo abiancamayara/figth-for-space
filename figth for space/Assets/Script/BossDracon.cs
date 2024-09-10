@@ -5,6 +5,8 @@ using UnityEngine;
 public class BossDracon : MonoBehaviour
 {
     public GameObject laserDoJogador;
+    public GameObject itemParaDropar;
+    
     public Transform localDoDisparoUnico;
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
@@ -16,7 +18,10 @@ public class BossDracon : MonoBehaviour
     private float cooldownTiro;
     public float balasPorSegundo = 2f;
     public float variacaoangulo;
+    
     private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
+    
+    public int chanceParaDropar;
 
     private enum EstadoInimigo
     {
@@ -92,6 +97,12 @@ public class BossDracon : MonoBehaviour
 
         if(vidaAtualDracon <= 0)
         {
+            int numeroAleatorio = Random.Range(0, 100);
+
+            if (numeroAleatorio <= chanceParaDropar)
+            {
+                Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
             Destroy(this.gameObject);
         }
     }

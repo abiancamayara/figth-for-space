@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI contadorLixoText;
 
     public int Lvalor;
-    
+
+    public VidaDosPlayers vidaDosPlayers;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,9 +42,17 @@ public class GameManager : MonoBehaviour
         quantidadeCartasText.text = "Carta: " + value.ToString();
     }
     
-    public void AtualizarContadorTexto(int LixoV)
+    public void ColetarLixo(int LixoV)
     {
         Lvalor += LixoV;
+        
+        // Verifica se coletou 5 lixos
+        if (Lvalor >= 5)
+        {
+            int vidaParaReceber = Mathf.CeilToInt(vidaDosPlayers.vidaMaximaDoJogador * 0.2f); // 20% da vida máxima
+            vidaDosPlayers.GanharVida(vidaParaReceber);
+            Lvalor = 0; // Reinicia o contador após o aumento de vida
+        }
         contadorLixoText.text ="Lixo: " + Lvalor.ToString();
     }
     public void GameOver()
