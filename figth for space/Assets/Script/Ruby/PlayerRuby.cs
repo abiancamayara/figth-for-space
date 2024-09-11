@@ -98,6 +98,7 @@ public class PlayerRuby : MonoBehaviour
             Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward*Random.Range(-variacaoangulo,variacaoangulo));
             
             cooldownTiro += 1 / balasPorSegundo;
+            AudioObserver.OnplaySFXEvent("tiro", Random.value);
         }
     }
     

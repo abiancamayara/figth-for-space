@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        AudioObserver.OnStopMusicEvent();
         gameOver = true;
         painelDeGameOver.SetActive(true);
     }

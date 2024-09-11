@@ -11,6 +11,7 @@ public class ItensColetaveis : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            AudioObserver.OnplaySFXEvent("coletavel",1);
             if(itemDoEscudo == true)
             {
                 other.gameObject.GetComponent<VidaDosPlayers>().AtivarEscudo();

@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 175075011}
   - component: {fileID: 175075010}
   - component: {fileID: 175075009}
+  - component: {fileID: 175075012}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -461,9 +462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 175075010}
-  sfxSource: {fileID: 0}
-  clipPulo: {fileID: 0}
-  clipColetavel: {fileID: 0}
+  sfxSource: {fileID: 175075012}
+  clipTiro: {fileID: 8300000, guid: aa92dd2ebf42a9243a0c385b4a641a17, type: 3}
+  clipColetavel: {fileID: 8300000, guid: 7b82c6fdfa7116845a17404b85420d94, type: 3}
 --- !u!82 &175075010
 AudioSource:
   m_ObjectHideFlags: 0
@@ -475,7 +476,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d490bde1271645b4fba1a6ca05293aac, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -575,6 +576,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &175075012
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175075008}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &191196093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 323436224922121854, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
@@ -2137,6 +2234,63 @@ MonoBehaviour:
   - {fileID: 330614480}
   tempoMaximoEntreOsSpawns: 1
   tempoAtualDosSpawns: 0
+--- !u!1001 &1295633731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.33371
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.083528
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 47014129331813307, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389172200459946418, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+      propertyPath: m_Name
+      value: Power-Up bomba
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
 --- !u!1 &1348901458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,6 +3324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.652
       objectReference: {fileID: 0}
+    - target: {fileID: 3136216643945748887, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3861046427399399778, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_Name
       value: Player Ruby
@@ -3735,3 +3893,4 @@ SceneRoots:
   - {fileID: 2103040631}
   - {fileID: 9842336}
   - {fileID: 175075011}
+  - {fileID: 1295633731}
