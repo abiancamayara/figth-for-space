@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class Kamikaze : MonoBehaviour
 {
-    
-    public float velocidadeDoInimigo;
-    public int danoParaDar;
-    public int vidaMaximaDoInimigo;
-    public int vidaAtualDoInimigo;
-    
     private Transform Target;
     private Rigidbody2D inimigoRb;
     private GameObject jogador;
+    public GameObject itemParaDropar;
+    
+    public float velocidadeDoInimigo;
+    
+    public int danoParaDar;
+    public int vidaMaximaDoInimigo;
+    public int vidaAtualDoInimigo;
+    public int chanceParaDropar;
+    public int pontosParaDar;
+    
+    
     
 
     void Start()
@@ -51,6 +56,13 @@ public class Kamikaze : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
+            GameManager.instance.AumentarPontuaao(pontosParaDar);
+            int numeroAleatorio = Random.Range(0, 100);
+
+            if (numeroAleatorio <= chanceParaDropar)
+            {
+                Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
             Destroy(this.gameObject);
         }
     }

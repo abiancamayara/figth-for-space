@@ -16,6 +16,7 @@ public class Inimigos : MonoBehaviour
     public int vidaMaximaDoInimigo;
     public int vidaAtualDoInimigo;
     public int chanceParaDropar;
+    public int pontosParaDar;
     
 
     public float tempoMaximoEntreOsLasers; 
@@ -72,6 +73,7 @@ public class Inimigos : MonoBehaviour
 
         if(vidaAtualDoInimigo <= 0)
         {
+            GameManager.instance.AumentarPontuaao(pontosParaDar);
             int numeroAleatorio = Random.Range(0, 100);
 
             if (numeroAleatorio <= chanceParaDropar)

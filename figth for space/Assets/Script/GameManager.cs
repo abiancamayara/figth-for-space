@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,11 +8,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public int pontuacaoAtual;
+    
     public static GameManager instance;
     public GameObject painelDeGameOver;
+    
     public bool gameOver;
+    public GameObject bossPrefab; // Prefab do Boss
+    public int pontuacaoParaInvocarBoss; // Muda esta variável para definir a quantidade de pontos necessária
+    
+    private bool bossInstanciado = false;
+    
     public TextMeshProUGUI quantidadeCartasText;
     public TextMeshProUGUI contadorLixoText;
+    public TextMeshProUGUI pontuacaoAtualText;
 
     public int Lvalor;
 
@@ -20,20 +30,40 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        instance = this;
         if(instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+    }
+
+    private void Start()
+    {
+        pontuacaoAtual = 0;
+        pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (pontuacaoAtual >= pontuacaoParaInvocarBoss && !bossInstanciado)
+        {
+            InstanciarBoss();
+        }
+    }
+
+    public void AumentarPontuaao(int pontosParaGanhar)
+    {
+        pontuacaoAtual += pontosParaGanhar;
+        pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
+    }
+    
+    public void InstanciarBoss()
+    {
+        // Instancia o Boss
+        Instantiate(bossPrefab, Vector3.zero, Quaternion.identity); // Ajuste a posição conforme necessário
+        bossInstanciado = true;
         
     }
 

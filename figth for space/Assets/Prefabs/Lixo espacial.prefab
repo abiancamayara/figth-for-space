@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6296844462743953971}
   - component: {fileID: 2213026834594618578}
   - component: {fileID: 1323121200593289082}
+  - component: {fileID: 3308364911147106814}
   m_Layer: 0
   m_Name: Lixo espacial
   m_TagString: Untagged
@@ -98,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20543dfec35f05e4c9530282b53e6891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaDosPlayers: {fileID: 0}
-  contadorLixoText: 1
+  LixoValue: 0
 --- !u!60 &1323121200593289082
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +148,16 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &3308364911147106814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275768496608969999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 0.7

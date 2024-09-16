@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZigZag : MonoBehaviour
 {
    public GameObject laserDoInimigo;
+   public GameObject itemParaDropar;
    
    public Transform localDoDisparo;
    public Transform localDoDisparoDaEsquerda;
@@ -13,18 +14,21 @@ public class ZigZag : MonoBehaviour
    public int multiplicador;
 
    public float velocidadeDoInimigo;
+   
    public int vidaMaximaDoInimigo;
    public int vidaAtualDoInimigo;
+   public int chanceParaDropar;
    
    private Transform Target;
 
    public float angulo = 0;
    private float cooldownTiro;
    public float balasPorSegundo;
-
    public float alturaOriginal;
+   
    public int amplitude;
    public int velocidadeDaOscilacao = 10;
+   public int pontosParaDar;
    
    public bool inimigoAtirador; 
    public bool inimigoAtivado;
@@ -97,6 +101,14 @@ public class ZigZag : MonoBehaviour
 
       if(vidaAtualDoInimigo <= 0)
       {
+         GameManager.instance.AumentarPontuaao(pontosParaDar);
+         int numeroAleatorio = Random.Range(0, 100);
+
+         if (numeroAleatorio <= chanceParaDropar)
+         {
+            Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+         }
+         
          Destroy(this.gameObject);
       }
    }

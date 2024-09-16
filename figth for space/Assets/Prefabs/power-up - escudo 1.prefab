@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1654640920925210873}
   - component: {fileID: 2890074322394725085}
   - component: {fileID: 1529716056918668216}
+  - component: {fileID: -6971242364935947996}
   m_Layer: 0
   m_Name: power-up - escudo 1
   m_TagString: Untagged
@@ -135,3 +136,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDoEscudo: 1
   itemDaBomba: 0
+--- !u!114 &-6971242364935947996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068371878898650412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 0.7

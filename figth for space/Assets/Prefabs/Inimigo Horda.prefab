@@ -184,7 +184,8 @@ MonoBehaviour:
   velocidadeDoInimigo: 15
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 80
+  chanceParaDropar: 30
+  pontosParaDar: 20
   tempoMaximoEntreOsLasers: 0.4
   tempoAtualDosLasers: 0
   inimigoAtirador: 1
