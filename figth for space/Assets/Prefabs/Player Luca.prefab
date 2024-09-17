@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: -7093691505720289403}
-  laserDoJogador: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
+  laserDoJogador: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
   ondaSonora: {fileID: 5303591375719657853, guid: 9629b5cc90cc9a2459f42e9b8358a9bb, type: 3}
   localDoDisparoUnico: {fileID: 0}
   localDoDisparoDaEsquerda: {fileID: 0}
@@ -217,7 +217,6 @@ MonoBehaviour:
   velocidadeDaNave: 0
   temLaserDuplo: 0
   balasPorSegundo: 5
-  cooldownOndaSonora: 5
   dash: {fileID: 0}
   limiteSuperiorEsquerdo: {fileID: 0}
   limiteInferiorDireito: {fileID: 0}
