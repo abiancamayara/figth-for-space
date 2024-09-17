@@ -124,6 +124,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2098802943364065967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.233}
+--- !u!1 &5047938451893661120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740821845967560311}
+  m_Layer: 0
+  m_Name: Instanciar o boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740821845967560311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5047938451893661120}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.70754796, w: 0.7066654}
+  m_LocalPosition: {x: -1.7195055, y: 6.0007887, z: -0.01078927}
+  m_LocalScale: {x: 0.18351375, y: 0.18351375, z: 0.1835138}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2098802943364065967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5425063289516160353
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +225,7 @@ Transform:
   - {fileID: 477436262077432626}
   - {fileID: 591796066651731140}
   - {fileID: 6193821387003430930}
+  - {fileID: 740821845967560311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.072}
 --- !u!212 &7239500808967995044

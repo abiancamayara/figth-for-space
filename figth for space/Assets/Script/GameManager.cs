@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int pontuacaoAtual;
-    
+
+    public Transform instaciarboss;
     public static GameManager instance;
     public GameObject painelDeGameOver;
     
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void InstanciarBoss()
     {
         // Instancia o Boss
-        Instantiate(bossPrefab, Vector3.zero, Quaternion.identity); // Ajuste a posição conforme necessário
+        Instantiate(bossPrefab, instaciarboss.position, Quaternion.identity); // Ajuste a posição conforme necessário
         bossInstanciado = true;
         
     }
