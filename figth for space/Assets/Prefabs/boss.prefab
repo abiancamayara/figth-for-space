@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDoJogador: {fileID: 9034397765013405610, guid: 29a04561cd2cbda40b50dd2cdafb2018, type: 3}
   itemParaDropar: {fileID: 1569725485329710762, guid: 817d2b731302e644192879efa66b0a74, type: 3}
-  escudoPrefab: {fileID: 5347841466703128307, guid: b2972786b37000846a13bc3e3e044d94, type: 3}
+  escudoPrefab: {fileID: 3493945740138539159, guid: 4975740385becfb449c573a80e7c0f9b, type: 3}
   localDoDisparoUnico: {fileID: 0}
   localDoDisparoDaEsquerda: {fileID: 0}
   localDoDisparoDaDireita: {fileID: 0}

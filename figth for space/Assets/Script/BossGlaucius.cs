@@ -19,6 +19,7 @@ public class BossGlaucius : MonoBehaviour
     public float variacaoangulo;
     
     private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
+    public bool temEscudo;
     
     public int chanceParaDropar;
 
@@ -90,18 +91,22 @@ public class BossGlaucius : MonoBehaviour
 
     public void MachucarBoss(int danoParaReceber)
     {
-        vidaAtualGlaucius -= danoParaReceber;
-
-        if (vidaAtualGlaucius <= 0)
+        if (temEscudo == false)
         {
-            int numeroAleatorio = Random.Range(0, 100);
+            vidaAtualGlaucius -= danoParaReceber;
 
-            if (numeroAleatorio <= chanceParaDropar)
+            if (vidaAtualGlaucius <= 0)
             {
-                Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+                int numeroAleatorio = Random.Range(0, 100);
+
+                if (numeroAleatorio <= chanceParaDropar)
+                {
+                    Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
+                }
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
         }
+       
     }
 }
 
