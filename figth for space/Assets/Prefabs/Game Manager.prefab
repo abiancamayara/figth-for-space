@@ -394,10 +394,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontuacaoAtual: 0
+  nextSceneName: Luna
   instaciarboss: {fileID: 3677421720392549485}
   painelDeGameOver: {fileID: 1037632049321694337}
   gameOver: 0
-  bossPrefab: {fileID: 7987088037541071808, guid: 3d0a740a695023e4eb200302bcfee12c, type: 3}
+  bossPrefab: {fileID: 1777429029665034502, guid: e66915ffc053f4c4ab9fc1923724503c, type: 3}
   pontuacaoParaInvocarBoss: 30
   quantidadeCartasText: {fileID: 8829106895133598380}
   contadorLixoText: {fileID: 5481223967281855744}

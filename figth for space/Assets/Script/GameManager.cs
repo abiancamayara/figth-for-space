@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
     public int pontuacaoAtual;
 
-    public string nextSceneName = "Luca";
+    public string nextSceneName;
     public Transform instaciarboss;
     public static GameManager instance;
     public GameObject painelDeGameOver;
