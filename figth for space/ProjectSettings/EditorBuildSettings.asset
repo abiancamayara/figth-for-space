@@ -9,15 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/menu principal.unity
     guid: 6d8c75605ccb52b4fb7908d6213e28b0
   - enabled: 1
-    path: Assets/Scenes/Ruby.unity
-    guid: 2acb2892fb099b1408055b69971c062f
+    path: Assets/Scenes/Tutorial.unity
+    guid: 7876007c8ca658f40a3671a8bdf029ef
   - enabled: 1
-    path: Assets/Scenes/Carta1.unity
+    path: Assets/Scenes/Cena carta 1.unity
     guid: ca3253741e8c40845a68fb868208c45b
+  - enabled: 1
+    path: Assets/Scenes/Luca.unity
+    guid: 1b1d473453194cf4e9f19e6824b2d838
+  - enabled: 1
+    path: Assets/Scenes/Cena carta 2.unity
+    guid: 79aeb7cf7eab47443b341a0e63ba76ed
   - enabled: 1
     path: Assets/Scenes/Luna.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Luca.unity
-    guid: 1b1d473453194cf4e9f19e6824b2d838
+    path: Assets/Scenes/Cena carta 3.unity
+    guid: e780ef1739285d74885dcc8440361b56
+  - enabled: 1
+    path: Assets/Scenes/Ruby.unity
+    guid: 2acb2892fb099b1408055b69971c062f
   m_configObjects: {}
