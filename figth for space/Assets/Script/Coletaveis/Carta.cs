@@ -45,6 +45,7 @@ public class Carta : MonoBehaviour
         {
             quantidadeCartas++;
             GameManager.instance.AtualizarQuantidadeCartasUI(quantidadeCartas);
+            GameManager.instance.PassarDeFase();
             Destroy(this.gameObject);
         }
     }

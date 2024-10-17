@@ -19,7 +19,7 @@ public class BossDracon : MonoBehaviour
     public float balasPorSegundo = 2f;
     public float variacaoangulo;
     
-    private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
+    //private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
     
     public int chanceParaDropar;
 

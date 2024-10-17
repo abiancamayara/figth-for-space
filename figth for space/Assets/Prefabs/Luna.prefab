@@ -468,9 +468,9 @@ MonoBehaviour:
   barraDeVidaDoJogador: {fileID: 0}
   barraDeEnergiaDoEscudo: {fileID: 0}
   escudoDoJogador: {fileID: 6559708719667562532}
-  vidaMaximaDoJogador: 20
+  vidaMaximaDoJogador: 100
   vidaAtualDojogador: 0
-  vidaMaximaDoEscudo: 5
+  vidaMaximaDoEscudo: 20
   vidaAtualDoEscudo: 0
   temEscudo: 0
 --- !u!114 &2158395579838633034

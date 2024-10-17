@@ -101,7 +101,7 @@ public class ZigZag : MonoBehaviour
 
       if(vidaAtualDoInimigo <= 0)
       {
-         GameManager.instance.AumentarPontuaao(pontosParaDar);
+         GameManager.instance.AumentarPontuacao(pontosParaDar);
          int numeroAleatorio = Random.Range(0, 100);
 
          if (numeroAleatorio <= chanceParaDropar)

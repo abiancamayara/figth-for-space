@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4640907096705290293}
   m_Layer: 0
   m_Name: 'Carta '
-  m_TagString: Untagged
+  m_TagString: Carta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

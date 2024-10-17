@@ -892,8 +892,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9566b6aabcd866249817dcb1fa0a335c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontuacaoAtual: 0
+  nextSceneName: Luna
+  instaciarboss: {fileID: 0}
   painelDeGameOver: {fileID: 2109961292}
   gameOver: 0
+  bossPrefab: {fileID: 0}
+  pontuacaoParaInvocarBoss: 0
+  quantidadeCartasText: {fileID: 0}
+  contadorLixoText: {fileID: 0}
+  pontuacaoAtualText: {fileID: 0}
+  Lvalor: 0
+  vidaDosPlayers: {fileID: 0}
 --- !u!4 &903003935
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: laserDoJogador
       value: 
-      objectReference: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
+      objectReference: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
     - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: velocidadeDaNave
       value: 10

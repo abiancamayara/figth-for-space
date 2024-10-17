@@ -25,7 +25,7 @@ public class PlayerLuca : MonoBehaviour
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
-    private float cooldownOndaSonoraAtual = 0; // Controle do cooldown da onda sonora
+    private float cooldownOndaSonoraAtual; // Controle do cooldown da onda sonora
   
 
     // Start is called before the first frame update

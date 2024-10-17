@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public int pontuacaoAtual;
 
+    public string nextSceneName = "Luca";
     public Transform instaciarboss;
     public static GameManager instance;
     public GameObject painelDeGameOver;
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AumentarPontuaao(int pontosParaGanhar)
+    public void AumentarPontuacao(int pontosParaGanhar)
     {
         pontuacaoAtual += pontosParaGanhar;
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
@@ -86,6 +88,20 @@ public class GameManager : MonoBehaviour
         }
         contadorLixoText.text ="Lixo: " + Lvalor.ToString();
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Carta"))
+        {
+            PassarDeFase();
+        }
+    }
+
+    public void PassarDeFase()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
+
     public void GameOver()
     {
         AudioObserver.OnStopMusicEvent();
