@@ -621,6 +621,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 149502539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.155}
+--- !u!4 &870227327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3677421720392549485, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+  m_PrefabInstance: {fileID: 1446298771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &910577565 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4463511857622014745, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
@@ -858,15 +863,11 @@ PrefabInstance:
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: bossPrefab
       value: 
-      objectReference: {fileID: 7987088037541071808, guid: 3d0a740a695023e4eb200302bcfee12c, type: 3}
+      objectReference: {fileID: 1777429029665034502, guid: e66915ffc053f4c4ab9fc1923724503c, type: 3}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: instaciarboss
       value: 
-      objectReference: {fileID: 2098802943364065967, guid: 3d0a740a695023e4eb200302bcfee12c, type: 3}
-    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
-      propertyPath: nextSceneName
-      value: "Op\xE7\xF5es"
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 870227327}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: vidaDosPlayers
       value: 
