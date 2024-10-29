@@ -12,7 +12,7 @@ public class BossGlaucius : MonoBehaviour
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
 
-    public float vidaMaximaGlaucius;
+    public float vidaMaximaGlaucius = 100;
     public float vidaAtualGlaucius;
     private float cooldownTiro;
     public float balasPorSegundo = 2f;

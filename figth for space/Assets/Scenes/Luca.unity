@@ -767,6 +767,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126486925 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4463511857622014745, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+  m_PrefabInstance: {fileID: 1681554397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1295138906
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Luca
       objectReference: {fileID: 0}
+    - target: {fileID: 2038001906229326065, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2913069410185666146, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.04739
@@ -1012,16 +1027,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6264937256274586613, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: vidaMaximaDoJogador
-      value: 20
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6264937256274586613, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: barraDeVidaDoJogador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1636796933}
     - target: {fileID: 6264937256274586613, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: barraDeEnergiaDoEscudo
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1126486925}
     - target: {fileID: 6503102286389557338, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: m_Size.x
       value: 4.28479
@@ -1082,8 +1097,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.14
       objectReference: {fileID: 0}
+    - target: {fileID: 8387294746840453883, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6095291114159215426, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+    - {fileID: 5243809173139429576, guid: 01f750a97014a274797641eb6becc1da, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f750a97014a274797641eb6becc1da, type: 3}
@@ -1342,6 +1363,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1636796933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8582168571703082799, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+  m_PrefabInstance: {fileID: 1681554397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1681554397
 PrefabInstance:
   m_ObjectHideFlags: 0

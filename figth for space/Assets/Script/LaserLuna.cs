@@ -53,6 +53,11 @@ public class LaserLuna : MonoBehaviour
             other.gameObject.GetComponent<BossGlaucius>().MachucarBoss(danoParaDar);
             Destroy(this.gameObject);
         }
+        if(other.gameObject.CompareTag("Zarak"))
+        {
+            other.gameObject.GetComponent<BossZarak>().MachucarBoss(danoParaDar);
+            Destroy(this.gameObject);
+        }
         
     }
 }
