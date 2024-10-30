@@ -1937,6 +1937,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 710363681}
     - target: {fileID: 1959501139041159153, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
+      propertyPath: balasPorSegundo
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959501139041159153, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
       propertyPath: limiteInferiorDireito
       value: 
       objectReference: {fileID: 1829622688}
