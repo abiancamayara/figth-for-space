@@ -22,6 +22,8 @@ public class BossZarak : MonoBehaviour
     public bool temEscudo;
 
     public int chanceParaDropar;
+    public int vidaMaximaDoEscudo; // Definindo a vida máxima do escudo
+    public int vidaAtualDoEscudo; // Para armazenar a vida atual do escudo
 
     private enum EstadoInimigo
     {
@@ -37,12 +39,14 @@ public class BossZarak : MonoBehaviour
     {
         vidaAtualZarak = vidaMaximaZarak;
         estadoAtual = EstadoInimigo.EstadoUm; // Começa no estado um
+        vidaAtualDoEscudo = vidaMaximaDoEscudo; // Inicializa a vida do escudo
     }
 
     void Update()
     {
         VerificarEstado();
         Atirar();
+        VerificarVidaDoEscudo(); // Verifica a vida do escudo a cada frame
     }
 
     private void VerificarEstado()
@@ -80,7 +84,20 @@ public class BossZarak : MonoBehaviour
         {
             escudoAtual = Instantiate(escudoPrefab, transform.position, Quaternion.identity);
             escudoAtual.transform.SetParent(transform);
+            vidaAtualDoEscudo = vidaMaximaDoEscudo; // Reseta a vida do escudo ao ativá-lo
+            escudoPrefab.SetActive(true);
             temEscudo = true; // O boss agora tem escudo
+        }
+    }
+
+    private void VerificarVidaDoEscudo()
+    {
+        if (temEscudo && vidaAtualDoEscudo <= 0)
+        {
+            Destroy(escudoAtual); // Destrói o escudo se a vida chegar a 0
+            escudoAtual = null; // Reseta a referência ao escudo
+            escudoPrefab.SetActive(false);
+            temEscudo = false; // O boss não tem mais escudo
         }
     }
 
@@ -100,34 +117,45 @@ public class BossZarak : MonoBehaviour
         // Método para atirar um feixe contínuo
         Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
     }
-    
+
     public void LimiteDoJogador()
     {
         if(transform.position.x < limiteSuperiorEsquerdo.position.x)
         {
-            transform.position = new Vector2 (limiteSuperiorEsquerdo.position.x, transform.position.y);
+            transform.position = new Vector2(limiteSuperiorEsquerdo.position.x, transform.position.y);
         }
 
         if(transform.position.y > limiteSuperiorEsquerdo.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteSuperiorEsquerdo.position.y);
+            transform.position = new Vector2(transform.position.x, limiteSuperiorEsquerdo.position.y);
         }
 
         if(transform.position.x > limiteInferiorDireito.position.x)
         {
-            transform.position = new Vector2 (limiteInferiorDireito.position.x, transform.position.y);
+            transform.position = new Vector2(limiteInferiorDireito.position.x, transform.position.y);
         }
 
         if(transform.position.y < limiteInferiorDireito.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteInferiorDireito.position.y);
+            transform.position = new Vector2(transform.position.x, limiteInferiorDireito.position.y);
         }
-
     }
 
     public void MachucarBoss(int danoParaReceber)
     {
-        if (!temEscudo)
+        if (temEscudo)
+        {
+            // Se o boss tem um escudo, reduz a vida do escudo em vez da vida do boss
+            vidaAtualDoEscudo -= danoParaReceber;
+
+            if (vidaAtualDoEscudo <= 0)
+            {
+                Destroy(escudoAtual); // Destrói o escudo se a vida chegar a 0
+                escudoAtual = null; // Reseta a referência ao escudo
+                temEscudo = false; // O boss não tem mais escudo
+            }
+        }
+        else
         {
             vidaAtualZarak -= danoParaReceber;
 
@@ -144,4 +172,3 @@ public class BossZarak : MonoBehaviour
         }
     }
 }
-
