@@ -31,8 +31,15 @@ public class Kamikaze : MonoBehaviour
 
     void Update()
     {
-        MovimentarInimigo();
-        transform.position = Vector2.MoveTowards(transform.position, Target.position, velocidadeDoInimigo * Time.deltaTime);
+        //MovimentarInimigo();
+        if (Target.position.x <= transform.position.x)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Target.position, velocidadeDoInimigo * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.down * velocidadeDoInimigo * Time.deltaTime, Space.Self);
+        }
     }
 
     private void MovimentarInimigo()
