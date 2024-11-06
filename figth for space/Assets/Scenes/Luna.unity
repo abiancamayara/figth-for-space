@@ -856,6 +856,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: pauseObj
+      value: 
+      objectReference: {fileID: 1897807561}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: bossPrefab
       value: 
       objectReference: {fileID: 7987088037541071808, guid: 3d0a740a695023e4eb200302bcfee12c, type: 3}
@@ -875,13 +879,77 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3677421720392549485, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -969.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677421720392549485, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -546.31
+      objectReference: {fileID: 0}
     - target: {fileID: 5813851966857626019, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_Name
       value: Instanciar boss Glaucius
       objectReference: {fileID: 0}
+    - target: {fileID: 5826977700610336867, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826977700610336867, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.b
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826977700610336867, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.g
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826977700610336867, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.r
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 162.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 91.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.839903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11.839903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11.839903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.001327
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972640214210086349, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0016613007
+      objectReference: {fileID: 0}
     - target: {fileID: 6424937943907638452, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427816297240276085, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427816297240276085, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427816297240276085, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9812
       objectReference: {fileID: 0}
     - target: {fileID: 7427816297240276085, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,8 +991,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8011480287668295907, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6933761313774938560, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+    - {fileID: 7977689368235503595, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
@@ -1296,6 +1370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1897807561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8011480287668295907, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+  m_PrefabInstance: {fileID: 1446298771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041474701
 GameObject:
   m_ObjectHideFlags: 0
