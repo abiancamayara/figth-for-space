@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af06b88b09eb9174594e113ee6b53a06
+guid: d9191cfbdaa830746893f08377af0835
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,55 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nave de luca (1)_0
+      name: rubi parado_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 299
-        width: 124
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92b7520921103954dae993de0b09f8d7
-      internalID: 801054670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nave de luca (1)_1
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 299
-        width: 124
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb49956bbd6e4ef4194880185b2f9319
-      internalID: 1167052724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nave de luca (1)_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 77
+        x: 45
+        y: 486
         width: 128
-        height: 65
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f41ff682998e55d4f952914211a30913
-      internalID: -125453832
+      spriteID: 6c75087f2798d8447be7a6c07f7c44db
+      internalID: 1878086088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nave de luca (1)_3
+      name: rubi parado_1
       rect:
         serializedVersion: 2
-        x: 361
-        y: 77
-        width: 136
-        height: 65
+        x: 270
+        y: 486
+        width: 133
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +158,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 979ea5f5781070c4fa5c0aeb7787926b
-      internalID: -359785242
+      spriteID: 0844571bcede1db43920d4f8d6a8b1c9
+      internalID: 2039007438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rubi parado_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 270
+        width: 133
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2706f4e9af021df4080922d8f5b93a1e
+      internalID: 1212058991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rubi parado_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 270
+        width: 133
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec7e0216e968634fb2f741bc2c93e35
+      internalID: 68229795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rubi parado_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 54
+        width: 133
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f698e7922b7e9794fbea1c670855d034
+      internalID: 3310202
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      nave de luca (1)_0: 801054670
-      nave de luca (1)_1: 1167052724
-      nave de luca (1)_2: -125453832
-      nave de luca (1)_3: -359785242
+      rubi parado_0: 1878086088
+      rubi parado_1: 2039007438
+      rubi parado_2: 1212058991
+      rubi parado_3: 68229795
+      rubi parado_4: 3310202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

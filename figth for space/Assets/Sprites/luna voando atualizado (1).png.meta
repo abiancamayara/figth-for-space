@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 566bd1b1a31a5d841a41cd63c6b678f7
+guid: d352a34683ddb624eb2bfa8d691cf36b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: luna voando atualizado (1)_0
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 669
+        width: 161
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42075608aa292ea42961742139cbf9e8
+      internalID: 1761118455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: luna voando atualizado (1)_1
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 169
+        width: 161
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6838017876558498c54df933593fcd
+      internalID: -443662277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +174,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      luna voando atualizado (1)_0: 1761118455
+      luna voando atualizado (1)_1: -443662277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
