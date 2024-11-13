@@ -7,7 +7,7 @@ public class PlayerLuna : MonoBehaviour
 {
     public Rigidbody2D rig;
     public GameObject laserDoJogador;
-    public Transform localDoDisparoUnico; 
+    public Transform localDoDisparoUnico;
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
     public Transform localDoDisparoParaCima;
@@ -17,9 +17,7 @@ public class PlayerLuna : MonoBehaviour
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
 
-    [SerializeField]
-    private Dash dash;
-
+    [SerializeField] private Dash dash;
     private float cooldownTiro = 0;
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
@@ -38,7 +36,7 @@ public class PlayerLuna : MonoBehaviour
     void Start()
     {
         temLaserDuplo = true;
-        animator = GetComponent<Animator>(); // Assumindo que o Animator está no mesmo GameObject
+        animator = GetComponent<Animator>();
         SetTransition(Transition.Parado);
     }
 
@@ -51,7 +49,7 @@ public class PlayerLuna : MonoBehaviour
         {
             MovimentarJogador();
             LimiteDoJogador();
-            AplicarDash();  
+            AplicarDash();
         }
 
         if (Input.GetKey(KeyCode.X))
@@ -63,14 +61,17 @@ public class PlayerLuna : MonoBehaviour
             AtirarLaser();
         }
 
-        // Atualiza a transição de animação com base no movimento do jogador
-        if (teclasApertadas.magnitude > 0)
+        // Atualiza a transição de animação com base no movimento do jogador, mas não muda durante o hit
+        if (currentTransition != Transition.Hit)
         {
-            SetTransition(Transition.Voando);
-        }
-        else
-        {
-            SetTransition(Transition.Parado);
+            if (teclasApertadas.magnitude > 0)
+            {
+                SetTransition(Transition.Voando);
+            }
+            else
+            {
+                SetTransition(Transition.Parado);
+            }
         }
     }
 
@@ -79,7 +80,7 @@ public class PlayerLuna : MonoBehaviour
         teclasApertadas = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rig.velocity = teclasApertadas.normalized * velocidadeDaNave;
     }
-    
+
     private void AtirarLaser()
     {
         if (cooldownTiro < 0)
@@ -101,8 +102,8 @@ public class PlayerLuna : MonoBehaviour
     {
         if (cooldownTiro < 0)
         {
-            Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation); 
-            Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation); 
+            Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation);
+            Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation);
             cooldownTiro += 1 / balasPorSegundo;
         }
     }
@@ -141,14 +142,17 @@ public class PlayerLuna : MonoBehaviour
 
     public void ReceiveDamage()
     {
+        // Ativa a animação de hit
         SetTransition(Transition.Hit);
         StartCoroutine(HandleHitTransition());
     }
 
     private IEnumerator HandleHitTransition()
     {
-        yield return new WaitForSeconds(0.5f); // Duração do hit (ajustar conforme necessário)
+        // Aguarda o tempo da animação de hit antes de retornar ao estado normal
+        yield return new WaitForSeconds(0.5f); // Tempo de duração do hit, pode ajustar conforme necessário
 
+        // Após o tempo do hit, voltamos à animação de "Parado" ou "Voando"
         if (teclasApertadas.magnitude > 0)
         {
             SetTransition(Transition.Voando);
@@ -162,7 +166,6 @@ public class PlayerLuna : MonoBehaviour
     private void SetTransition(Transition newTransition)
     {
         currentTransition = newTransition;
-        animator.SetInteger("Transition", (int)currentTransition); // Assumindo que "Transition" é o parâmetro no Animator
+        animator.SetInteger("Transition", (int)currentTransition);
     }
 }
-

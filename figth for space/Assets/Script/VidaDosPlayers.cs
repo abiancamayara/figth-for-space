@@ -7,16 +7,14 @@ public class VidaDosPlayers : MonoBehaviour
 {
     public Slider barraDeVidaDoJogador;
     public Slider barraDeEnergiaDoEscudo;
-    public GameObject escudoDoJogador; 
-   
-
+    public GameObject escudoDoJogador;
 
     public int vidaMaximaDoJogador;
     public int vidaAtualDojogador;
-    public int vidaMaximaDoEscudo; 
-    public int vidaAtualDoEscudo; 
+    public int vidaMaximaDoEscudo;
+    public int vidaAtualDoEscudo;
 
-    public bool temEscudo; 
+    public bool temEscudo;
 
     // Start is called before the first frame update
     void Start()
@@ -32,29 +30,22 @@ public class VidaDosPlayers : MonoBehaviour
         barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
 
         barraDeEnergiaDoEscudo.gameObject.SetActive(false);
-
-        //escudoDoJogador.SetActive(false);
-        temEscudo = false; 
+        temEscudo = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void AtivarEscudo()
     {
         barraDeEnergiaDoEscudo.gameObject.SetActive(true);
-
         vidaAtualDoEscudo = vidaMaximaDoEscudo;
-
         barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
-
         escudoDoJogador.SetActive(true);
         temEscudo = true;
     }
-
 
     public void DesativarEscudo()
     {
@@ -64,7 +55,7 @@ public class VidaDosPlayers : MonoBehaviour
 
     public void GanharVida(int vidaParaReceber)
     {
-        if(vidaAtualDojogador + vidaParaReceber <= vidaMaximaDoJogador)
+        if (vidaAtualDojogador + vidaParaReceber <= vidaMaximaDoJogador)
         {
             vidaAtualDojogador += vidaParaReceber;
         }
@@ -76,31 +67,23 @@ public class VidaDosPlayers : MonoBehaviour
         barraDeVidaDoJogador.value = vidaAtualDojogador;
     }
 
-
-
     public void MachucarJogador(int danoParaReceber)
     {
-        if(temEscudo == false)
+        if (temEscudo == false)
         {
             vidaAtualDojogador -= danoParaReceber;
             barraDeVidaDoJogador.value = vidaAtualDojogador;
 
-            if(vidaAtualDojogador <= 0)
+            if (vidaAtualDojogador <= 0)
             {
                 Destroy(gameObject);
                 GameManager.instance.GameOver();
                 Debug.Log("Game Over");
             }
-        }
-        else
-        {
-            vidaAtualDoEscudo -= danoParaReceber;
-            barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
-
-            if(vidaAtualDoEscudo <= 0)
+            else
             {
-                DesativarEscudo();
-                barraDeEnergiaDoEscudo.gameObject.SetActive(false);
+                // Chama o método para iniciar a animação de hit no jogador
+                GetComponent<PlayerLuna>().ReceiveDamage();
             }
         }
     }
