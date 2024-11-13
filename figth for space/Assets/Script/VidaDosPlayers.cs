@@ -66,25 +66,44 @@ public class VidaDosPlayers : MonoBehaviour
 
         barraDeVidaDoJogador.value = vidaAtualDojogador;
     }
-
+    
     public void MachucarJogador(int danoParaReceber)
     {
         if (temEscudo == false)
         {
-            vidaAtualDojogador -= danoParaReceber;
-            barraDeVidaDoJogador.value = vidaAtualDojogador;
+            // Primeiro verifica se há escudo, e aplica o dano ao jogador apenas se não houver escudo
+            if (vidaAtualDojogador > 0)
+            {
+                vidaAtualDojogador -= danoParaReceber;
+                barraDeVidaDoJogador.value = vidaAtualDojogador;
 
-            if (vidaAtualDojogador <= 0)
-            {
-                Destroy(gameObject);
-                GameManager.instance.GameOver();
-                Debug.Log("Game Over");
-            }
-            else
-            {
-                // Chama o método para iniciar a animação de hit no jogador
-                GetComponent<PlayerLuna>().ReceiveDamage();
+                // Se a vida do jogador for 0 ou menor, destruir o objeto e finalizar o jogo
+                if (vidaAtualDojogador <= 0)
+                {
+                    Destroy(gameObject);
+                    GameManager.instance.GameOver();
+                    Debug.Log("Game Over");
+                }
+                else
+                {
+                    // Chama o método para iniciar a animação de dano nos três jogadores
+                    // Vamos garantir que cada player tenha seu componente de dano e reagir individualmente
+
+                    PlayerLuna luna = GetComponent<PlayerLuna>();
+                    PlayerLuca luca = GetComponent<PlayerLuca>();
+                    PlayerRuby ruby = GetComponent<PlayerRuby>();
+
+                    if (luna != null)
+                        luna.ReceiveDamage();  // Chama a animação de dano do Player Luna
+
+                    if (luca != null)
+                        luca.ReceiveDamage();  // Chama a animação de dano do Player Luca
+
+                    if (ruby != null)
+                        ruby.ReceiveDamage();  // Chama a animação de dano do Player Ruby
+                }
             }
         }
     }
 }
+

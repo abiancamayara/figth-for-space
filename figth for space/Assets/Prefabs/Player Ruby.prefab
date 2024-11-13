@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1565304368971550945}
   - component: {fileID: 7187106237434745852}
   - component: {fileID: 8265324020764678310}
+  - component: {fileID: 329595274594066001}
   m_Layer: 0
   m_Name: Player Ruby
   m_TagString: Player
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_Size: {x: 7.1875, y: 6.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &-6992494349271044419
@@ -343,6 +344,27 @@ MonoBehaviour:
   rigi: {fileID: -6992494349271044419}
   duracao: 0.2
   contTempoDeUso: 0
+--- !u!95 &329595274594066001
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861046427399399778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0814f9088caac5c4f803c3bfb0470cbc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5310647536952149842
 GameObject:
   m_ObjectHideFlags: 0

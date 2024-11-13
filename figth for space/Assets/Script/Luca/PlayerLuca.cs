@@ -26,12 +26,23 @@ public class PlayerLuca : MonoBehaviour
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
     private float cooldownOndaSonoraAtual; // Controle do cooldown da onda sonora
+    
+    private Animator animator;
+    private Transition currentTransition;
+    public enum Transition
+    {
+        Parado = 0,
+        Voando = 1,
+        Hit = 2
+    }
   
 
     // Start is called before the first frame update
     void Start()
     {
         temLaserDuplo = true;
+        animator = GetComponent<Animator>();
+        SetTransition(Transition.Parado);
     }
 
     // Update is called once per frame
@@ -51,6 +62,18 @@ public class PlayerLuca : MonoBehaviour
         else
         {
             AtirarLaser();
+        }
+        
+        if (currentTransition != Transition.Hit)
+        {
+            if (teclasApertadas.magnitude > 0)
+            {
+                SetTransition(Transition.Voando);
+            }
+            else
+            {
+                SetTransition(Transition.Parado);
+            }
         }
         
     }
@@ -116,5 +139,34 @@ public class PlayerLuca : MonoBehaviour
             this.dash.Aplicar();
             ParticleObserver.OnParticleSpawnEvent(transform.position);
         }
+    }
+    
+    public void ReceiveDamage()
+    {
+        // Ativa a animação de hit
+        SetTransition(Transition.Hit);
+        StartCoroutine(HandleHitTransition());
+    }
+
+    private IEnumerator HandleHitTransition()
+    {
+        // Aguarda o tempo da animação de hit antes de retornar ao estado normal
+        yield return new WaitForSeconds(0.5f); // Tempo de duração do hit, pode ajustar conforme necessário
+
+        // Após o tempo do hit, voltamos à animação de "Parado" ou "Voando"
+        if (teclasApertadas.magnitude > 0)
+        {
+            SetTransition(Transition.Voando);
+        }
+        else
+        {
+            SetTransition(Transition.Parado);
+        }
+    }
+
+    private void SetTransition(Transition newTransition)
+    {
+        currentTransition = newTransition;
+        animator.SetInteger("Transition", (int)currentTransition);
     }
 }

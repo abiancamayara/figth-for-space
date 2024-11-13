@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 1959501139041159153}
   - component: {fileID: 6195078326912720567}
   - component: {fileID: 2158395579838633034}
+  - component: {fileID: 4185496773469066684}
   m_Layer: 0
   m_Name: Luna
   m_TagString: Player
@@ -489,3 +490,24 @@ MonoBehaviour:
   rigi: {fileID: 3450152229459819281}
   duracao: 0.2
   contTempoDeUso: 0
+--- !u!95 &4185496773469066684
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763380407099546656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6877760b6251c54b91e9049ce8b4a46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
