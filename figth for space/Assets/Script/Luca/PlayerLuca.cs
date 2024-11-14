@@ -33,7 +33,8 @@ public class PlayerLuca : MonoBehaviour
     {
         Parado = 0,
         Voando = 1,
-        Hit = 2
+        Hit = 2,
+        Morrendo = 3
     }
   
 
