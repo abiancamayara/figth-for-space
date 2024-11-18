@@ -253,14 +253,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDoJogador: {fileID: 9034397765013405610, guid: 29a04561cd2cbda40b50dd2cdafb2018, type: 3}
   itemParaDropar: {fileID: 1569725485329710762, guid: 817d2b731302e644192879efa66b0a74, type: 3}
+  DestruidorDeInimigos: {fileID: 8222786930695839210, guid: 088d33947430ecd48b40d7fc660d399a, type: 3}
   escudoPrefab: {fileID: 3493945740138539159, guid: 4975740385becfb449c573a80e7c0f9b, type: 3}
+  geradorObj: {fileID: 6668391213507012098, guid: e0189f998ff22d941a0c11657bf79665, type: 3}
   localDoDisparoUnico: {fileID: 8111784566459888374}
   localDoDisparoDaEsquerda: {fileID: 5701988676743565997}
   localDoDisparoDaDireita: {fileID: 8101193416548536359}
+  localDeDestruir: {fileID: 4058157588058308281, guid: 383f2f822c8254049a8146e19b0c72eb, type: 3}
   vidaMaximaGlaucius: 1000
   vidaAtualGlaucius: 0
   balasPorSegundo: 10
   variacaoangulo: 0
+  inimigos:
+  - {fileID: 4995111085020860458, guid: 0d82e9618b9f9514182c66ee3785de61, type: 3}
+  - {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
+  - {fileID: 2857247809377539215, guid: b4a8648ff5c4d2f47ad493ea9b1d6463, type: 3}
   temEscudo: 0
   chanceParaDropar: 100
 --- !u!1 &8621147739411725337
