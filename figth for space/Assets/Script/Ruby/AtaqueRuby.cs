@@ -4,64 +4,122 @@ using UnityEngine;
 
 public partial class AtaqueRuby : MonoBehaviour
 {
-        public float tempoAntesDeExplodir = 3f; // Tempo em segundos até a bomba explodir
-        public float raioExplosao = 5f; // Raio da explosão
-        public PlayerRuby player;
+    public float tempoAntesDeExplodir = 3f; // Tempo em segundos até a bomba explodir
+    public float raioExplosao = 5f; // Raio da explosão
+    public PlayerRuby player;
+    public float velocidadeDoLaser;
+    public int danoParaDar;
+    public float cooldown = 2f; // Tempo de cooldown entre lançamentos
+
+    private bool podeAtacar = true; // Controle de cooldown
+
+    private void Start()
+    {
+        Invoke("Explodir", tempoAntesDeExplodir); // Chama Explodir após o tempo especificado
+    }
+
+    private void Update()
+    {
+        MovimentarLaser(); // Atualiza a movimentação do laser (bomba)
+    }
+
+    private void Explodir()
+    {
+        // Lógica de explosão - Encontra todos os colliders dentro do raio de explosão
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, raioExplosao);
         
-        public float velocidadeDoLaser; 
-        public int danoParaDar;
+        foreach (Collider2D collider in colliders)
+        {
+            // Verifica o tipo de inimigo e aplica o dano
+            Inimigos inimigo = collider.GetComponent<Inimigos>();
+            Kamikaze kamikaze = collider.GetComponent<Kamikaze>();
+            BossDracon bossDracon = collider.GetComponent<BossDracon>();
+            BossGlaucius glaucius = collider.GetComponent<BossGlaucius>();
+            BossZarak zarak = collider.GetComponent<BossZarak>();
+            ZigZag zigzag = collider.GetComponent<ZigZag>();
 
-        private void Start()
-        {
-            Invoke("Explodir", tempoAntesDeExplodir);
-        }
-        
-        void Update()
-        {
-            MovimentarLaser(); 
-        }
-
-        private void Explodir()
-        {
-            // Lógica de explosão
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, raioExplosao);
-            foreach (Collider2D collider in colliders)
+            if (inimigo != null)
             {
-                // Aqui você pode verificar se o collider é um inimigo e aplicar dano
-                // Por exemplo:
-                // if(collider.CompareTag("Inimigo"))
-                // {
-                //     // Aplique dano ao inimigo
-                // }
+                inimigo.MachucarInimigo(danoParaDar);
             }
-
-            // Destrói a bomba após a explosão
-            player.lancou = false;
-            Destroy(gameObject);
-        }
-        
-        private void MovimentarLaser()
-        {
-            transform.Translate(Vector3.up * velocidadeDoLaser * Time.deltaTime);
-        }
-
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if(other.gameObject.CompareTag("Inimigo"))
+            else if (kamikaze != null)
             {
-                other.gameObject.GetComponent<Inimigos>().MachucarInimigo(danoParaDar);
-                Destroy(this.gameObject);
+                kamikaze.MachucarInimigo(danoParaDar);
             }
-            if(other.gameObject.CompareTag("Kamikaze"))
+            else if (bossDracon != null)
             {
-                other.gameObject.GetComponent<Kamikaze>().MachucarInimigo(danoParaDar);
-                Destroy(this.gameObject);
+                bossDracon.MachucarBoss(danoParaDar); // Aplica dano ao BossDracon
+            }
+            else if (glaucius != null)
+            {
+                glaucius.MachucarBoss(danoParaDar); // Aplica dano ao Glaucius
+            }
+            else if (zarak != null)
+            {
+                zarak.MachucarBoss(danoParaDar); // Aplica dano ao Zarak
+            }
+            else if (zigzag != null)
+            {
+                zigzag.MachucarInimigo(danoParaDar); // Aplica dano ao ZigZag
             }
         }
 
-        private void OnDrawGizmosSelected()
+        // Destrói a bomba após a explosão
+        player.lancou = false;
+        Destroy(gameObject);
+    }
+
+    private void MovimentarLaser()
+    {
+        transform.Translate(Vector3.up * velocidadeDoLaser * Time.deltaTime); // Move a bomba para cima
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Verifica a colisão da bomba com inimigos e aplica o dano
+        Inimigos inimigo = other.GetComponent<Inimigos>();
+        Kamikaze kamikaze = other.GetComponent<Kamikaze>();
+        BossDracon bossDracon = other.GetComponent<BossDracon>();
+        BossGlaucius glaucius = other.GetComponent<BossGlaucius>();
+        BossZarak zarak = other.GetComponent<BossZarak>();
+        ZigZag zigzag = other.GetComponent<ZigZag>();
+
+        if (inimigo != null)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, raioExplosao);
+            inimigo.MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject); // Destrói a bomba
         }
+        else if (kamikaze != null)
+        {
+            kamikaze.MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject); // Destrói a bomba
+        }
+        else if (bossDracon != null)
+        {
+            bossDracon.MachucarBoss(danoParaDar); // Aplica dano ao BossDracon
+            Destroy(this.gameObject); // Destrói a bomba
+        }
+        else if (glaucius != null)
+        {
+            glaucius.MachucarBoss(danoParaDar); // Aplica dano ao Glaucius
+            Destroy(this.gameObject); // Destrói a bomba
+        }
+        else if (zarak != null)
+        {
+            zarak.MachucarBoss(danoParaDar); // Aplica dano ao Zarak
+            Destroy(this.gameObject); // Destrói a bomba
+        }
+        else if (zigzag != null)
+        {
+            zigzag.MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject); // Destrói a bomba
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Desenha o gizmo do raio da explosão no editor
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, raioExplosao); // Raio de explosão
+    }
 }

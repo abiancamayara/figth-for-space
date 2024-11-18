@@ -69,41 +69,53 @@ public class VidaDosPlayers : MonoBehaviour
     
     public void MachucarJogador(int danoParaReceber)
     {
-        if (temEscudo == false)
+        if (temEscudo)
         {
-            // Primeiro verifica se há escudo, e aplica o dano ao jogador apenas se não houver escudo
-            if (vidaAtualDojogador > 0)
+            // Primeiro aplica o dano ao escudo
+            vidaAtualDoEscudo -= danoParaReceber;
+            barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
+
+            // Se a vida do escudo for menor ou igual a 0, desativa o escudo
+            if (vidaAtualDoEscudo <= 0)
             {
-                vidaAtualDojogador -= danoParaReceber;
+                DesativarEscudo();
+                // Se sobrar dano, aplica ao jogador
+                int danoRestante = Mathf.Abs(vidaAtualDoEscudo);  // danoRestante é o valor absoluto da vida negativa do escudo
+                vidaAtualDojogador -= danoRestante;
                 barraDeVidaDoJogador.value = vidaAtualDojogador;
-
-                // Se a vida do jogador for 0 ou menor, destruir o objeto e finalizar o jogo
-                if (vidaAtualDojogador <= 0)
-                {
-                    Destroy(gameObject);
-                    GameManager.instance.GameOver();
-                    Debug.Log("Game Over");
-                }
-                else
-                {
-                    // Chama o método para iniciar a animação de dano nos três jogadores
-                    // Vamos garantir que cada player tenha seu componente de dano e reagir individualmente
-
-                    PlayerLuna luna = GetComponent<PlayerLuna>();
-                    PlayerLuca luca = GetComponent<PlayerLuca>();
-                    PlayerRuby ruby = GetComponent<PlayerRuby>();
-
-                    if (luna != null)
-                        luna.ReceiveDamage();  // Chama a animação de dano do Player Luna
-
-                    if (luca != null)
-                        luca.ReceiveDamage();  // Chama a animação de dano do Player Luca
-
-                    if (ruby != null)
-                        ruby.ReceiveDamage();  // Chama a animação de dano do Player Ruby
-                }
             }
+        }
+        else
+        {
+            // Aplica o dano ao jogador se não há escudo
+            vidaAtualDojogador -= danoParaReceber;
+            barraDeVidaDoJogador.value = vidaAtualDojogador;
+        }
+
+        // Verifica se a vida do jogador é menor ou igual a 0
+        if (vidaAtualDojogador <= 0)
+        {
+            Destroy(gameObject);
+            GameManager.instance.GameOver();
+            Debug.Log("Game Over");
+        }
+        else
+        {
+            // Chama o método para iniciar a animação de dano nos três jogadores
+            PlayerLuna luna = GetComponent<PlayerLuna>();
+            PlayerLuca luca = GetComponent<PlayerLuca>();
+            PlayerRuby ruby = GetComponent<PlayerRuby>();
+
+            if (luna != null)
+                luna.ReceiveDamage();  // Chama a animação de dano do Player Luna
+
+            if (luca != null)
+                luca.ReceiveDamage();  // Chama a animação de dano do Player Luca
+
+            if (ruby != null)
+                ruby.ReceiveDamage();  // Chama a animação de dano do Player Ruby
         }
     }
 }
+
 

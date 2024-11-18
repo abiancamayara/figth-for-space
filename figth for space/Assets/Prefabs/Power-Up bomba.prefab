@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8291536098458460780}
   - component: {fileID: 5841474603225261768}
   - component: {fileID: -2393130171934261562}
+  - component: {fileID: 399067459422044962}
   m_Layer: 0
   m_Name: Power-Up bomba
   m_TagString: Untagged
@@ -149,3 +150,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempoDeVida: 0.7
+--- !u!114 &399067459422044962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389172200459946418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8efb2ea88201b4191facd4b9b2d525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -257,7 +257,7 @@ MonoBehaviour:
   localDoDisparoUnico: {fileID: 8111784566459888374}
   localDoDisparoDaEsquerda: {fileID: 5701988676743565997}
   localDoDisparoDaDireita: {fileID: 8101193416548536359}
-  vidaMaximaGlaucius: 100
+  vidaMaximaGlaucius: 1000
   vidaAtualGlaucius: 0
   balasPorSegundo: 10
   variacaoangulo: 0
