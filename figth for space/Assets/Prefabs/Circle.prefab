@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3311785158874566382}
   - component: {fileID: -1325835909244142458}
   - component: {fileID: -1621806489885771808}
+  - component: {fileID: 5420623340639238733}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5303591375719657853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.70910937, w: 0.7050985}
   m_LocalPosition: {x: -41.548668, y: -6.906863, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3.1842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.325}
 --- !u!212 &4468730717718418381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -149,3 +150,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempoDeVida: 1
+--- !u!114 &5420623340639238733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303591375719657853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24968f3a54a11154291fe88a0a0ea18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 1
+  taxaExpansao: 1
+  raioMaximo: 5
+  velocidadeDoLaser: 0
+  dano: 10
+  player: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}

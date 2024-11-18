@@ -4,43 +4,50 @@ using UnityEngine;
 
 public partial class AtaqueRuby : MonoBehaviour
 {
-    public GameObject bombaPrefab; // Referência ao prefab da bomba
-    public float tempoAntesDeExplodir = 3f; // Tempo em segundos até a bomba explodir
-    public float raioExplosao = 5f; // Raio da explosão
-    public PlayerRuby player;
+    public GameObject bombaPrefab;  // Referência ao prefab da bomba
+    public float tempoAntesDeExplodir = 3f;  // Tempo até a bomba explodir
+    public float raioExplosao = 5f;  // Raio de explosão
+    public PlayerRuby player;  // Referência ao jogador
     public float velocidadeDoLaser;
     public int danoParaDar;
-    public float cooldown = 2f; // Tempo de cooldown entre lançamentos
+    public float cooldown = 2f;  // Tempo de cooldown entre lançamentos
 
-    private bool podeAtacar = true; // Controle de cooldown
+    private bool podeAtacar = true;  // Controle de cooldown
 
-    private void Start()
-    {
-        // Inicialização não precisa de modificações aqui
-    }
+    private void Start() { }
 
     private void Update()
     {
-        // Verifica se a tecla 'X' foi pressionada e se o cooldown permitiu o lançamento
+        // Verifica se o jogador apertou a tecla 'X' e se o cooldown permitiu
         if (Input.GetKeyDown(KeyCode.X) && podeAtacar)
         {
-            LançarBomba();
+            LançarBomba();  // Lança a bomba
         }
+        
+        // Movimento da bomba (somente se a bomba foi lançada)
+        MovimentarLaser();
     }
+
+    private void MovimentarLaser()
+    {
+        // Supondo que o jogador tenha uma direção ou seja uma transformação a ser seguida.
+        // Movimento para frente, na direção do jogador
+        Vector3 direction = player.transform.up;  // Assume que "up" é a direção para frente do jogador
+        transform.Translate(direction * velocidadeDoLaser * Time.deltaTime);
+    }
+
 
     private void LançarBomba()
     {
-        // Desabilita a possibilidade de lançar bombas enquanto o cooldown não passar
-        podeAtacar = false;
+        // Usando a posição da frente do jogador (ajustando com base na direção do jogador)
+        Vector3 spawnPosition = player.transform.position + player.transform.up * 1.5f;  // 1.5f é um valor arbitrário, ajusta a distância da bomba
+        //GameObject bomba = Instantiate(bombaPrefab, spawnPosition, Quaternion.identity);
 
-        // Instancia a bomba a partir do prefab
-        GameObject bomba = Instantiate(bombaPrefab, transform.position, Quaternion.identity);
-
-        // Configura a velocidade da bomba - faz com que ela se mova para cima
-        AtaqueRuby bombaScript = bomba.GetComponent<AtaqueRuby>();
+        // Configura a bomba (caso precise de ajustes na bomba instanciada)
+        AtaqueRuby bombaScript = bombaPrefab.GetComponent<AtaqueRuby>();
         if (bombaScript != null)
         {
-            bombaScript.velocidadeDoLaser = velocidadeDoLaser; // Atribui a velocidade à bomba instanciada
+            bombaScript.player = player;  // Passa referência do jogador para a bomba
         }
 
         // Inicia a explosão da bomba após o tempo especificado
@@ -50,65 +57,26 @@ public partial class AtaqueRuby : MonoBehaviour
         Invoke("RecarregarCooldown", cooldown);
     }
 
+
     private void RecarregarCooldown()
     {
-        podeAtacar = true; // Permite o lançamento de uma nova bomba após o cooldown
+        podeAtacar = true;  // Permite o lançamento de uma nova bomba após o cooldown
     }
 
     private void Explodir()
     {
-        // Lógica de explosão - Encontra todos os colliders dentro do raio de explosão
+        // Lógica de explosão
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, raioExplosao);
-
         foreach (Collider2D collider in colliders)
         {
-            // Verifica o tipo de inimigo e aplica o dano
-            Inimigos inimigo = collider.GetComponent<Inimigos>();
-            Kamikaze kamikaze = collider.GetComponent<Kamikaze>();
-            BossDracon bossDracon = collider.GetComponent<BossDracon>();
-            BossGlaucius glaucius = collider.GetComponent<BossGlaucius>();
-            BossZarak zarak = collider.GetComponent<BossZarak>();
-            ZigZag zigzag = collider.GetComponent<ZigZag>();
-
-            if (inimigo != null)
-            {
-                inimigo.MachucarInimigo(danoParaDar);
-            }
-            else if (kamikaze != null)
-            {
-                kamikaze.MachucarInimigo(danoParaDar);
-            }
-            else if (bossDracon != null)
-            {
-                bossDracon.MachucarBoss(danoParaDar); // Aplica dano ao BossDracon
-            }
-            else if (glaucius != null)
-            {
-                glaucius.MachucarBoss(danoParaDar); // Aplica dano ao Glaucius
-            }
-            else if (zarak != null)
-            {
-                zarak.MachucarBoss(danoParaDar); // Aplica dano ao Zarak
-            }
-            else if (zigzag != null)
-            {
-                zigzag.MachucarInimigo(danoParaDar); // Aplica dano ao ZigZag
-            }
+            AplicarDanoInimigos(collider);
         }
 
-        // Destrói a bomba após a explosão
-        player.lancou = false;
-        Destroy(gameObject);
+        Destroy(gameObject);  // Destrói a bomba após a explosão
     }
 
-    private void MovimentarLaser()
+    private void AplicarDanoInimigos(Collider2D other)
     {
-        transform.Translate(Vector3.up * velocidadeDoLaser * Time.deltaTime); // Move a bomba para cima
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Verifica a colisão da bomba com inimigos e aplica o dano
         Inimigos inimigo = other.GetComponent<Inimigos>();
         Kamikaze kamikaze = other.GetComponent<Kamikaze>();
         BossDracon bossDracon = other.GetComponent<BossDracon>();
@@ -116,42 +84,54 @@ public partial class AtaqueRuby : MonoBehaviour
         BossZarak zarak = other.GetComponent<BossZarak>();
         ZigZag zigzag = other.GetComponent<ZigZag>();
 
-        if (inimigo != null)
-        {
-            inimigo.MachucarInimigo(danoParaDar);
-            Destroy(this.gameObject); // Destrói a bomba
-        }
-        else if (kamikaze != null)
-        {
-            kamikaze.MachucarInimigo(danoParaDar);
-            Destroy(this.gameObject); // Destrói a bomba
-        }
-        else if (bossDracon != null)
-        {
-            bossDracon.MachucarBoss(danoParaDar); // Aplica dano ao BossDracon
-            Destroy(this.gameObject); // Destrói a bomba
-        }
-        else if (glaucius != null)
-        {
-            glaucius.MachucarBoss(danoParaDar); // Aplica dano ao Glaucius
-            Destroy(this.gameObject); // Destrói a bomba
-        }
-        else if (zarak != null)
-        {
-            zarak.MachucarBoss(danoParaDar); // Aplica dano ao Zarak
-            Destroy(this.gameObject); // Destrói a bomba
-        }
-        else if (zigzag != null)
-        {
-            zigzag.MachucarInimigo(danoParaDar);
-            Destroy(this.gameObject); // Destrói a bomba
-        }
+        if (inimigo != null) inimigo.MachucarInimigo(danoParaDar);
+        else if (kamikaze != null) kamikaze.MachucarInimigo(danoParaDar);
+        else if (bossDracon != null) bossDracon.MachucarBoss(danoParaDar);
+        else if (glaucius != null) glaucius.MachucarBoss(danoParaDar);
+        else if (zarak != null) zarak.MachucarBoss(danoParaDar);
+        else if (zigzag != null) zigzag.MachucarInimigo(danoParaDar);
+
+        Destroy(this.gameObject);  // Destrói a bomba após a colisão
     }
 
     private void OnDrawGizmosSelected()
     {
-        // Desenha o gizmo do raio da explosão no editor
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, raioExplosao); // Raio de explosão
+        Gizmos.DrawWireSphere(transform.position, raioExplosao);  // Desenha o raio de explosão no editor
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Inimigo"))
+        {
+            other.gameObject.GetComponent<Inimigos>().MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.CompareTag("Kamikaze"))
+        {
+            other.gameObject.GetComponent<Kamikaze>().MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.CompareTag("zigzag"))
+        {
+            other.gameObject.GetComponent<ZigZag>().MachucarInimigo(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.CompareTag("Dracon"))
+        {
+            other.gameObject.GetComponent<BossDracon>().MachucarBoss(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.CompareTag("Glaucius"))
+        {
+            other.gameObject.GetComponent<BossGlaucius>().MachucarBoss(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.CompareTag("Zarak"))
+        {
+            other.gameObject.GetComponent<BossZarak>().MachucarBoss(danoParaDar);
+            Destroy(this.gameObject);
+        }
+        
     }
 }

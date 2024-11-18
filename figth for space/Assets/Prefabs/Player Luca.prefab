@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rig: {fileID: -7093691505720289403}
   laserDoJogador: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
-  ondaSonora: {fileID: 5303591375719657853, guid: 9629b5cc90cc9a2459f42e9b8358a9bb, type: 3}
+  ondaSonoraPrefab: {fileID: 5303591375719657853, guid: 9629b5cc90cc9a2459f42e9b8358a9bb, type: 3}
   localDoDisparoUnico: {fileID: 7076465469236640877}
   localDoDisparoDaEsquerda: {fileID: 7482799635822732326}
   localDoDisparoDaDireita: {fileID: 3211258784422513043}

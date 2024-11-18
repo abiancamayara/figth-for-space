@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 7187106237434745852}
   - component: {fileID: 8265324020764678310}
   - component: {fileID: 329595274594066001}
-  - component: {fileID: 5953331101941414086}
   m_Layer: 0
   m_Name: Player Ruby
   m_TagString: Player
@@ -156,6 +155,7 @@ Transform:
   - {fileID: 2835582426614483874}
   - {fileID: 5251980030125958631}
   - {fileID: 8506646797539014053}
+  - {fileID: 9151941800819808283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4943853830276291733
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: -6992494349271044419}
-  laserDoJogador: {fileID: 4788874260701391015, guid: 737b7a08d408c2b448f0e05efcc2cc31, type: 3}
+  laserDoJogador: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
   localDoDisparoUnico: {fileID: 323436224922121854}
   localDoDisparoDaEsquerda: {fileID: 2835582426614483874}
   localDoDisparoDaDireita: {fileID: 5251980030125958631}
@@ -366,25 +366,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5953331101941414086
-MonoBehaviour:
+--- !u!1 &5281951531710669485
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861046427399399778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a710146c409d3418a5c53b18a0c934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombaPrefab: {fileID: 0}
-  tempoAntesDeExplodir: 3
-  raioExplosao: 5
-  player: {fileID: 0}
-  velocidadeDoLaser: 0
-  danoParaDar: 0
-  cooldown: 2
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9151941800819808283}
+  m_Layer: 0
+  m_Name: Ponto de disparo
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9151941800819808283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281951531710669485}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.7065016, w: 0.7077115}
+  m_LocalPosition: {x: 0.95399934, y: -0.189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4747273926233492891}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.902}
 --- !u!1 &5310647536952149842
 GameObject:
   m_ObjectHideFlags: 0

@@ -498,11 +498,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &191196093 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 323436224922121854, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-  m_PrefabInstance: {fileID: 1983308231}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246604824
 GameObject:
   m_ObjectHideFlags: 3
@@ -1089,6 +1084,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4747273926233492891, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
   m_PrefabInstance: {fileID: 1983308231}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1208553397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9151941800819808283, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+  m_PrefabInstance: {fileID: 1983308231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1265166324 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8582168571703082799, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
@@ -1647,7 +1647,7 @@ PrefabInstance:
     - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: localDoLancamento
       value: 
-      objectReference: {fileID: 191196093}
+      objectReference: {fileID: 1208553397}
     - target: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: limiteInferiorDireito
       value: 
@@ -1689,6 +1689,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3861046427399399778, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861046427399399778, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_Name
       value: Player Ruby
       objectReference: {fileID: 0}
@@ -1706,11 +1710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4747273926233492891, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.84
+      value: -35.21
       objectReference: {fileID: 0}
     - target: {fileID: 4747273926233492891, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.99
+      value: -12.1
       objectReference: {fileID: 0}
     - target: {fileID: 4747273926233492891, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1787,26 +1791,6 @@ PrefabInstance:
     - target: {fileID: 5251980030125958631, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.633
-      objectReference: {fileID: 0}
-    - target: {fileID: 5953331101941414086, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-    - target: {fileID: 5953331101941414086, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5953331101941414086, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-      propertyPath: bombaPrefab
-      value: 
-      objectReference: {fileID: 4344126336780484858, guid: fb936ce5550302f4c868df38fc026805, type: 3}
-    - target: {fileID: 5953331101941414086, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-      propertyPath: danoParaDar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5953331101941414086, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-      propertyPath: velocidadeDoLaser
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7187106237434745852, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
       propertyPath: vidaMaximaDoJogador
