@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5752781376978256136}
   - component: {fileID: 4180705173143970078}
   - component: {fileID: 231607453120874863}
-  - component: {fileID: 9023466098270165043}
   m_Layer: 0
   m_Name: Bomba
   m_TagString: Untagged
@@ -121,21 +120,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &9023466098270165043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344126336780484858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a710146c409d3418a5c53b18a0c934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tempoAntesDeExplodir: 1
-  raioExplosao: 5
-  player: {fileID: 1565304368971550945, guid: db8ed0fdb07f111429a62e5277fe61ba, type: 3}
-  velocidadeDoLaser: 50
-  danoParaDar: 1
-  cooldown: 100

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public partial class AtaqueRuby : MonoBehaviour
 {
+    public GameObject bombaPrefab; // Referência ao prefab da bomba
     public float tempoAntesDeExplodir = 3f; // Tempo em segundos até a bomba explodir
     public float raioExplosao = 5f; // Raio da explosão
     public PlayerRuby player;
@@ -15,19 +16,50 @@ public partial class AtaqueRuby : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Explodir", tempoAntesDeExplodir); // Chama Explodir após o tempo especificado
+        // Inicialização não precisa de modificações aqui
     }
 
     private void Update()
     {
-        MovimentarLaser(); // Atualiza a movimentação do laser (bomba)
+        // Verifica se a tecla 'X' foi pressionada e se o cooldown permitiu o lançamento
+        if (Input.GetKeyDown(KeyCode.X) && podeAtacar)
+        {
+            LançarBomba();
+        }
+    }
+
+    private void LançarBomba()
+    {
+        // Desabilita a possibilidade de lançar bombas enquanto o cooldown não passar
+        podeAtacar = false;
+
+        // Instancia a bomba a partir do prefab
+        GameObject bomba = Instantiate(bombaPrefab, transform.position, Quaternion.identity);
+
+        // Configura a velocidade da bomba - faz com que ela se mova para cima
+        AtaqueRuby bombaScript = bomba.GetComponent<AtaqueRuby>();
+        if (bombaScript != null)
+        {
+            bombaScript.velocidadeDoLaser = velocidadeDoLaser; // Atribui a velocidade à bomba instanciada
+        }
+
+        // Inicia a explosão da bomba após o tempo especificado
+        Invoke("Explodir", tempoAntesDeExplodir);
+
+        // Registra o tempo do lançamento e inicia o cooldown
+        Invoke("RecarregarCooldown", cooldown);
+    }
+
+    private void RecarregarCooldown()
+    {
+        podeAtacar = true; // Permite o lançamento de uma nova bomba após o cooldown
     }
 
     private void Explodir()
     {
         // Lógica de explosão - Encontra todos os colliders dentro do raio de explosão
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, raioExplosao);
-        
+
         foreach (Collider2D collider in colliders)
         {
             // Verifica o tipo de inimigo e aplica o dano

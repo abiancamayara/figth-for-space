@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 7187106237434745852}
   - component: {fileID: 8265324020764678310}
   - component: {fileID: 329595274594066001}
+  - component: {fileID: 5953331101941414086}
   m_Layer: 0
   m_Name: Player Ruby
   m_TagString: Player
@@ -365,6 +366,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5953331101941414086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861046427399399778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a710146c409d3418a5c53b18a0c934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombaPrefab: {fileID: 0}
+  tempoAntesDeExplodir: 3
+  raioExplosao: 5
+  player: {fileID: 0}
+  velocidadeDoLaser: 0
+  danoParaDar: 0
+  cooldown: 2
 --- !u!1 &5310647536952149842
 GameObject:
   m_ObjectHideFlags: 0
