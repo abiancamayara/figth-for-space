@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject painelDeGameOver;
     public GameObject pauseObj;
+    
+    public GameObject Zarak;
+    public GameObject Glaucius;
+    public GameObject Dracon;
 
     public bool gameOver;
     public GameObject bossPrefab; // Prefab do Boss
@@ -47,15 +51,21 @@ public class GameManager : MonoBehaviour
     {
         pontuacaoAtual = 0;
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
+        
+        DontDestroyOnLoad(Dracon);  // Garante que o Dracon não seja destruído ao trocar de cena
+        DontDestroyOnLoad(Glaucius); // Faz o mesmo para outros inimigos
+        DontDestroyOnLoad(Zarak);
+        
     }
     
     void Update()
     {
         PauseGame();
          if (pontuacaoAtual >= pontuacaoParaInvocarBoss && !bossInstanciado)
-        {
-            InstanciarBoss();
-        }
+         {
+             InstanciarBoss();
+             
+         }
     }
     
 
@@ -68,9 +78,27 @@ public class GameManager : MonoBehaviour
     public void InstanciarBoss()
     {
         // Instancia o Boss
-        Instantiate(bossPrefab, instaciarboss.position, Quaternion.identity); // Ajuste a posição conforme necessário
-        bossInstanciado = true;
-     }
+        //Instantiate(bossPrefab, instaciarboss.position, Quaternion.identity); // Ajuste a posição conforme necessário
+        //bossInstanciado = true;
+        
+        
+        if (Dracon != null)
+        {
+            Dracon.SetActive(true); // Ativa o GameObject do inimigo
+        }
+
+        // Para os outros inimigos, a lógica seria a mesma
+        if (Glaucius != null)
+        {
+            Glaucius.SetActive(true); // Ativa o segundo inimigo
+        }
+
+        if (Zarak != null)
+        {
+            Zarak.SetActive(true); // Ativa o terceiro inimigo
+        }
+    }
+    
 
     public void AtualizarQuantidadeCartasUI(int value)
     {

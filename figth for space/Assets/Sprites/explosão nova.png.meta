@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98f60d9b2e409604081ec3ad0971074b
+guid: 846af063527f20a4eb9e1b8611c4f4e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion_0
+      name: "explos\xE3o nova_0"
       rect:
         serializedVersion: 2
-        x: 209
-        y: 890
-        width: 41
-        height: 40
+        x: 70
+        y: 396
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec63206786347ed41bfed64ab49c4f51
-      internalID: 455941376
+      spriteID: 26a6d055eb0e22b41b1cde6daa5cea49
+      internalID: -683667157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_1
+      name: "explos\xE3o nova_1"
       rect:
         serializedVersion: 2
-        x: 703
-        y: 872
-        width: 81
-        height: 80
+        x: 224
+        y: 387
+        width: 44
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,61 +158,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 446472b9f8d97284ebd5b8cc62a223b8
-      internalID: 805638187
+      spriteID: ee7c7225246162b4a870ab80c04a1672
+      internalID: -402861446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_2
+      name: "explos\xE3o nova_3"
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 381
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7920c3831db70f4f948e3167b225357
+      internalID: -1451534140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "explos\xE3o nova_4"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 212
+        width: 82
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db18c2a1647a0d24489fb78740290476
+      internalID: -1690823569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "explos\xE3o nova_7"
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 217
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6d9e05490cf134ebd4e0ba1a37ffdb
+      internalID: -1464511704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "explos\xE3o nova_8"
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 221
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed2cbef42318214a9fba567280a8e74
+      internalID: 281061985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "explos\xE3o nova_10"
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 49
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61770212b2c39f42a5ad6a670f2c7af
+      internalID: -1010422184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "explos\xE3o nova_13"
       rect:
         serializedVersion: 2
         x: 204
-        y: 620
-        width: 59
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce2b598b501026442b5aba4a4cc3a7aa
-      internalID: 1777301487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_3
-      rect:
-        serializedVersion: 2
-        x: 715
-        y: 620
-        width: 62
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c007266a96160784ca334cb0a83fc43d
-      internalID: 1555316403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_4
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 364
-        width: 63
+        y: 55
+        width: 76
         height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,71 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 655cc13a29aa79348869c6a9ade05969
-      internalID: -541929442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_5
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 352
-        width: 84
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c6336d20306542478e97b36fb80aef2
-      internalID: 1054639415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_9
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 85
-        width: 112
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e128e6fcadb7d345a3fe01e771afbf2
-      internalID: 218399723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_6
-      rect:
-        serializedVersion: 2
-        x: 659
-        y: 67
-        width: 166
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2792e83c0aaae324d99f6d7e374d4344
-      internalID: 1076225280
+      spriteID: 01fbf7016b8f6694884f80305920dc12
+      internalID: 615140603
       vertices: []
       indices: 
       edges: []
@@ -301,35 +301,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      explosion_0: 455941376
-      explosion_1: 805638187
-      explosion_10: 413720666
-      explosion_11: 1638426753
-      explosion_12: -1541836163
-      explosion_13: 406331923
-      explosion_14: 63258271
-      explosion_15: 1765053229
-      explosion_16: 112119031
-      explosion_17: -1441378330
-      explosion_18: 36110647
-      explosion_19: -1129612517
-      explosion_2: 1777301487
-      explosion_20: -2053863786
-      explosion_21: -537044463
-      explosion_22: 468579645
-      explosion_23: -67559414
-      explosion_24: 1327093969
-      explosion_25: 1194456476
-      explosion_26: -2045986882
-      explosion_27: 25226776
-      explosion_28: 1852203625
-      explosion_3: 1555316403
-      explosion_4: -541929442
-      explosion_5: 1054639415
-      explosion_6: 1076225280
-      explosion_7: -2128146167
-      explosion_8: 1990500972
-      explosion_9: 218399723
+      "explos\xE3o nova_0": -683667157
+      "explos\xE3o nova_1": -402861446
+      "explos\xE3o nova_10": -1010422184
+      "explos\xE3o nova_11": 1733272925
+      "explos\xE3o nova_12": 383031634
+      "explos\xE3o nova_13": 615140603
+      "explos\xE3o nova_14": -99291203
+      "explos\xE3o nova_15": 685713244
+      "explos\xE3o nova_16": 1413830975
+      "explos\xE3o nova_17": 985323367
+      "explos\xE3o nova_18": -2144311341
+      "explos\xE3o nova_19": -1207215301
+      "explos\xE3o nova_2": 938522209
+      "explos\xE3o nova_3": -1451534140
+      "explos\xE3o nova_4": -1690823569
+      "explos\xE3o nova_5": -1772893862
+      "explos\xE3o nova_6": 1229151540
+      "explos\xE3o nova_7": -1464511704
+      "explos\xE3o nova_8": 281061985
+      "explos\xE3o nova_9": -685051162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

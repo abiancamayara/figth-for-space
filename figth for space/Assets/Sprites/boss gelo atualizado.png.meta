@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 5daa1e785f370a542805093580488ad5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss gelo atualizado_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1366
+        width: 341
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03efc507807df644899bce6f92497465
+      internalID: 1352021673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_1
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1396
+        width: 349
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b005b82c90c93e48b739e1d529f7cf5
+      internalID: 464405183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 974
+        width: 264
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b278aa34faf4d4049bcd1a216f49d103
+      internalID: 669485075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_3
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 971
+        width: 307
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4373d09b6320546b9e39535d25d6a0
+      internalID: 1900334326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_7
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 544
+        width: 352
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc7b3428a5a40f4abbcb907e6c6801f
+      internalID: 510491407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_8
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 545
+        width: 429
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686afc0ed3bce18489c18aef8d31e726
+      internalID: 908218203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_25
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 125
+        width: 405
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7088573450ad544cbc24ee9c9b077e2
+      internalID: -1326126552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss gelo atualizado_27
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 126
+        width: 414
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c27131475a58b748b72009c1735acb4
+      internalID: -1830188922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      boss gelo atualizado_0: 1352021673
+      boss gelo atualizado_1: 464405183
+      boss gelo atualizado_10: -1633111876
+      boss gelo atualizado_11: -533342981
+      boss gelo atualizado_12: -1594308477
+      boss gelo atualizado_13: 2026686227
+      boss gelo atualizado_14: 791216030
+      boss gelo atualizado_15: 786635598
+      boss gelo atualizado_16: -2094033328
+      boss gelo atualizado_17: 801348739
+      boss gelo atualizado_18: -827822742
+      boss gelo atualizado_19: 1475234905
+      boss gelo atualizado_2: 669485075
+      boss gelo atualizado_20: 2020921566
+      boss gelo atualizado_21: -1767643979
+      boss gelo atualizado_22: 1144833894
+      boss gelo atualizado_23: -932385394
+      boss gelo atualizado_24: -532015183
+      boss gelo atualizado_25: -1326126552
+      boss gelo atualizado_26: -1776826038
+      boss gelo atualizado_27: -1830188922
+      boss gelo atualizado_28: -2103295787
+      boss gelo atualizado_29: -1493743931
+      boss gelo atualizado_3: 1900334326
+      boss gelo atualizado_30: 635938830
+      boss gelo atualizado_31: 1310449692
+      boss gelo atualizado_32: 1066277656
+      boss gelo atualizado_33: 1685489783
+      boss gelo atualizado_34: 335590405
+      boss gelo atualizado_35: -1968601609
+      boss gelo atualizado_36: 1379006826
+      boss gelo atualizado_37: 1158317420
+      boss gelo atualizado_38: 217615124
+      boss gelo atualizado_39: -384167225
+      boss gelo atualizado_4: -1894336716
+      boss gelo atualizado_40: -2024101456
+      boss gelo atualizado_41: -173130165
+      boss gelo atualizado_42: 1296663839
+      boss gelo atualizado_43: 1186736331
+      boss gelo atualizado_44: 1400759662
+      boss gelo atualizado_45: 1966539632
+      boss gelo atualizado_46: 593482075
+      boss gelo atualizado_47: -378860287
+      boss gelo atualizado_5: -937311921
+      boss gelo atualizado_6: 587823532
+      boss gelo atualizado_7: 510491407
+      boss gelo atualizado_8: 908218203
+      boss gelo atualizado_9: -1345655830
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
