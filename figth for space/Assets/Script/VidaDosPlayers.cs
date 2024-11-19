@@ -15,7 +15,10 @@ public class VidaDosPlayers : MonoBehaviour
     public int vidaAtualDoEscudo;
 
     public bool temEscudo;
-
+    [SerializeField] private Animator anim1;
+    [SerializeField] private Animator anim2;
+    private Animator animator;
+    [SerializeField] private Animator anim3;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,8 @@ public class VidaDosPlayers : MonoBehaviour
 
         barraDeEnergiaDoEscudo.gameObject.SetActive(false);
         temEscudo = false;
+
+        animator = GetComponent<Animator>();  // Inicializa o Animator
     }
 
     // Update is called once per frame
@@ -66,7 +71,7 @@ public class VidaDosPlayers : MonoBehaviour
 
         barraDeVidaDoJogador.value = vidaAtualDojogador;
     }
-    
+
     public void MachucarJogador(int danoParaReceber)
     {
         if (temEscudo)
@@ -95,13 +100,14 @@ public class VidaDosPlayers : MonoBehaviour
         // Verifica se a vida do jogador é menor ou igual a 0
         if (vidaAtualDojogador <= 0)
         {
-            Destroy(gameObject);
+            SetTransition(Transition.Death);  // Chama a transição de morte
+            Destroy(gameObject);  // Destrói o jogador após a animação de morte
             GameManager.instance.GameOver();
             Debug.Log("Game Over");
         }
         else
         {
-            // Chama o método para iniciar a animação de dano nos três jogadores
+            // Chama a animação de dano para os jogadores
             PlayerLuna luna = GetComponent<PlayerLuna>();
             PlayerLuca luca = GetComponent<PlayerLuca>();
             PlayerRuby ruby = GetComponent<PlayerRuby>();
@@ -116,6 +122,45 @@ public class VidaDosPlayers : MonoBehaviour
                 ruby.ReceiveDamage();  // Chama a animação de dano do Player Ruby
         }
     }
+
+    // Função que define a transição de animação de acordo com o estado
+    public void SetTransition(Transition transition)
+    {
+        if (animator == null) return;  // Certifique-se de que o Animator está presente
+
+        switch (transition)
+        {
+            case Transition.Hit:
+                animator.SetTrigger("TakeDamage");  // Transição para animação de dano
+                break;
+            case Transition.Death:
+                if (this is PlayerLuna)
+                {
+                    animator.SetTrigger("morrendo"); 
+                }
+                else if (this is PlayerLuca)
+                {
+                    animator.SetTrigger("morrendo");  
+                }
+                else if (this is PlayerRuby)
+                {
+                    animator.SetTrigger("morrendo"); 
+                }
+                else
+                {
+                    // Se não for nenhum dos tipos conhecidos, logue ou trate de outra forma
+                    Debug.LogWarning("Tipo de jogador não reconhecido para animação de morte.");
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
 }
 
-
+public enum Transition
+{
+    Hit = 2,   // Animação de dano
+    Death = 3  // Animação de morte
+}
