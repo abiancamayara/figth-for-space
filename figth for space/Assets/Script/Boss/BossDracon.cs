@@ -6,6 +6,7 @@ public class BossDracon : MonoBehaviour
 {
     public GameObject laserDoJogador;
     public GameObject itemParaDropar;
+    public GameObject destruidorObj;
     
     public Transform localDoDisparoUnico;
     public Transform localDoDisparoDaEsquerda;
@@ -104,6 +105,7 @@ public class BossDracon : MonoBehaviour
                 Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
             }
             Destroy(this.gameObject);
+            destruidorObj.SetActive(true);
         }
     }
 }

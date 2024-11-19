@@ -8,6 +8,8 @@ public class BossGlaucius : MonoBehaviour
     public GameObject itemParaDropar;
     public GameObject escudoPrefab; // Um prefab para o escudo que será ativado
 
+    public GameObject destruidorObj;
+
     public Transform localDoDisparoUnico;
     public Transform localDoDisparoDaEsquerda;
     public Transform localDoDisparoDaDireita;
@@ -104,6 +106,7 @@ public class BossGlaucius : MonoBehaviour
                     Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
                 }
                 Destroy(this.gameObject);
+                destruidorObj.SetActive(true);
             }
         }
        

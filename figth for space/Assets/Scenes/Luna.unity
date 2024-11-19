@@ -339,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &196402203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDoJogador: {fileID: 3777497370981360979, guid: 48c625ee167a41343b9b0b8458a300f5, type: 3}
   itemParaDropar: {fileID: 0}
-  escudoPrefab: {fileID: 3493945740138539159, guid: 4975740385becfb449c573a80e7c0f9b, type: 3}
+  escudoPrefab: {fileID: 7628037753087135375, guid: 7be334cbe20d9cf48b99d086d3ec84c1, type: 3}
   localDoDisparoUnico: {fileID: 378354586}
   localDoDisparoDaEsquerda: {fileID: 1918262875}
   localDoDisparoDaDireita: {fileID: 1914447610}
@@ -2023,14 +2023,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1037632049321694337, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: Zarak
       value: 
       objectReference: {fileID: 196402202}
-    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
-      propertyPath: Glaucius
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: bossPrefab
       value: 
@@ -2085,6 +2085,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7427816297240276085, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512443242212226502, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512443242212226502, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512443242212226502, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512443242212226502, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
