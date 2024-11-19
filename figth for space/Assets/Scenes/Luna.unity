@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e6add3f1155704d854fd633bef0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserDoJogador: {fileID: 9034397765013405610, guid: 29a04561cd2cbda40b50dd2cdafb2018, type: 3}
+  laserDoJogador: {fileID: 3777497370981360979, guid: 48c625ee167a41343b9b0b8458a300f5, type: 3}
   itemParaDropar: {fileID: 0}
   escudoPrefab: {fileID: 3493945740138539159, guid: 4975740385becfb449c573a80e7c0f9b, type: 3}
   localDoDisparoUnico: {fileID: 378354586}
@@ -3535,7 +3535,7 @@ PrefabInstance:
       objectReference: {fileID: 710363681}
     - target: {fileID: 1959501139041159153, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
       propertyPath: balasPorSegundo
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1959501139041159153, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
       propertyPath: limiteInferiorDireito
@@ -3564,7 +3564,7 @@ PrefabInstance:
     - target: {fileID: 1973641908669920251, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 95da7ef62a30cc4489fd05cc82e672f6, type: 3}
+      objectReference: {fileID: 21300000, guid: 3963d80af4229c04c8d6fe6db3d44a9e, type: 3}
     - target: {fileID: 1973641908669920251, guid: 1c65ba9d4eb3bcc478161d580d4892c4, type: 3}
       propertyPath: m_Color.a
       value: 0.34901962

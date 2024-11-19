@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: -7093691505720289403}
-  laserDoJogador: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
+  laserDoJogador: {fileID: 1289448508745139718, guid: f28a02deacdcf814f8e5c90d6cb4a4ef, type: 3}
   ondaSonora: {fileID: 818016911915615391, guid: 657ec67ade4972b4e9125b0203bc03ab, type: 3}
   localDoDisparoUnico: {fileID: 7076465469236640877}
   localDoDisparoDaEsquerda: {fileID: 7482799635822732326}
@@ -335,7 +335,6 @@ MonoBehaviour:
   dash: {fileID: 0}
   limiteSuperiorEsquerdo: {fileID: 0}
   limiteInferiorDireito: {fileID: 0}
-  cooldownOndaSonora: 5
 --- !u!114 &6264937256274586613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +355,9 @@ MonoBehaviour:
   vidaMaximaDoEscudo: 20
   vidaAtualDoEscudo: 0
   temEscudo: 0
+  anim1: {fileID: 0}
+  anim2: {fileID: 0}
+  anim3: {fileID: 0}
 --- !u!114 &3196563731714875106
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -970,7 +970,7 @@ PrefabInstance:
     - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: laserDoJogador
       value: 
-      objectReference: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
+      objectReference: {fileID: 1289448508745139718, guid: f28a02deacdcf814f8e5c90d6cb4a4ef, type: 3}
     - target: {fileID: -5124265813786780059, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: velocidadeDaNave
       value: 10
@@ -1003,6 +1003,26 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1503153189431183145, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.1183555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503153189431183145, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.1183555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503153189431183145, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.1183555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503153189431183145, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503153189431183145, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.028633
+      objectReference: {fileID: 0}
     - target: {fileID: 2001462395413558055, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: m_Name
       value: Player Luca
@@ -1107,6 +1127,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5284973640729864987, guid: 01f750a97014a274797641eb6becc1da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6264937256274586613, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: escudoDoJogador
       value: 
