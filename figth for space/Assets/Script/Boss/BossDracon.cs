@@ -14,6 +14,8 @@ public class BossDracon : MonoBehaviour
     public Transform localDoDisparoParaCima;
     public Transform localDoDisparoParaBaixo;
 
+    public Transform alvo;
+
     public float vidaMaximaDracon;
     public float vidaAtualDracon;
     private float cooldownTiro;
@@ -36,10 +38,12 @@ public class BossDracon : MonoBehaviour
     {
         vidaAtualDracon = vidaMaximaDracon;
         estadoAtual = EstadoInimigo.EstadoUm; // Começa no estado um
+        alvo = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
+        if(alvo == null) return;
         VerificarEstado();
         Atirar();
     }

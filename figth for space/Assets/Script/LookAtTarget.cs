@@ -17,9 +17,16 @@ public class LookAtTarget : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if(alvo == null) return;
+        LoockAtTarget();
+        
+    }
+
+    void LoockAtTarget()
+    {
         transform.LookAt(alvo);
         transform.Rotate(Vector3.up * 90);
         transform.Rotate(Vector3.forward * Anguloajuste);
-        
     }
+    
 }

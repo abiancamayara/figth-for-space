@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class LaserDoInimitoRapidos : MonoBehaviour
@@ -19,9 +20,12 @@ public class LaserDoInimitoRapidos : MonoBehaviour
         MovimentarLaser();
     }
 
+    
+
     private void MovimentarLaser()
-    {
-        transform.Translate(Vector3.up * velocidadeDoLaser * Time.deltaTime);
+    { 
+    
+        transform.Translate(Vector3.down * velocidadeDoLaser * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8592349654123233438}
   - component: {fileID: 5490737506634982765}
   - component: {fileID: -5983698055280339273}
+  - component: {fileID: -262198350564447257}
   m_Layer: 0
   m_Name: Laser Dracon
   m_TagString: Untagged
@@ -135,3 +136,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 0.62857145}
   m_Direction: 0
+--- !u!114 &-262198350564447257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034397765013405610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 1

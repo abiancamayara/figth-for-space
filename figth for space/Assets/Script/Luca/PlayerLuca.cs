@@ -148,7 +148,12 @@ public class PlayerLuca : MonoBehaviour
         SetTransition(Transition.Hit);
         StartCoroutine(HandleHitTransition());
     }
+    public void Morreu(){
+        Debug.Log("CHamou o morreu");
+        // Ativa a animação de morte
 
+        StartCoroutine(HandleDeathTransition());
+    }
     private IEnumerator HandleHitTransition()
     {
         // Aguarda o tempo da animação de hit antes de retornar ao estado normal
@@ -163,6 +168,16 @@ public class PlayerLuca : MonoBehaviour
         {
             SetTransition(Transition.Parado);
         }
+    }
+    
+    private IEnumerator HandleDeathTransition()
+    {
+        // Aguarda o tempo da animação de morte antes de destruir o jogador
+        yield return new WaitForSeconds(0.7f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
+        Debug.Log("Chamoou o destroy");
+        // Destrói o jogador após a animação de morte
+        Destroy(gameObject);
+        GameManager.instance.GameOver();
     }
 
     private void SetTransition(Transition newTransition)

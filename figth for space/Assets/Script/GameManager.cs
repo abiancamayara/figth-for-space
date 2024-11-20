@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI contadorLixoText;
     public TextMeshProUGUI pontuacaoAtualText;
 
+
+    public GameObject lixoEspacial;
+    public GameObject carta;
+
     public int Lvalor;
 
     public VidaDosPlayers vidaDosPlayers;
@@ -52,10 +56,7 @@ public class GameManager : MonoBehaviour
         pontuacaoAtual = 0;
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
         
-        DontDestroyOnLoad(Dracon);  // Garante que o Dracon não seja destruído ao trocar de cena
-        DontDestroyOnLoad(Glaucius); // Faz o mesmo para outros inimigos
-        DontDestroyOnLoad(Zarak);
-        
+    
     }
     
     void Update()
@@ -137,7 +138,17 @@ public class GameManager : MonoBehaviour
         AudioObserver.OnStopMusicEvent();
         gameOver = true;
         painelDeGameOver.SetActive(true);
-    }        
+        
+
+        // desligando textos e imagens da tela para o game over
+        quantidadeCartasText.gameObject.SetActive(false);
+        contadorLixoText.gameObject.SetActive(false);
+        carta.SetActive(false);
+        lixoEspacial.SetActive(false);
+    }
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    } 
     
      public void PauseGame()
     {

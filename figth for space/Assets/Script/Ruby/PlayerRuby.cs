@@ -173,6 +173,11 @@ public class PlayerRuby : MonoBehaviour
         StartCoroutine(HandleHitTransition());
     }
 
+    public void Morreu(){
+        SetTransition(Transition.Morrendo);
+        StartCoroutine(HandleDeathTransition());
+    }
+
     private IEnumerator HandleHitTransition()
     {
         yield return new WaitForSeconds(0.5f);
@@ -184,6 +189,17 @@ public class PlayerRuby : MonoBehaviour
         {
             SetTransition(Transition.Parado);
         }
+    }
+
+    private IEnumerator HandleDeathTransition()
+    {
+        // Aguarda o tempo da animação de morte antes de destruir o jogador
+        yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
+
+        // Após o tempo da animação de morte, destruímos o jogador
+        Destroy(gameObject);
+        yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
+        GameManager.instance.GameOver();
     }
 
     private void SetTransition(Transition newTransition)
