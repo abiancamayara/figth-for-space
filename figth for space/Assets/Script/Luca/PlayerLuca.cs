@@ -182,6 +182,7 @@ public class PlayerLuca : MonoBehaviour
 
     private void SetTransition(Transition newTransition)
     {
+        
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }

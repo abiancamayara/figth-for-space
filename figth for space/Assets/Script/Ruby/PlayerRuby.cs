@@ -194,11 +194,11 @@ public class PlayerRuby : MonoBehaviour
     private IEnumerator HandleDeathTransition()
     {
         // Aguarda o tempo da animação de morte antes de destruir o jogador
-        yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
+        yield return new WaitForSeconds(0.7f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
 
         // Após o tempo da animação de morte, destruímos o jogador
         Destroy(gameObject);
-        yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
+        //yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
         GameManager.instance.GameOver();
     }
 

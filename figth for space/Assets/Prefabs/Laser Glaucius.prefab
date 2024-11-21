@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 597660429968055594}
   - component: {fileID: 2356897846672787879}
   - component: {fileID: 8705159714979075677}
+  - component: {fileID: 8407096554909860056}
   m_Layer: 0
   m_Name: Laser Glaucius
   m_TagString: Untagged
@@ -99,3 +100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeDoLaser: 50
   danoParaDar: 10
+--- !u!114 &8407096554909860056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875533195589601339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 0.7

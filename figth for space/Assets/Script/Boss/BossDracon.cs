@@ -22,6 +22,15 @@ public class BossDracon : MonoBehaviour
     public float balasPorSegundo = 2f;
     public float variacaoangulo;
     
+    private Animator animator;
+    private Transition currentTransition;
+    
+    public enum Transition
+    {
+        Parado = 0,
+        Morrendo = 1
+    }
+    
     //private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
     
     public int chanceParaDropar;
@@ -39,6 +48,8 @@ public class BossDracon : MonoBehaviour
         vidaAtualDracon = vidaMaximaDracon;
         estadoAtual = EstadoInimigo.EstadoUm; // Começa no estado um
         alvo = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
+        SetTransition(Transition.Parado);
     }
 
     void Update()
@@ -95,13 +106,43 @@ public class BossDracon : MonoBehaviour
             cooldownTiro += 1 / balasPorSegundo;
         }
     }
+    
+    public void Morreu(){
+        Debug.Log("CHamou o morreu");
+        // Ativa a animação de morte
 
+        StartCoroutine(HandleDeathTransition());
+    }
+    
+    private IEnumerator HandleDeathTransition()
+    {
+      
+        // Espera o tempo necessário para a animação de morte
+        // Certifique-se de que o tempo de duração da animação de morte corresponde ao valor abaixo
+        yield return new WaitForSeconds(0.7f);  // Ajuste o tempo conforme necessário, dependendo da duração da animação de morte.
+        
+        Debug.Log("Chamou o destroy");
+        Destroy(gameObject);
+
+        // Chama a lógica do GameManager para finalizar o jogo (ou qualquer outro comportamento necessário)
+        //GameManager.instance.GameOver();
+    }
+
+    
+    private void SetTransition(Transition newTransition)
+    {
+        // isso aqui não está funcionando legal!>
+        currentTransition = newTransition;
+        animator.SetInteger("Transition", (int)currentTransition);
+    }
+    
     public void MachucarBoss(int danoParaReceber)
     {
         vidaAtualDracon -= danoParaReceber;
 
         if(vidaAtualDracon <= 0)
         {
+            animator.SetTrigger("morrendo");  
             int numeroAleatorio = Random.Range(0, 100);
 
             if (numeroAleatorio <= chanceParaDropar)

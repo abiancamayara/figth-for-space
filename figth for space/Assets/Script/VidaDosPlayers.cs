@@ -140,19 +140,20 @@ public class VidaDosPlayers : MonoBehaviour
     // Função que define a transição de animação de acordo com o estado
     public void SetTransition(Transition transition)
     {
-        Debug.Log("chamou o transition");
+        // esse aqui funciona melhor
         if (animator == null) return;  // Certifique-se de que o Animator está presente
-
-        switch (transition)
-        {
-            case Transition.Hit:
-                animator.SetTrigger("TakeDamage");  // Transição para animação de dano
-                break;
-            case Transition.Death:
-                Debug.Log("Chamou morrendo");
-                animator.SetTrigger("morrendo");  
-                break;
-            default:
+     
+             switch (transition)
+             {
+                 case Transition.Hit:
+                     animator.SetTrigger("TakeDamage");  // Transição para animação de dano
+                     break;
+                 case Transition.Death:
+                     Debug.Log("Chamou morrendo");
+                     animator.SetTrigger("morrendo");  
+                     break;
+               Debug.Log("chamou o transition");
+          default:
                 // Se não for nenhum dos tipos conhecidos, logue ou trate de outra forma
                 Debug.LogWarning("Tipo de jogador não reconhecido para animação de morte.");
                 break;

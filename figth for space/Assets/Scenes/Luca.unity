@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5284973640729864987, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6264937256274586613, guid: 01f750a97014a274797641eb6becc1da, type: 3}
       propertyPath: escudoDoJogador
@@ -2212,7 +2212,7 @@ MonoBehaviour:
   localDoDisparoParaCima: {fileID: 1616061045}
   localDoDisparoParaBaixo: {fileID: 927802649}
   alvo: {fileID: 0}
-  vidaMaximaDracon: 500
+  vidaMaximaDracon: 100
   vidaAtualDracon: 0
   balasPorSegundo: 10
   variacaoangulo: 4
