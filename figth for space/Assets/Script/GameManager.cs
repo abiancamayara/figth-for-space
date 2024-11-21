@@ -55,18 +55,25 @@ public class GameManager : MonoBehaviour
     {
         pontuacaoAtual = 0;
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual;
-        
-    
     }
     
     void Update()
     {
-        PauseGame();
-         if (pontuacaoAtual >= pontuacaoParaInvocarBoss && !bossInstanciado)
-         {
-             InstanciarBoss();
+        //PauseGame();
+        if(isPaused) 
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        
+        if (pontuacaoAtual >= pontuacaoParaInvocarBoss && !bossInstanciado)
+        {
+            InstanciarBoss();
              
-         }
+        }
     }
     
 
@@ -151,20 +158,22 @@ public class GameManager : MonoBehaviour
     } 
     
      public void PauseGame()
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            isPaused = !isPaused;
-            pauseObj.SetActive(isPaused);
-        }
+     { 
+         isPaused = !isPaused;
+         if(isPaused) 
+         {
+             Time.timeScale = 0;
+             pauseObj.SetActive(true);
+         }
+         else
+         {
+             Time.timeScale = 1;
+             pauseObj.SetActive(false);
+         }
+     }
 
-        if(isPaused) 
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-    } 
+     public void Exit()
+     {
+         SceneManager.LoadScene(0);
+     }
 }   

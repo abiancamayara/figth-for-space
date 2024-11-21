@@ -2160,7 +2160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!111 &2080783443
 Animation:
   m_ObjectHideFlags: 0
@@ -2917,6 +2917,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3148757108025992449, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.78
+      objectReference: {fileID: 0}
     - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.71
@@ -2958,6 +2962,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6313992015055589127, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: pontosDeSpawn.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313992015055589127, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: pontosDeSpawn.Array.data[5]
+      value: 
+      objectReference: {fileID: 8706534564192519875}
+    - target: {fileID: 6313992015055589127, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: pontosDeSpawn.Array.data[6]
+      value: 
+      objectReference: {fileID: 8706534564192519874}
+    - target: {fileID: 6313992015055589127, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: pontosDeSpawn.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313992015055589127, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
       propertyPath: objetosParaSpawnar.Array.data[0]
       value: 
       objectReference: {fileID: 460228190}
@@ -2977,11 +2997,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gerador de Meteoros
       objectReference: {fileID: 0}
+    - target: {fileID: 6428391258830722496, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5651350798363248531, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+    - {fileID: 785033266592954290, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+--- !u!4 &8706534564192519874 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6428391258830722496, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+  m_PrefabInstance: {fileID: 8706534564192519873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8706534564192519875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3148757108025992449, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+  m_PrefabInstance: {fileID: 8706534564192519873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
