@@ -143,13 +143,14 @@ public class BossDracon : MonoBehaviour
         if(vidaAtualDracon <= 0)
         {
             animator.SetTrigger("morrendo");  
+            StartCoroutine(HandleDeathTransition());
             int numeroAleatorio = Random.Range(0, 100);
 
             if (numeroAleatorio <= chanceParaDropar)
             {
                 Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
             }
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             destruidorObj.SetActive(true);
         }
     }

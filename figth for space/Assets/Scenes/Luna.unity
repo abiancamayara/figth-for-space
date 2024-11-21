@@ -381,10 +381,12 @@ MonoBehaviour:
   balasPorSegundo: 10
   variacaoangulo: 3
   temEscudo: 0
+  jamorreu: 0
   chanceParaDropar: 0
   vidaMaximaDoEscudo: 20
   vidaAtualDoEscudo: 0
   tempoEntreTirosFeixeContinui: 0
+  estadoAtual: 0
 --- !u!61 &196402205
 BoxCollider2D:
   m_ObjectHideFlags: 0

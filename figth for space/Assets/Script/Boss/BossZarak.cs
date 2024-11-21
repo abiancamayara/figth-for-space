@@ -23,6 +23,7 @@ public class BossZarak : MonoBehaviour
     public float variacaoangulo;
 
     public bool temEscudo;
+    public bool jamorreu;
 
     public int chanceParaDropar;
     public int vidaMaximaDoEscudo; // Vida máxima do escudo
@@ -41,14 +42,14 @@ public class BossZarak : MonoBehaviour
         Morrendo = 1
     }
 
-    private enum EstadoInimigo
+    public enum EstadoInimigo
     {
         EstadoUm,  // Atira lasers normais
         EstadoDois, // Atira feixe contínuo
         EstadoTres // Ativa o escudo
     }
 
-    private EstadoInimigo estadoAtual;
+    public EstadoInimigo estadoAtual;
     private GameObject escudoAtual; // Para guardar a referência ao escudo ativado
 
     void Start()
@@ -67,18 +68,20 @@ public class BossZarak : MonoBehaviour
         if(alvo == null) return;
         VerificarEstado(); // Checa se deve mudar de estado
         Atirar(); // Responsável por atirar de acordo com o estado atual
-        VerificarVidaDoEscudo(); // Verifica se o escudo foi destruído
+        
     }
 
     private void VerificarEstado()
     {
         // Verifica a mudança de estado com base na vida do Boss
-        if (vidaAtualZarak <= vidaMaximaZarak * 0.2f && estadoAtual != EstadoInimigo.EstadoTres)
+        // ele ativa o escudo a todo momento e chamando várias vezes o escudo.
+        
+        if (vidaAtualZarak <= vidaMaximaZarak * 0.2f && estadoAtual == EstadoInimigo.EstadoDois)
         {
             estadoAtual = EstadoInimigo.EstadoTres; // Muda para EstadoTres
             AtivarEscudo(); // Ativa o escudo
         }
-        else if (vidaAtualZarak <= vidaMaximaZarak * 0.5f && estadoAtual != EstadoInimigo.EstadoDois)
+        else if (vidaAtualZarak <= vidaMaximaZarak * 0.5f && estadoAtual == EstadoInimigo.EstadoUm)
         {
             estadoAtual = EstadoInimigo.EstadoDois; // Muda para EstadoDois
         }
@@ -115,16 +118,9 @@ public class BossZarak : MonoBehaviour
     }
 
 
-    private void VerificarVidaDoEscudo()
-    {
-        // Verifica se o escudo foi destruído
-        if (temEscudo && vidaAtualDoEscudo <= 0)
-        {
-            Destroy(escudoAtual); // Destrói o escudo
-            escudoAtual = null; // Reseta a referência ao escudo
-            temEscudo = false; // O Boss não tem mais escudo
-        }
-    }
+    
+    
+
 
     private void AtirarLaser()
     {
@@ -190,6 +186,7 @@ public class BossZarak : MonoBehaviour
         yield return new WaitForSeconds(0.7f);  // Ajuste o tempo conforme necessário, dependendo da duração da animação de morte.
         
         Debug.Log("Chamou o destroy");
+        
         Destroy(gameObject);
 
         // Chama a lógica do GameManager para finalizar o jogo (ou qualquer outro comportamento necessário)
@@ -230,8 +227,9 @@ public class BossZarak : MonoBehaviour
         }
 
         // Se a vida do Boss for 0 ou menos, chama a função de morte
-        if (vidaAtualZarak <= 0)
+        if (vidaAtualZarak <= 0 && !jamorreu)
         {
+            jamorreu = true;
             animator.SetTrigger("morrendo");
             // deve mover a logica do morrer está duplicado em 2 lugares
             int numeroAleatorio = Random.Range(0, 100);
