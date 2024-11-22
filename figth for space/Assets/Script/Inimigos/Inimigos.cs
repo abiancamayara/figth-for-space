@@ -10,6 +10,8 @@ public class Inimigos : MonoBehaviour
     public GameObject laserDoInimigo;
     public GameObject itemParaDropar;
     public Transform localDoDisparo;
+    public Transform localDoDisparoDireita;
+    public Transform localDoDisparoEsquerda;
     
 
     public float velocidadeDoInimigo;
@@ -62,7 +64,8 @@ public class Inimigos : MonoBehaviour
 
         if(tempoAtualDosLasers <= 0)
         {
-            Instantiate(laserDoInimigo, localDoDisparo.position, Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(laserDoInimigo, localDoDisparoDireita.position, Quaternion.Euler(0f, 0f, -90f));
+            Instantiate(laserDoInimigo, localDoDisparoEsquerda.position, Quaternion.Euler(0f, 0f, -90f));
             tempoAtualDosLasers = tempoMaximoEntreOsLasers;
         }
     }

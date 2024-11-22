@@ -15,7 +15,8 @@ public class PlayerLuna : MonoBehaviour
 
     public float velocidadeDaNave;
     public bool temLaserDuplo;
-    public float balasPorSegundo = 5;
+    public float balasPorSegundo;
+    public float variacaoangulo;
 
     [SerializeField] private Dash dash;
     private float cooldownTiro = 0;
@@ -93,8 +94,8 @@ public class PlayerLuna : MonoBehaviour
             }
             else
             {
-                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
-                Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
+                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
+                Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             }
             cooldownTiro += 1 / balasPorSegundo;
         }
@@ -104,8 +105,10 @@ public class PlayerLuna : MonoBehaviour
     {
         if (cooldownTiro < 0)
         {
-            Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation);
-            Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation);
+            Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
+            Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
+            Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
+            Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             cooldownTiro += 1 / balasPorSegundo;
         }
     }
