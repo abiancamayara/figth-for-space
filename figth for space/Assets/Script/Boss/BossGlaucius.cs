@@ -165,7 +165,6 @@ public class BossGlaucius : MonoBehaviour
             // Se não tiver escudo, o dano vai diretamente para a vida do boss
             vidaAtualGlaucius -= danoParaReceber;
         }
-
         // Se a vida do Boss for 0 ou menos, chama a função de morte
         if (vidaAtualGlaucius <= 0)
         {
@@ -181,6 +180,5 @@ public class BossGlaucius : MonoBehaviour
             StartCoroutine(HandleDeathTransition());
         }
     }
-
 }
 

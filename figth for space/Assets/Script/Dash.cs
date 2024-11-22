@@ -15,8 +15,7 @@ public class Dash : MonoBehaviour
     [SerializeField]
     private float duracao;
     public float contTempoDeUso;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4801373811518255664}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.00028973818}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0025780194, w: -0.99999666}
   m_LocalPosition: {x: 0.399, y: -0.543, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3189162145060787718}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179.967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.705}
 --- !u!1 &4995111085020860458
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4995111085020860458}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe0bc30676109084a8939a5b021db0e4, type: 3}
   m_Name: 
@@ -221,7 +221,7 @@ MonoBehaviour:
   pontosParaDar: 0
   tempoMaximoEntreOsLasers: 0
   tempoAtualDosLasers: 0
-  inimigoAtirador: 1
+  inimigoAtirador: 0
   inimigoAtivado: 0
 --- !u!114 &6965750060829813680
 MonoBehaviour:
@@ -246,13 +246,14 @@ MonoBehaviour:
   vidaAtualDoInimigo: 0
   chanceParaDropar: 80
   angulo: 0
-  balasPorSegundo: 30
+  cooldownTiro: 0
+  balasPorSegundo: 5
   alturaOriginal: 0
   amplitude: 3
   velocidadeDaOscilacao: 10
-  pontosParaDar: 0
+  pontosParaDar: 10
   inimigoAtirador: 1
-  inimigoAtivado: 0
+  inimigoAtivado: 1
 --- !u!1 &6862438781105308597
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,10 +309,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7345756677462572098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.99999607, w: -0.0028134582}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0014500021, w: -0.999999}
   m_LocalPosition: {x: -0.294, y: -0.535, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3189162145060787718}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.834}

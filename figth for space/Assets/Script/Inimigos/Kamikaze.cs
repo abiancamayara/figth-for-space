@@ -18,9 +18,6 @@ public class Kamikaze : MonoBehaviour
     public int chanceParaDropar;
     public int pontosParaDar;
     
-    
-    
-
     void Start()
     {
         vidaAtualDoInimigo = vidaMaximaDoInimigo;
