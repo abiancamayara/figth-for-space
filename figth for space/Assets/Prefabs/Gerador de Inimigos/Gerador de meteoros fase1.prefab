@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 6313992015055589127}
   - component: {fileID: 6821535703755177829}
   m_Layer: 0
-  m_Name: Gerador de Meteoros
+  m_Name: Gerador de meteoros fase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

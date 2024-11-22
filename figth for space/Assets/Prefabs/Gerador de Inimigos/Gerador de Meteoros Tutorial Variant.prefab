@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5161180534920173570
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 785033266592954290, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 785033266592954290, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 930367527810482489, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 930367527810482489, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 397.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475679376748671896, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 397.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648222934252086006, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812774482319493766, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812774482319493766, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 397.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837713380294258276, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837713380294258276, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 397.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130851735456803637, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4130851735456803637, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302382966950449076, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4302382966950449076, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651350798363248531, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5651350798363248531, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403798760891938113, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_Name
+      value: Gerador de Meteoros Tutorial Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086560146992689958, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 397.40002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0e92a269919b4d4ea49e640a51d610c, type: 3}

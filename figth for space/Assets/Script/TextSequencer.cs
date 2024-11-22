@@ -27,7 +27,9 @@ public class TextSequencer : MonoBehaviour
             "Use as setas direcionais para mover para cima e para baixo",
             "Use seu ataque secundário pressionando a tecla x",
             "Use seu Dash pressionando a tecla Z",
+            "Desvie dos meteoros para não levar dano",
             "Derrotando os inimigos você pode liberar algum power-up",
+            "O lixo espacial aparecerá para coleta na próxima fase",
             "Ao coletar 5 lixos espaciais você aumenta sua vida",
             "Ao atingir sua meta de pontuação você libera a carta que contém a localização do primeiro boss",
         };
