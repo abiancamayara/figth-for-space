@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3275767335136950216}
   - component: {fileID: 4268250317457399439}
   - component: {fileID: 3738269290143364511}
+  - component: {fileID: -2520702100401528288}
   m_Layer: 0
   m_Name: bala horda
   m_TagString: Untagged
@@ -163,3 +164,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.0038881302}
   m_Size: {x: 0.4694028, y: 0.8391094}
   m_Direction: 0
+--- !u!114 &-2520702100401528288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794715332153058655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 0.7

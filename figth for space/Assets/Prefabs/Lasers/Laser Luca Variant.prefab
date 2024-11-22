@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2137344625072682245, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
+      propertyPath: danoParaDar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137344625072682245, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
+      propertyPath: velocidadeDoLaser
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2298119144952912323, guid: 2b7ac03fd2d2da046967ab928e3c7e9f, type: 3}
       propertyPath: m_Name
       value: Laser Luca Variant

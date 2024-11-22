@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7131592704941227267}
   - component: {fileID: 2298506526996538703}
   - component: {fileID: 4133154096887704077}
+  - component: {fileID: -6622127298994155819}
   m_Layer: 0
   m_Name: balinha zigue-zague
   m_TagString: Untagged
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeDoLaser: 30
   danoParaDar: 5
+--- !u!114 &-6622127298994155819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982117662573893310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67050e602244d841b4b9354376d9251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoDeVida: 0.7

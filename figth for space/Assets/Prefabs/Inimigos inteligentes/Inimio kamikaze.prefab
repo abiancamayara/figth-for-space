@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6743016457965339991}
   - component: {fileID: 3932990453198297608}
   - component: {fileID: 4909052886155864091}
+  - component: {fileID: 1385963118606591713}
   m_Layer: 0
   m_Name: Inimio kamikaze
   m_TagString: Kamikaze
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemParaDropar: {fileID: 275768496608969999, guid: b2c458ff8b7b6514c814e9b8e26a0531, type: 3}
   velocidadeDoInimigo: 10
-  danoParaDar: 10
+  danoParaDar: 2
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
   chanceParaDropar: 25
@@ -204,6 +205,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1385963118606591713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857247809377539215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0bc30676109084a8939a5b021db0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserDoInimigo: {fileID: 0}
+  itemParaDropar: {fileID: 0}
+  localDoDisparo: {fileID: 0}
+  localDoDisparoDireita: {fileID: 0}
+  localDoDisparoEsquerda: {fileID: 0}
+  velocidadeDoInimigo: 0
+  vidaMaximaDoInimigo: 0
+  vidaAtualDoInimigo: 0
+  chanceParaDropar: 0
+  pontosParaDar: 0
+  tempoMaximoEntreOsLasers: 0
+  tempoAtualDosLasers: 0
+  inimigoAtirador: 0
+  inimigoAtivado: 0
 --- !u!1 &5622572867675048209
 GameObject:
   m_ObjectHideFlags: 0

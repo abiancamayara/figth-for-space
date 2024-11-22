@@ -16,17 +16,15 @@ public class PlayerLuca : MonoBehaviour
     public bool temLaserDuplo;
     public float balasPorSegundo = 5;
 
-
-
     [SerializeField]
     private Dash dash;
 
-
     private float cooldownTiro = 0;
+    private float cooldownOndaSonora = 0; // Variável de cooldown para onda sonora
+    public float intervaloEntreOndasSonoras = 2f; // Tempo entre os disparos da onda sonora
     private Vector2 teclasApertadas;
     public Transform limiteSuperiorEsquerdo, limiteInferiorDireito;
-    private float cooldownOndaSonoraAtual; // Controle do cooldown da onda sonora
-    
+
     private Animator animator;
     private Transition currentTransition;
     public enum Transition
@@ -37,8 +35,6 @@ public class PlayerLuca : MonoBehaviour
         Morrendo = 3
     }
   
-
-    // Start is called before the first frame update
     void Start()
     {
         temLaserDuplo = true;
@@ -46,17 +42,19 @@ public class PlayerLuca : MonoBehaviour
         SetTransition(Transition.Parado);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        if(!this.dash.Usado)
+        if (!this.dash.Usado)
         {
             MovimentarJogador();
             LimiteDoJogador();
             AplicarDash();  
         }
-        if(Input.GetKey(KeyCode.X))
+
+        cooldownTiro -= Time.deltaTime;
+        cooldownOndaSonora -= Time.deltaTime; // Atualiza o cooldown da onda sonora
+
+        if (Input.GetKey(KeyCode.X))
         {
             AtirarOndaSonora();
         }
@@ -64,7 +62,7 @@ public class PlayerLuca : MonoBehaviour
         {
             AtirarLaser();
         }
-        
+
         if (currentTransition != Transition.Hit)
         {
             if (teclasApertadas.magnitude > 0)
@@ -76,9 +74,7 @@ public class PlayerLuca : MonoBehaviour
                 SetTransition(Transition.Parado);
             }
         }
-        
     }
-
 
     private void MovimentarJogador()
     {
@@ -88,72 +84,76 @@ public class PlayerLuca : MonoBehaviour
 
     private void AtirarLaser()
     {
-            cooldownTiro -= Time.deltaTime;
-            if(cooldownTiro <0)
+        if (cooldownTiro < 0)
+        {
+            if (temLaserDuplo == false)
             {
-                if(temLaserDuplo == false)
-                {
-                    Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
-                }
-                else
-                {
-                    Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
-                }   Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
-                cooldownTiro += 1/balasPorSegundo;
+                Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
             }
-    }
-    
-    private void AtirarOndaSonora()
-    {
-        Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+            else
+            {
+                Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation);
+                Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
+            }
+            cooldownTiro = 1 / balasPorSegundo;
+        }
     }
 
+    private void AtirarOndaSonora()
+    {
+        if (cooldownOndaSonora < 0) // Verifica se o cooldown permite disparar a onda sonora
+        {
+            Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+            cooldownOndaSonora = intervaloEntreOndasSonoras; // Reseta o cooldown para o próximo disparo
+        }
+    }
 
     public void LimiteDoJogador()
     {
-        if(transform.position.x < limiteSuperiorEsquerdo.position.x)
+        if (transform.position.x < limiteSuperiorEsquerdo.position.x)
         {
-            transform.position = new Vector2 (limiteSuperiorEsquerdo.position.x, transform.position.y);
+            transform.position = new Vector2(limiteSuperiorEsquerdo.position.x, transform.position.y);
         }
 
-        if(transform.position.y > limiteSuperiorEsquerdo.position.y)
+        if (transform.position.y > limiteSuperiorEsquerdo.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteSuperiorEsquerdo.position.y);
+            transform.position = new Vector2(transform.position.x, limiteSuperiorEsquerdo.position.y);
         }
 
-        if(transform.position.x > limiteInferiorDireito.position.x)
+        if (transform.position.x > limiteInferiorDireito.position.x)
         {
-            transform.position = new Vector2 (limiteInferiorDireito.position.x, transform.position.y);
+            transform.position = new Vector2(limiteInferiorDireito.position.x, transform.position.y);
         }
 
-        if(transform.position.y < limiteInferiorDireito.position.y)
+        if (transform.position.y < limiteInferiorDireito.position.y)
         {
-            transform.position = new Vector2 (transform.position.x, limiteInferiorDireito.position.y);
+            transform.position = new Vector2(transform.position.x, limiteInferiorDireito.position.y);
         }
-
     }
 
     private void AplicarDash()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             this.dash.Aplicar();
             ParticleObserver.OnParticleSpawnEvent(transform.position);
         }
     }
-    
+
     public void ReceiveDamage()
     {
         // Ativa a animação de hit
         SetTransition(Transition.Hit);
         StartCoroutine(HandleHitTransition());
     }
-    public void Morreu(){
-        Debug.Log("CHamou o morreu");
-        // Ativa a animação de morte
 
+    public void Morreu()
+    {
+        Debug.Log("Chamou o morreu");
+        // Ativa a animação de morte
         StartCoroutine(HandleDeathTransition());
     }
+
     private IEnumerator HandleHitTransition()
     {
         // Aguarda o tempo da animação de hit antes de retornar ao estado normal
@@ -182,7 +182,6 @@ public class PlayerLuca : MonoBehaviour
 
     private void SetTransition(Transition newTransition)
     {
-        
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }

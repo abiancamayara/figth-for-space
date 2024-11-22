@@ -34,8 +34,6 @@ public class Carta : MonoBehaviour
     {
         // Instantiate a carta na posição do boss ou em um lugar específico
         Instantiate(cartaPrefab, transform.position, Quaternion.identity);
-
-        // Aumenta a quantidade de cartas coletadas
         
     }
     

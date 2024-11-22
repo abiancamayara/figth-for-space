@@ -209,17 +209,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0bc30676109084a8939a5b021db0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserDoInimigo: {fileID: 7982117662573893310, guid: a61b9833d904a734a874de4a81ee83ec, type: 3}
-  itemParaDropar: {fileID: 6389172200459946418, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
-  localDoDisparo: {fileID: 5382575641736598986}
-  localDoDisparoDireita: {fileID: 5081605067468820796}
-  localDoDisparoEsquerda: {fileID: 6912328823741189138}
-  velocidadeDoInimigo: 10
-  vidaMaximaDoInimigo: 10
+  laserDoInimigo: {fileID: 0}
+  itemParaDropar: {fileID: 0}
+  localDoDisparo: {fileID: 0}
+  localDoDisparoDireita: {fileID: 0}
+  localDoDisparoEsquerda: {fileID: 0}
+  velocidadeDoInimigo: 0
+  vidaMaximaDoInimigo: 0
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 30
-  pontosParaDar: 40
-  tempoMaximoEntreOsLasers: 0.5
+  chanceParaDropar: 0
+  pontosParaDar: 0
+  tempoMaximoEntreOsLasers: 0
   tempoAtualDosLasers: 0
   inimigoAtirador: 1
   inimigoAtivado: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   velocidadeDoInimigo: 8
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 30
+  chanceParaDropar: 80
   angulo: 0
   balasPorSegundo: 30
   alturaOriginal: 0

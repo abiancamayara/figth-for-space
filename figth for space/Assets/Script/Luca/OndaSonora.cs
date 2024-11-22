@@ -33,14 +33,37 @@ public class OndaSonora : MonoBehaviour
         {
             Destroy(gameObject); // Destrói a onda sonora quando o tempo de vida acabar
         }
+        
+        MovimentarLaser();
+        
+        // Agora movemos a detecção para o Update (ou FixedUpdate se necessário)
+        DetectarInimigosDentroDoRaio();
+    }
 
+    private void DetectarInimigosDentroDoRaio()
+    {
         // Detecta inimigos dentro da área da onda sonora
         Collider2D[] inimigos = Physics2D.OverlapCircleAll(transform.position, colisor.radius);
         foreach (Collider2D inimigo in inimigos)
         {
-            if (inimigo.CompareTag("Inimigo"))
+            if (inimigo.CompareTag("Inimigo") ||
+                inimigo.CompareTag("Kamikaze") ||
+                inimigo.CompareTag("zigzag") ||
+                inimigo.CompareTag("Dracon") ||
+                inimigo.CompareTag("Glaucius") ||
+                inimigo.CompareTag("Zarak"))
             {
-                inimigo.GetComponent<Inimigos>().MachucarInimigo(dano);
+                // Verifica se o inimigo tem o script "Inimigos" e aplica o dano
+                Inimigos inimigoScript = inimigo.GetComponent<Inimigos>();
+                if (inimigoScript != null)
+                {
+                    inimigoScript.MachucarInimigo(dano);
+                    Debug.Log($"Inimigo {inimigo.name} recebeu {dano} de dano.");
+                }
+                else
+                {
+                    Debug.LogWarning($"Inimigo {inimigo.name} não possui o componente Inimigos.");
+                }
             }
         }
     }
@@ -53,9 +76,7 @@ public class OndaSonora : MonoBehaviour
     
     private void MovimentarLaser()
     {
-        // Movimento para frente, com base na rotação do jogador
-        Vector3 direction = player.transform.right;  // Agora, a direção é para a frente, considerando a rotação do jogador
-        transform.Translate(direction * velocidadeDoLaser * Time.deltaTime);
+        transform.Translate(Vector3.down * velocidadeDoLaser * Time.deltaTime);
     }
 
     void OnDrawGizmosSelected()

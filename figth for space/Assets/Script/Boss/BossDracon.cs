@@ -7,6 +7,8 @@ public class BossDracon : MonoBehaviour
     public GameObject laserDoJogador;
     public GameObject itemParaDropar;
     public GameObject destruidorObj;
+    public GameObject destruidorObj2;
+    public GameObject destruidorObj3;
     
     public Transform localDoDisparoUnico;
     public Transform localDoDisparoDaEsquerda;
@@ -152,6 +154,8 @@ public class BossDracon : MonoBehaviour
             }
             //Destroy(this.gameObject);
             destruidorObj.SetActive(true);
+            destruidorObj2.SetActive(true);
+            destruidorObj3.SetActive(true);
         }
     }
 }
