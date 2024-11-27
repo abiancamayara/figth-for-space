@@ -247,7 +247,7 @@ MonoBehaviour:
   chanceParaDropar: 95
   angulo: 0
   cooldownTiro: 0
-  balasPorSegundo: 5
+  balasPorSegundo: 3
   alturaOriginal: 0
   amplitude: 3
   velocidadeDaOscilacao: 10

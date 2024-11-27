@@ -2120,7 +2120,7 @@ MonoBehaviour:
   localDoDisparoParaCima: {fileID: 1616061045}
   localDoDisparoParaBaixo: {fileID: 927802649}
   alvo: {fileID: 0}
-  vidaMaximaDracon: 150
+  vidaMaximaDracon: 250
   vidaAtualDracon: 0
   balasPorSegundo: 5
   variacaoangulo: 4
@@ -2647,6 +2647,10 @@ PrefabInstance:
     - target: {fileID: 4593589351657076643, guid: 3456e74b0d64bfa4fbd3350c76515f96, type: 3}
       propertyPath: vidaMaximaDoEscudo
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593589351657076643, guid: 3456e74b0d64bfa4fbd3350c76515f96, type: 3}
+      propertyPath: vidaMaximaDoJogador
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4593589351657076643, guid: 3456e74b0d64bfa4fbd3350c76515f96, type: 3}
       propertyPath: barraDeVidaDoJogador
