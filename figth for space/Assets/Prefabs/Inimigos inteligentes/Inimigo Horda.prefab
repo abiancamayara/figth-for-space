@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 149927753979249428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.6, y: -0.1, z: 0}
-  m_LocalScale: {x: 1.1903096, y: 1.1903096, z: 1.1903096}
+  m_LocalPosition: {x: 6.667, y: 0.006, z: 0}
+  m_LocalScale: {x: 1.5164546, y: 1.5164546, z: 1.5164546}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5627280073940237095}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ae20f0f5b444f764d8d7e8b8289d97a0, type: 3}
+  m_Sprite: {fileID: -1600224137, guid: 16b078b471dca174785bb9d48eb5b898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -127,7 +127,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.74, y: 1.48}
+    oldSize: {x: 1.26, y: 1.16}
     newSize: {x: 1.74, y: 1.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDoInimigo: {fileID: 2794715332153058655, guid: 590baea6a4de5e24e94e0868a2c4b655, type: 3}
-  itemParaDropar: {fileID: 6068371878898650412, guid: 5f758fc574a348142936d97bd1781197, type: 3}
+  itemParaDropar: {fileID: 6389172200459946418, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
   localDoDisparo: {fileID: 5627280073940237095}
   localDoDisparoDireita: {fileID: 1007251706521306455}
   localDoDisparoEsquerda: {fileID: 3974233030375681035}
@@ -187,7 +187,7 @@ MonoBehaviour:
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
   chanceParaDropar: 30
-  pontosParaDar: 20
+  pontosParaDar: 15
   tempoMaximoEntreOsLasers: 0.4
   tempoAtualDosLasers: 0
   inimigoAtirador: 1
@@ -238,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 1787371657655971247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.003984004, w: -0.99999213}
-  m_LocalPosition: {x: 0.23300001, y: -0.6959999, z: 0}
+  m_LocalPosition: {x: 0.21, y: -0.757, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,7 +269,7 @@ Transform:
   m_GameObject: {fileID: 4723601219493473194}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.9999989, w: -0.0015083846}
-  m_LocalPosition: {x: -0, y: -0.612, z: 0}
+  m_LocalPosition: {x: 0, y: -0.664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,7 +300,7 @@ Transform:
   m_GameObject: {fileID: 7701608805496801849}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0019578035, w: -0.9999981}
-  m_LocalPosition: {x: -0.2060102, y: -0.69600004, z: 0}
+  m_LocalPosition: {x: -0.206, y: -0.757, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

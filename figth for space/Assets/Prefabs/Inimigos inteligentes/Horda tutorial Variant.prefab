@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1820520229854084072, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
+      propertyPath: chanceParaDropar
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4431550993546909552, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.49

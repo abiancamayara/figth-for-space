@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeDoLaser: 30
-  danoParaDar: 8
+  danoParaDar: 1
 --- !u!50 &4268250317457399439
 Rigidbody2D:
   serializedVersion: 4
@@ -162,7 +162,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.0038881302}
-  m_Size: {x: 0.4694028, y: 0.8391094}
+  m_Size: {x: 0.41729233, y: 0.7471353}
   m_Direction: 0
 --- !u!114 &-2520702100401528288
 MonoBehaviour:

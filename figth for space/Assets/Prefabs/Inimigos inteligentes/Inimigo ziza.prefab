@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4801373811518255664}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0025780194, w: -0.99999666}
-  m_LocalPosition: {x: 0.399, y: -0.543, z: 0}
+  m_LocalPosition: {x: 0.351, y: -0.595, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1cf69b732dfa8ed41a154378bba93afd, type: 3}
+  m_Sprite: {fileID: -196763898, guid: 93862807038c89a409e479baaa9012be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -158,7 +158,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.3428571}
+    oldSize: {x: 1.0857143, y: 1.1714286}
     newSize: {x: 1.4, y: 1.3428571}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDoInimigo: {fileID: 0}
-  itemParaDropar: {fileID: 0}
+  itemParaDropar: {fileID: 275768496608969999, guid: b2c458ff8b7b6514c814e9b8e26a0531, type: 3}
   localDoDisparo: {fileID: 0}
   localDoDisparoDireita: {fileID: 0}
   localDoDisparoEsquerda: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDoInimigo: {fileID: 7982117662573893310, guid: a61b9833d904a734a874de4a81ee83ec, type: 3}
-  itemParaDropar: {fileID: 6389172200459946418, guid: dd3cb6359df68f945800037e9e3de7e4, type: 3}
+  itemParaDropar: {fileID: 275768496608969999, guid: b2c458ff8b7b6514c814e9b8e26a0531, type: 3}
   localDoDisparo: {fileID: 5382575641736598986}
   localDoDisparoDaEsquerda: {fileID: 6912328823741189138}
   localDoDisparoDaDireita: {fileID: 5081605067468820796}
@@ -244,14 +244,14 @@ MonoBehaviour:
   velocidadeDoInimigo: 8
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 80
+  chanceParaDropar: 95
   angulo: 0
   cooldownTiro: 0
   balasPorSegundo: 5
   alturaOriginal: 0
   amplitude: 3
   velocidadeDaOscilacao: 10
-  pontosParaDar: 10
+  pontosParaDar: 30
   inimigoAtirador: 1
   inimigoAtivado: 1
 --- !u!1 &6862438781105308597
@@ -279,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 6862438781105308597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.99999094, w: -0.004266291}
-  m_LocalPosition: {x: 0.051, y: -0.654, z: 0}
+  m_LocalPosition: {x: 0.003, y: -0.702, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 7345756677462572098}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0014500021, w: -0.999999}
-  m_LocalPosition: {x: -0.294, y: -0.535, z: 0}
+  m_LocalPosition: {x: -0.33, y: -0.587, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

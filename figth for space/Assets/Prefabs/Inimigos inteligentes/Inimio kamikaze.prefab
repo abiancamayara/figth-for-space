@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 2857247809377539215}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.29, y: -10.41, z: 0}
-  m_LocalScale: {x: 1.1960124, y: 1.1960124, z: 1.1960124}
+  m_LocalPosition: {x: 6.2866, y: -10.41, z: 0}
+  m_LocalScale: {x: 1.5871085, y: 1.5871085, z: 1.5871085}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6147012455212441785}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7bb6ed5b8ef90c841894f7e90b50720b, type: 3}
+  m_Sprite: {fileID: -1148698083, guid: 97d878fb8f0fbe6428998974e3b23045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -126,7 +126,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.88, y: 1.68}
+    oldSize: {x: 1.28, y: 1.12}
     newSize: {x: 1.88, y: 1.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
   danoParaDar: 2
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 25
-  pontosParaDar: 35
+  chanceParaDropar: 70
+  pontosParaDar: 20
 --- !u!95 &4909052886155864091
 Animator:
   serializedVersion: 5
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDoInimigo: {fileID: 0}
-  itemParaDropar: {fileID: 0}
+  itemParaDropar: {fileID: 6068371878898650412, guid: 5f758fc574a348142936d97bd1781197, type: 3}
   localDoDisparo: {fileID: 0}
   localDoDisparoDireita: {fileID: 0}
   localDoDisparoEsquerda: {fileID: 0}
