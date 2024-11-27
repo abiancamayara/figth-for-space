@@ -12,6 +12,7 @@ TagManager:
   - Glaucius
   - Carta
   - Zarak
+  - laser inimigo
   layers:
   - Default
   - TransparentFX

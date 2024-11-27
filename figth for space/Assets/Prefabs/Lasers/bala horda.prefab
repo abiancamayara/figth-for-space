@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2520702100401528288}
   m_Layer: 0
   m_Name: bala horda
-  m_TagString: Untagged
+  m_TagString: laser inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,6 +26,9 @@ public class BossDracon : MonoBehaviour
     
     private Animator animator;
     private Transition currentTransition;
+
+    private AudioSource audioSource;
+    public AudioClip somExplosao; // Clip de áudio para o som de explosão
     
     public enum Transition
     {
@@ -51,6 +54,7 @@ public class BossDracon : MonoBehaviour
         estadoAtual = EstadoInimigo.EstadoUm; // Começa no estado um
         alvo = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         SetTransition(Transition.Parado);
     }
 
@@ -63,7 +67,7 @@ public class BossDracon : MonoBehaviour
 
     private void VerificarEstado()
     {
-        // Verifica se a vida do inimigo está abaixo de 70% da vida máxima
+        // Verifica se a vida do inimigo está abaixo de 50% da vida máxima
         if (vidaAtualDracon <= vidaMaximaDracon * 0.5f && estadoAtual != EstadoInimigo.EstadoDois)
         {
             estadoAtual = EstadoInimigo.EstadoDois; // Muda para estado dois
@@ -110,7 +114,7 @@ public class BossDracon : MonoBehaviour
     }
     
     public void Morreu(){
-        Debug.Log("CHamou o morreu");
+        Debug.Log("Chamou o morreu");
         // Ativa a animação de morte
 
         StartCoroutine(HandleDeathTransition());
@@ -118,7 +122,12 @@ public class BossDracon : MonoBehaviour
     
     private IEnumerator HandleDeathTransition()
     {
-      
+        // Reproduz o som de explosão
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao);
+        }
+
         // Espera o tempo necessário para a animação de morte
         // Certifique-se de que o tempo de duração da animação de morte corresponde ao valor abaixo
         yield return new WaitForSeconds(0.7f);  // Ajuste o tempo conforme necessário, dependendo da duração da animação de morte.
@@ -133,7 +142,7 @@ public class BossDracon : MonoBehaviour
     
     private void SetTransition(Transition newTransition)
     {
-        // isso aqui não está funcionando legal!>
+        // isso aqui não está funcionando legal!
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }
@@ -152,11 +161,9 @@ public class BossDracon : MonoBehaviour
             {
                 Instantiate(itemParaDropar, transform.position, Quaternion.Euler(0f, 0f, 0f));
             }
-            //Destroy(this.gameObject);
             destruidorObj.SetActive(true);
             destruidorObj2.SetActive(true);
             destruidorObj3.SetActive(true);
         }
     }
 }
-

@@ -21,7 +21,6 @@ public class BossGlaucius : MonoBehaviour
     public float balasPorSegundo;
     public float variacaoangulo;
     
-    //private bool estadoAcelerado = false; // Se o inimigo está no estado acelerado
     public bool temEscudo;
     
     public int chanceParaDropar;
@@ -31,6 +30,9 @@ public class BossGlaucius : MonoBehaviour
     private Animator animator;
     private Transition currentTransition;
     
+    private AudioSource audioSource;
+    public AudioClip somExplosao; // Clip de áudio para o som de explosão
+
     public enum Transition
     {
         Parado = 0,
@@ -52,12 +54,13 @@ public class BossGlaucius : MonoBehaviour
         estadoAtual = EstadoInimigo.EstadoUm; // Começa no estado um
         alvo = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         SetTransition(Transition.Parado);
     }
 
     void Update()
     {
-        if(alvo == null) return;
+        if (alvo == null) return;
         VerificarEstado();
         Atirar();
     }
@@ -99,7 +102,6 @@ public class BossGlaucius : MonoBehaviour
         }
     }
 
-
     private void AtirarLaser()
     {
         cooldownTiro -= Time.deltaTime;
@@ -111,17 +113,22 @@ public class BossGlaucius : MonoBehaviour
             cooldownTiro += 1 / balasPorSegundo;
         }
     }
-    
-    public void Morreu(){
-        Debug.Log("CHamou o morreu");
-        // Ativa a animação de morte
 
+    public void Morreu()
+    {
+        Debug.Log("Chamou o morreu");
+        // Ativa a animação de morte
         StartCoroutine(HandleDeathTransition());
     }
     
     private IEnumerator HandleDeathTransition()
     {
-      
+        // Reproduz o som de explosão
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao);
+        }
+
         // Espera o tempo necessário para a animação de morte
         // Certifique-se de que o tempo de duração da animação de morte corresponde ao valor abaixo
         yield return new WaitForSeconds(0.7f);  // Ajuste o tempo conforme necessário, dependendo da duração da animação de morte.
@@ -133,10 +140,9 @@ public class BossGlaucius : MonoBehaviour
         //GameManager.instance.GameOver();
     }
 
-    
     private void SetTransition(Transition newTransition)
     {
-        // isso aqui não está funcionando legal!>
+        // Isso aqui não está funcionando legal!
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }
@@ -169,7 +175,7 @@ public class BossGlaucius : MonoBehaviour
         if (vidaAtualGlaucius <= 0)
         {
             animator.SetTrigger("morrendo");
-            // deve mover a logica do morrer está duplicado em 2 lugares
+            // Deve mover a lógica do morrer está duplicada em 2 lugares
             int numeroAleatorio = Random.Range(0, 100);
 
             if (numeroAleatorio <= chanceParaDropar)
@@ -181,4 +187,3 @@ public class BossGlaucius : MonoBehaviour
         }
     }
 }
-

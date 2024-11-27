@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6622127298994155819}
   m_Layer: 0
   m_Name: balinha zigue-zague
-  m_TagString: Untagged
+  m_TagString: laser inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

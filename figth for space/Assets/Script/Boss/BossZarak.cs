@@ -36,6 +36,9 @@ public class BossZarak : MonoBehaviour
     private Animator animator;
     private Transition currentTransition;
     
+    public AudioSource audioSource;  // AudioSource para tocar o som
+    public AudioClip somExplosao;   // Clip de áudio para a explosão
+
     public enum Transition
     {
         Parado = 0,
@@ -60,22 +63,20 @@ public class BossZarak : MonoBehaviour
         cooldownFeixeContinui = tempoEntreTirosFeixeContinui; // Inicializa o cooldown do feixe contínuo
         alvo = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // Garantir que o AudioSource esteja configurado
         SetTransition(Transition.Parado);
     }
 
     void Update()
     {
-        if(alvo == null) return;
+        if (alvo == null) return;
         VerificarEstado(); // Checa se deve mudar de estado
         Atirar(); // Responsável por atirar de acordo com o estado atual
-        
     }
 
     private void VerificarEstado()
     {
         // Verifica a mudança de estado com base na vida do Boss
-        // ele ativa o escudo a todo momento e chamando várias vezes o escudo.
-        
         if (vidaAtualZarak <= vidaMaximaZarak * 0.2f && estadoAtual == EstadoInimigo.EstadoDois)
         {
             estadoAtual = EstadoInimigo.EstadoTres; // Muda para EstadoTres
@@ -116,11 +117,6 @@ public class BossZarak : MonoBehaviour
             temEscudo = true;
         }
     }
-
-
-    
-    
-
 
     private void AtirarLaser()
     {
@@ -172,17 +168,16 @@ public class BossZarak : MonoBehaviour
             transform.position = new Vector2(transform.position.x, limiteInferiorDireito.position.y);
         }
     }
-    
-    
-        // Agora aguardamos o tempo suficiente para a animação de morte ser concluída antes de destruir o objeto
-        
-    
 
     private IEnumerator HandleDeathTransition()
     {
-      
+        // Reproduz o som de explosão quando o Boss morrer
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao); // Reproduz o som de explosão
+        }
+        
         // Espera o tempo necessário para a animação de morte
-        // Certifique-se de que o tempo de duração da animação de morte corresponde ao valor abaixo
         yield return new WaitForSeconds(0.7f);  // Ajuste o tempo conforme necessário, dependendo da duração da animação de morte.
         
         Debug.Log("Chamou o destroy");
@@ -193,10 +188,8 @@ public class BossZarak : MonoBehaviour
         //GameManager.instance.GameOver();
     }
 
-    
     private void SetTransition(Transition newTransition)
     {
-        // isso aqui não está funcionando legal!>
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }
@@ -231,7 +224,7 @@ public class BossZarak : MonoBehaviour
         {
             jamorreu = true;
             animator.SetTrigger("morrendo");
-            // deve mover a logica do morrer está duplicado em 2 lugares
+            // Deve mover a lógica de morrer aqui, para evitar duplicação
             int numeroAleatorio = Random.Range(0, 100);
 
             if (numeroAleatorio <= chanceParaDropar)
@@ -242,6 +235,4 @@ public class BossZarak : MonoBehaviour
             StartCoroutine(HandleDeathTransition());
         }
     }
-
 }
-

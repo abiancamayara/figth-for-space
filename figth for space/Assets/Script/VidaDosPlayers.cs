@@ -9,6 +9,7 @@ public class VidaDosPlayers : MonoBehaviour
     public Slider barraDeVidaDoJogador;
     public Slider barraDeEnergiaDoEscudo;
     public GameObject escudoDoJogador;
+    public GameObject escudodatela;
 
     public int vidaMaximaDoJogador;
     public int vidaAtualDojogador;
@@ -34,6 +35,7 @@ public class VidaDosPlayers : MonoBehaviour
         barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
 
         barraDeEnergiaDoEscudo.gameObject.SetActive(false);
+        escudodatela.gameObject.SetActive(false);
         DesativarEscudo();
 
         animator = GetComponent<Animator>();  // Inicializa o Animator
@@ -50,6 +52,7 @@ public class VidaDosPlayers : MonoBehaviour
         vidaAtualDoEscudo = vidaMaximaDoEscudo;
         barraDeEnergiaDoEscudo.value = vidaAtualDoEscudo;
         escudoDoJogador.SetActive(true);
+        escudodatela.SetActive(true);
         temEscudo = true;
     }
 

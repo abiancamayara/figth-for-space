@@ -26,24 +26,37 @@ public class PlayerLuna : MonoBehaviour
     private Animator animator;
     private Transition currentTransition;
 
+    private AudioSource audioSource; // Adiciona um campo para o AudioSource
+    public AudioClip somExplosao; // Adiciona um campo para o som de explosão
+
     public enum Transition
     {
         Parado = 0,
         Voando = 1,
         Hit = 2,
         Morrendo = 3
-
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         temLaserDuplo = true;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // Obtém o AudioSource anexado ao GameObject
+
+        // Verificação adicional para garantir que o AudioSource e o AudioClip não estão nulos
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource não encontrado no GameObject do jogador.");
+        }
+
+        if (somExplosao == null)
+        {
+            Debug.LogError("AudioClip do som de explosão não atribuído no inspetor.");
+        }
+
         SetTransition(Transition.Parado);
     }
 
-    // Update is called once per frame
     void Update()
     {
         cooldownTiro -= Time.deltaTime;
@@ -64,7 +77,6 @@ public class PlayerLuna : MonoBehaviour
             AtirarLaser();
         }
 
-        // Atualiza a transição de animação com base no movimento do jogador, mas não muda durante o hit
         if (currentTransition != Transition.Hit)
         {
             if (teclasApertadas.magnitude > 0)
@@ -98,6 +110,7 @@ public class PlayerLuna : MonoBehaviour
                 Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             }
             cooldownTiro += 1 / balasPorSegundo;
+            AudioObserver.OnplaySFXEvent("tiro", Random.value);
         }
     }
 
@@ -110,6 +123,7 @@ public class PlayerLuna : MonoBehaviour
             Instantiate(laserDoJogador, localDoDisparoParaCima.position, localDoDisparoParaCima.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             Instantiate(laserDoJogador, localDoDisparoParaBaixo.position, localDoDisparoParaBaixo.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             cooldownTiro += 1 / balasPorSegundo;
+            AudioObserver.OnplaySFXEvent("tiro", Random.value);
         }
     }
 
@@ -151,9 +165,9 @@ public class PlayerLuna : MonoBehaviour
         SetTransition(Transition.Hit);
         StartCoroutine(HandleHitTransition());
     }
-    public void Morreu(){
-        
-        //SetTransition(Transition.Death);
+
+    public void Morreu()
+    {
         StartCoroutine(HandleDeathTransition());
     }
 
@@ -173,22 +187,25 @@ public class PlayerLuna : MonoBehaviour
         }
     }
 
-
     private IEnumerator HandleDeathTransition()
     {
+        // Reproduz o som de explosão
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao);
+        }
+
         // Aguarda o tempo da animação de morte antes de destruir o jogador
         yield return new WaitForSeconds(0.7f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
-        Debug.Log("Chamoou o destroy");
-        
-        // Após o tempo da animação de morte, destruímos o jogador
+        Debug.Log("Chamou o destroy");
+
+        // Destrói o jogador após a animação de morte
         Destroy(gameObject);
-        //yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
         GameManager.instance.GameOver();
     }
 
     private void SetTransition(Transition newTransition)
     {
-        
         currentTransition = newTransition;
         animator.SetInteger("Transition", (int)currentTransition);
     }

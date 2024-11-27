@@ -3,7 +3,14 @@ guid: 69a96074ed6be2940aa6011a28f16a15
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - barraDeVidaDoJogador: {instanceID: 0}
+  - barraDeEnergiaDoEscudo: {instanceID: 0}
+  - escudoDoJogador: {instanceID: 0}
+  - escudodatela: {fileID: 1207619385045949321, guid: 97448d6ba3f91914dbecc33cbe32cb53, type: 3}
+  - anim1: {instanceID: 0}
+  - anim2: {instanceID: 0}
+  - anim3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

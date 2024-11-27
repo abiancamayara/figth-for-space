@@ -27,6 +27,11 @@ public class PlayerLuca : MonoBehaviour
 
     private Animator animator;
     private Transition currentTransition;
+
+    private AudioSource audioSource;
+    public AudioClip somTiroSecundario; // Clip de áudio para o tiro secundário
+    public AudioClip somExplosao; // Clip de áudio para o som de explosão
+
     public enum Transition
     {
         Parado = 0,
@@ -39,6 +44,7 @@ public class PlayerLuca : MonoBehaviour
     {
         temLaserDuplo = true;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // Obtém o AudioSource anexado ao GameObject
         SetTransition(Transition.Parado);
     }
 
@@ -96,6 +102,7 @@ public class PlayerLuca : MonoBehaviour
                 Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation);
             }
             cooldownTiro = 1 / balasPorSegundo;
+            AudioObserver.OnplaySFXEvent("tiro", Random.value);
         }
     }
 
@@ -104,6 +111,7 @@ public class PlayerLuca : MonoBehaviour
         if (cooldownOndaSonora < 0) // Verifica se o cooldown permite disparar a onda sonora
         {
             Instantiate(ondaSonora, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
+            audioSource.PlayOneShot(somTiroSecundario); // Reproduz o som do tiro secundário
             cooldownOndaSonora = intervaloEntreOndasSonoras; // Reseta o cooldown para o próximo disparo
         }
     }
@@ -172,9 +180,15 @@ public class PlayerLuca : MonoBehaviour
     
     private IEnumerator HandleDeathTransition()
     {
+        // Reproduz o som de explosão
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao);
+        }
+
         // Aguarda o tempo da animação de morte antes de destruir o jogador
         yield return new WaitForSeconds(0.7f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
-        Debug.Log("Chamoou o destroy");
+        Debug.Log("Chamou o destroy");
         // Destrói o jogador após a animação de morte
         Destroy(gameObject);
         GameManager.instance.GameOver();

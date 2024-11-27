@@ -29,6 +29,10 @@ public class PlayerRuby : MonoBehaviour
 
     private Animator animator;
     private Transition currentTransition;
+    
+    private AudioSource audioSource;
+    public AudioClip somTiroSecundario; // Clip de áudio para o tiro secundário
+    public AudioClip somExplosao; // Clip de áudio para o som de explosão
 
     public enum Transition
     {
@@ -42,6 +46,7 @@ public class PlayerRuby : MonoBehaviour
     {
         temLaserDuplo = true;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         SetTransition(Transition.Parado);
     }
 
@@ -117,6 +122,7 @@ public class PlayerRuby : MonoBehaviour
     {
         // Instancia a bomba e configura o local do lançamento
         GameObject bomba = Instantiate(bombaPrefab, localDoLancamento.position, localDoLancamento.rotation);
+        audioSource.PlayOneShot(somTiroSecundario); // Reproduz o som do tiro secundário
         AtaqueRuby bombaScript = bomba.GetComponent<AtaqueRuby>();
         if (bombaScript != null)
         {
@@ -173,7 +179,8 @@ public class PlayerRuby : MonoBehaviour
         StartCoroutine(HandleHitTransition());
     }
 
-    public void Morreu(){
+    public void Morreu()
+    {
         SetTransition(Transition.Morrendo);
         StartCoroutine(HandleDeathTransition());
     }
@@ -193,12 +200,17 @@ public class PlayerRuby : MonoBehaviour
 
     private IEnumerator HandleDeathTransition()
     {
+        // Reproduz o som de explosão
+        if (audioSource != null && somExplosao != null)
+        {
+            audioSource.PlayOneShot(somExplosao);
+        }
+
         // Aguarda o tempo da animação de morte antes de destruir o jogador
         yield return new WaitForSeconds(0.7f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
 
         // Após o tempo da animação de morte, destruímos o jogador
         Destroy(gameObject);
-        //yield return new WaitForSeconds(0.5f); // Tempo de duração da animação de morte, pode ajustar conforme necessário
         GameManager.instance.GameOver();
     }
 

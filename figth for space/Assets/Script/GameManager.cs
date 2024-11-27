@@ -18,15 +18,18 @@ public class GameManager : MonoBehaviour
     public GameObject Zarak;
     public GameObject Glaucius;
     public GameObject Dracon;
+    public GameObject Carta;
 
     public bool gameOver;
     public int pontuacaoParaInvocarDracon; // Pontuação para invocar Dracon
     public int pontuacaoParaInvocarGlaucius; // Pontuação para invocar Glaucius
     public int pontuacaoParaInvocarZarak; // Pontuação para invocar Zarak
+    public int pontuacaoParaInvocarCarta;
 
     private bool bossInstanciadoDracon = false;
     private bool bossInstanciadoGlaucius = false;
     private bool bossInstanciadoZarak = false;
+    private bool cartaInstanciado = false;
     private bool isPaused;
 
     public TextMeshProUGUI quantidadeCartasText;
@@ -86,6 +89,11 @@ public class GameManager : MonoBehaviour
         {
             AtivarZarak();
         }
+        
+        if (pontuacaoAtual >= pontuacaoParaInvocarCarta && !cartaInstanciado)
+        {
+            AtivarCarta();
+        }
     }
 
     public void AumentarPontuacao(int pontosParaGanhar)
@@ -124,6 +132,17 @@ public class GameManager : MonoBehaviour
             bossInstanciadoZarak = true;
         }
     }
+    
+    public void AtivarCarta()
+    {
+        // Ativa o Boss Zarak
+        if (Carta != null)
+        {
+            Carta.SetActive(true); // Ativa o GameObject do inimigo Zarak
+            cartaInstanciado = true;
+        }
+    }
+    
 
     public void AtualizarQuantidadeCartasUI(int value)
     {
