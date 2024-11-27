@@ -7,6 +7,6 @@ public class FinalLuna : MonoBehaviour
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(2);
     }
 }

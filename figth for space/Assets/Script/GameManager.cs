@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public string nextSceneName;
     public Transform instaciarboss;
     public static GameManager instance;
+    
     public GameObject painelDeGameOver;
     public GameObject pauseObj;
 
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour
     public GameObject Glaucius;
     public GameObject Dracon;
     public GameObject Carta;
+
+    public GameObject Coracao;
+    public GameObject Escudo;
+    public GameObject ButtonPause;
 
     public bool gameOver;
     public int pontuacaoParaInvocarDracon; // Pontuação para invocar Dracon
@@ -35,9 +40,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI quantidadeCartasText;
     public TextMeshProUGUI contadorLixoText;
     public TextMeshProUGUI pontuacaoAtualText;
+    public TextMeshProUGUI metaDePontuaçãoText;
 
     public GameObject lixoEspacial;
     public GameObject carta;
+
+    public Image retangulo;
 
     public int Lvalor;
 
@@ -173,8 +181,21 @@ public class GameManager : MonoBehaviour
 
     public void PassarDeFase()
     {
-        SceneManager.LoadScene(nextSceneName);
+        // Carregar a próxima cena pelo índice
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Verifica se a próxima cena existe
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("Não há mais cenas no Build");
+        }
     }
+
 
     public void GameOver()
     {
@@ -185,8 +206,15 @@ public class GameManager : MonoBehaviour
         // Desligando textos e imagens da tela para o game over
         quantidadeCartasText.gameObject.SetActive(false);
         contadorLixoText.gameObject.SetActive(false);
+        pontuacaoAtualText.gameObject.SetActive(false);
+        metaDePontuaçãoText.gameObject.SetActive(false);
         carta.SetActive(false);
         lixoEspacial.SetActive(false);
+        Coracao.SetActive(false);
+        Escudo.SetActive(false);
+        ButtonPause.SetActive(false);
+        retangulo.gameObject.SetActive(false);
+        
     }
 
     public void Restart()
@@ -201,6 +229,9 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseObj.SetActive(true);
+            Coracao.SetActive(false);
+            retangulo.gameObject.SetActive(false);
+            metaDePontuaçãoText.gameObject.SetActive(false);
         }
         else
         {

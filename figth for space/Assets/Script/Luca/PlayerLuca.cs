@@ -141,7 +141,7 @@ public class PlayerLuca : MonoBehaviour
 
     private void AplicarDash()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             this.dash.Aplicar();
             ParticleObserver.OnParticleSpawnEvent(transform.position);

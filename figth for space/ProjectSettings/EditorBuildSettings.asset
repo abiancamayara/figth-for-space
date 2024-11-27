@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/menu principal.unity
     guid: 6d8c75605ccb52b4fb7908d6213e28b0
   - enabled: 1
+    path: "Assets/Scenes/Op\xE7\xF5es.unity"
+    guid: a421ea2bda3a58143a457aeb1009ca2c
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Luna.unity
+    guid: 14ff7d73292072c4999e3ea6109649f3
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Luca.unity
+    guid: 9ed2b4d349a59de42a57cb702ce3b529
+  - enabled: 1
     path: Assets/Scenes/Tutorial Ruby.unity
-    guid: 7876007c8ca658f40a3671a8bdf029ef
+    guid: 7b6e8a78708601549864adaa7b63757b
   - enabled: 1
     path: Assets/Scenes/Cena carta 1.unity
     guid: ca3253741e8c40845a68fb868208c45b
@@ -21,21 +30,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Cena carta 2.unity
     guid: 79aeb7cf7eab47443b341a0e63ba76ed
   - enabled: 1
-    path: Assets/Scenes/Luna.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Ruby.unity
+    guid: 2acb2892fb099b1408055b69971c062f
   - enabled: 1
     path: Assets/Scenes/Cena carta 3.unity
     guid: e780ef1739285d74885dcc8440361b56
   - enabled: 1
-    path: "Assets/Scenes/Op\xE7\xF5es.unity"
-    guid: a421ea2bda3a58143a457aeb1009ca2c
+    path: Assets/Scenes/Luna.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Final Luna.unity
-    guid: 14481d84b27834240b73f9dfe29c2641
-  - enabled: 1
-    path: Assets/Scenes/Final Luca.unity
-    guid: 94de113e344c66f4aaed35d3aba93376
-  - enabled: 1
-    path: Assets/Scenes/Final Ruby.unity
-    guid: 923a94af1a69e4b40bc7046eaac421c8
+    path: Assets/Scenes/Final.unity
+    guid: 874f8e651369ca2499a38d03a76d2543
   m_configObjects: {}
