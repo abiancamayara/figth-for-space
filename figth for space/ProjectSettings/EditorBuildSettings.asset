@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menu principal.unity
     guid: 6d8c75605ccb52b4fb7908d6213e28b0
   - enabled: 1
+    path: "Assets/Scenes/Introdu\xE7\xE3o.unity"
+    guid: 3ce4929917dbba143b07e6e92bfdda27
+  - enabled: 1
     path: "Assets/Scenes/Op\xE7\xF5es.unity"
     guid: a421ea2bda3a58143a457aeb1009ca2c
   - enabled: 1
@@ -40,5 +43,5 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Final.unity
-    guid: 874f8e651369ca2499a38d03a76d2543
+    guid: 6c2853e09d8fa6841bcf533e4c4ae9b7
   m_configObjects: {}
