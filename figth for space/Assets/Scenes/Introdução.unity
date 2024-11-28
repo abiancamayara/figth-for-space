@@ -377,7 +377,7 @@ MonoBehaviour:
   textUI: {fileID: 796991592}
   timeBetweenTexts: 2
   timeToDisplayText: 2
-  typingSpeed: 0.1
+  typingSpeed: 0.06
 --- !u!1 &802601234
 GameObject:
   m_ObjectHideFlags: 0

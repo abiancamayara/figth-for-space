@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public GameObject Coracao;
     public GameObject Escudo;
     public GameObject ButtonPause;
+    public GameObject lixoEspacial;
+    public GameObject carta;
 
     public bool gameOver;
     public int pontuacaoParaInvocarDracon; // Pontuação para invocar Dracon
@@ -41,9 +43,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI contadorLixoText;
     public TextMeshProUGUI pontuacaoAtualText;
     public TextMeshProUGUI metaDePontuaçãoText;
-
-    public GameObject lixoEspacial;
-    public GameObject carta;
 
     public Image retangulo;
 
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         pontuacaoAtual = 0;
+        Lvalor = 0;
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual; // Atualiza a UI no início
         Debug.Log("Pontuação Inicial: " + pontuacaoAtual); // Debug para verificar o valor inicial
     }
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
     public void AumentarPontuacao(int pontosParaGanhar)
     {
         pontuacaoAtual += pontosParaGanhar; // Aumenta a pontuação
-        Debug.Log("Pontuação após aumento: " + pontuacaoAtual); // Debug para verificar o aumento
+        //Debug.Log("Pontuação após aumento: " + pontuacaoAtual); // Debug para verificar o aumento
         pontuacaoAtualText.text = "Pontuação: " + pontuacaoAtual; // Atualiza a UI
     }
 
@@ -159,17 +159,28 @@ public class GameManager : MonoBehaviour
 
     public void ColetarLixo(int LixoV)
     {
-        Lvalor += LixoV;
-        // Verifica se coletou 5 lixos
+        Debug.Log("Coletando lixo com valor: " + LixoV);  // Verifique se o valor de LixoV está correto
+
+        // Verifique se o valor de LixoV é maior que 0
+        if (LixoV > 0)
+        {
+            Lvalor += LixoV;
+            Debug.Log("Lixo somado. Lvalor agora é: " + Lvalor);  // Verifique se o Lvalor está sendo somado corretamente
+        }
+
+        // Verifica se coletou 5 ou mais lixos
         if (Lvalor >= 5)
         {
             int vidaParaReceber = Mathf.CeilToInt(vidaDosPlayers.vidaMaximaDoJogador * 0.2f); // 20% da vida máxima
-            vidaDosPlayers.GanharVida(vidaParaReceber);
-            Lvalor = 0; // Reinicia o contador após o aumento de vida
+            vidaDosPlayers.GanharVida(vidaParaReceber);  // Atualiza a vida do jogador
+            Debug.Log("Vida aumentada em: " + vidaParaReceber);  // Exibe no console a quantidade de vida recebida
+            Lvalor = 0; // Reseta o contador de lixo após o aumento de vida
         }
 
-        contadorLixoText.text = "Lixo : " + Lvalor.ToString();
+        // Atualiza a UI com o valor atual de lixo
+        contadorLixoText.text = "Lixo espacial: " + Lvalor.ToString();  // Atualiza a UI com a quantidade de lixo coletado
     }
+
 
     private void OnCollisionEnter(Collision other)
     {

@@ -17,6 +17,7 @@ public class LixoEspacial : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //Debug.Log("Lixo coletado: " + LixoValue);  // Debug para verificar se a colisão está sendo detectada corretamente
             GameManager.instance.ColetarLixo(LixoValue);
             Destroy(gameObject, 0.1f);
         }

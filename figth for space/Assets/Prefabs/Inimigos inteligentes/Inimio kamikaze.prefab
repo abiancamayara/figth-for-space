@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c534ba51bfbe941a73aedb0292099d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemParaDropar: {fileID: 275768496608969999, guid: b2c458ff8b7b6514c814e9b8e26a0531, type: 3}
+  itemParaDropar: {fileID: 6068371878898650412, guid: 5f758fc574a348142936d97bd1781197, type: 3}
   velocidadeDoInimigo: 10
-  danoParaDar: 2
+  danoParaDar: 3
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 70
+  chanceParaDropar: 40
   pontosParaDar: 20
 --- !u!95 &4909052886155864091
 Animator:

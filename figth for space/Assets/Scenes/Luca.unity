@@ -1343,7 +1343,7 @@ Transform:
   m_GameObject: {fileID: 1348901458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.24, y: 3.47, z: -0.15337247}
+  m_LocalPosition: {x: -37.75, y: 3.4, z: -0.15337247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1688,6 +1688,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2080783442}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: lixoEspacial
+      value: 
+      objectReference: {fileID: 275768496608969999, guid: b2c458ff8b7b6514c814e9b8e26a0531, type: 3}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: vidaDosPlayers
       value: 
       objectReference: {fileID: 0}
@@ -1965,7 +1969,7 @@ Transform:
   m_GameObject: {fileID: 1829622687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.31, y: -13.74, z: -0.15337247}
+  m_LocalPosition: {x: -6.8, y: -13.74, z: -0.15337247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2120,7 +2124,7 @@ MonoBehaviour:
   localDoDisparoParaCima: {fileID: 1616061045}
   localDoDisparoParaBaixo: {fileID: 927802649}
   alvo: {fileID: 0}
-  vidaMaximaDracon: 250
+  vidaMaximaDracon: 300
   vidaAtualDracon: 0
   balasPorSegundo: 5
   variacaoangulo: 4
@@ -2664,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Lucaa
       objectReference: {fileID: 0}
+    - target: {fileID: 6769537770063790169, guid: 3456e74b0d64bfa4fbd3350c76515f96, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 47f4bccc2d81f9441a5e26296653e492, type: 2}
     - target: {fileID: 7087489364230035191, guid: 3456e74b0d64bfa4fbd3350c76515f96, type: 3}
       propertyPath: limiteInferiorDireito
       value: 

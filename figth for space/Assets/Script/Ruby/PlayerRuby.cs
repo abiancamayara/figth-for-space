@@ -29,7 +29,7 @@ public class PlayerRuby : MonoBehaviour
 
     private Animator animator;
     private Transition currentTransition;
-    
+
     private AudioSource audioSource;
     public AudioClip somTiroSecundario; // Clip de áudio para o tiro secundário
     public AudioClip somExplosao; // Clip de áudio para o som de explosão
@@ -72,8 +72,8 @@ public class PlayerRuby : MonoBehaviour
             tempoCooldownBomba -= Time.deltaTime;  // Decrementa o tempo do cooldown
         }
 
-        // Se não estiver lançando bomba, atira o laser
-        if (!lançandoBomba)
+        // Sempre que a bomba não estiver sendo lançada, ou após lançá-la, dispara os lasers
+        if (!lançandoBomba || lancou)  // Condição para garantir que os lasers sejam disparados
         {
             AtirarLaser();
         }
@@ -101,18 +101,21 @@ public class PlayerRuby : MonoBehaviour
     private void AtirarLaser()
     {
         cooldownTiro -= Time.deltaTime;
-        if(cooldownTiro < 0)
+        if (cooldownTiro < 0)
         {
+            // Disparo de laser único
             if (!temLaserDuplo)
             {
                 Instantiate(laserDoJogador, localDoDisparoUnico.position, localDoDisparoUnico.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             }
+            // Disparo de laser duplo (do lado esquerdo e direito)
             else
             {
                 Instantiate(laserDoJogador, localDoDisparoDaEsquerda.position, localDoDisparoDaEsquerda.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
+                Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
             }
-            Instantiate(laserDoJogador, localDoDisparoDaDireita.position, localDoDisparoDaDireita.rotation).transform.Rotate(Vector3.forward * Random.Range(-variacaoangulo, variacaoangulo));
 
+            // Reseta o cooldown de disparo de laser
             cooldownTiro += 1 / balasPorSegundo;
             AudioObserver.OnplaySFXEvent("tiro", Random.value);
         }
@@ -132,8 +135,12 @@ public class PlayerRuby : MonoBehaviour
         // Reinicia o cooldown de lançamento da bomba
         tempoCooldownBomba = cooldownLancamentoBomba;
 
-        lançandoBomba = true;  // Ativa a flag para indicar que está lançando a bomba
-        lancou = true;  // Marca que o jogador lançou a bomba
+        // A bomba foi lançada, então os lasers devem voltar a funcionar
+        lançandoBomba = false;  // Permite que o laser continue a disparar após lançar a bomba
+        lancou = true;  // Marca que o jogador lançou a bomba, o que permite os lasers dispararem imediatamente
+
+        // Para garantir que o laser seja disparado após a bomba, chamamos o método de disparo de laser.
+        cooldownTiro = 0;  // Reseta o cooldown para que o laser possa ser disparado imediatamente
     }
 
     private void ResetarLancamento()

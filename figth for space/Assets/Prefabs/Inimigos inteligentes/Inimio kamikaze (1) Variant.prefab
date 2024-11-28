@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimio kamikaze (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3932990453198297608, guid: b4a8648ff5c4d2f47ad493ea9b1d6463, type: 3}
+      propertyPath: danoParaDar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3932990453198297608, guid: b4a8648ff5c4d2f47ad493ea9b1d6463, type: 3}
+      propertyPath: chanceParaDropar
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5363309435706708726, guid: b4a8648ff5c4d2f47ad493ea9b1d6463, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.797443

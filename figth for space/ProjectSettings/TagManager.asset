@@ -13,6 +13,7 @@ TagManager:
   - Carta
   - Zarak
   - laser inimigo
+  - Lixo
   layers:
   - Default
   - TransparentFX

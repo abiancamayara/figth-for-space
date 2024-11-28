@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc994ee008a78c2499e71be7d4d14c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDoLaser: 50
-  danoParaDar: 10
+  velocidadeDoLaser: 40
+  danoParaDar: 1
 --- !u!114 &8407096554909860056
 MonoBehaviour:
   m_ObjectHideFlags: 0
