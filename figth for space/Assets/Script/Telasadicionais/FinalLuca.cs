@@ -7,7 +7,7 @@ public class FinalLuca : MonoBehaviour
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SequenciaDeTexto : MonoBehaviour
 {
@@ -8,11 +9,27 @@ public class SequenciaDeTexto : MonoBehaviour
     public float timeBetweenTexts = 1f;  // Tempo entre cada texto
     public float timeToDisplayText = 2f;  // Tempo para mostrar cada texto
     public float typingSpeed = 0.05f;  // Velocidade do efeito de digitação
+    public float timeBeforeAutoLoad = 2f;  // Tempo antes da mudança automática para a próxima cena (após o último texto)
 
     private void Start()
     {
         // Inicia a sequência de textos
         StartCoroutine(ShowTextSequence());
+    }
+    
+    void Update()
+    {
+        // Verifica se a tecla "Space" foi pressionada
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CarregarCena();
+        }
+    }
+    
+    void CarregarCena()
+    {
+        // Carregar a próxima cena
+        SceneManager.LoadScene("Opções");  // Substitua "Opções" pelo nome da sua cena
     }
 
     private IEnumerator ShowTextSequence()
@@ -49,6 +66,12 @@ public class SequenciaDeTexto : MonoBehaviour
             // Espera o tempo de intervalo entre os textos
             yield return new WaitForSeconds(timeBetweenTexts);
         }
+
+        // Depois que todos os textos foram exibidos, aguarda o tempo antes de carregar a próxima cena automaticamente
+        yield return new WaitForSeconds(timeBeforeAutoLoad);
+
+        // Carregar a próxima cena
+        CarregarCena();
     }
 
     // Coroutine para digitar o texto com o efeito digitalizador

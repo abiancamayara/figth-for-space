@@ -371,6 +371,7 @@ MonoBehaviour:
   sfxSource: {fileID: 175075012}
   clipTiro: {fileID: 8300000, guid: aa92dd2ebf42a9243a0c385b4a641a17, type: 3}
   clipColetavel: {fileID: 8300000, guid: 7b82c6fdfa7116845a17404b85420d94, type: 3}
+  musicClips: []
 --- !u!82 &175075010
 AudioSource:
   m_ObjectHideFlags: 0

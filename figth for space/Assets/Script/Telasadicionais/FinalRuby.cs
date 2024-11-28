@@ -7,6 +7,6 @@ public class FinalRuby : MonoBehaviour
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }
