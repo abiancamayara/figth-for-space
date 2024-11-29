@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
   spawnPoint: {fileID: 789494718}
 --- !u!4 &789494718
 Transform:
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Meta de pontua\xE7\xE3o: 2500\n"
+  m_text: "Meta de pontua\xE7\xE3o: 500\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
   m_sharedMaterial: {fileID: 313683185369447982, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
@@ -2349,7 +2349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
   spawnPoint: {fileID: 1689490228}
 --- !u!4 &1689490228
 Transform:
@@ -2794,7 +2794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
   spawnPoint: {fileID: 1841363224}
 --- !u!1 &1854994008 stripped
 GameObject:
@@ -3368,6 +3368,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1972916169}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: retangulo
+      value: 
+      objectReference: {fileID: 1295914742}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: "metaDePontua\xE7\xE3oText"
+      value: 
+      objectReference: {fileID: 893330419}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: pontuacaoParaInvocarCarta
       value: 500
       objectReference: {fileID: 0}
@@ -3381,7 +3389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: pontuacaoParaInvocarGlaucius
-      value: 2500
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2335692777243255426, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_Name
@@ -3432,7 +3440,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8016660509267652405, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+    - {fileID: 293733275480175486, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caa5dfbd112cba146ab98dc117569264, type: 3}

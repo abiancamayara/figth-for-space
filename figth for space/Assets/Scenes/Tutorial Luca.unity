@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 2
+  spawnInterval: 0.5
   spawnPoint: {fileID: 789494718}
 --- !u!4 &789494718
 Transform:
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 1.5
+  spawnInterval: 0.5
   spawnPoint: {fileID: 1165031070}
 --- !u!1 &1241515504
 GameObject:
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Meta de pontua\xE7\xE3o: 500\n\n\n"
+  m_text: "Meta de pontua\xE7\xE3o: 200\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
   m_sharedMaterial: {fileID: 313683185369447982, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 149927753979249428, guid: f393c3be821988c4f96965f081bdbf57, type: 3}
-  spawnInterval: 2
+  spawnInterval: 0.5
   spawnPoint: {fileID: 1689490228}
 --- !u!4 &1689490228
 Transform:
@@ -3436,8 +3436,48 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1526350834}
     - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: TeclaX
+      value: 
+      objectReference: {fileID: 1763967429}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: TeclaZ
+      value: 
+      objectReference: {fileID: 1973901119}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: SetaCima
+      value: 
+      objectReference: {fileID: 593074428}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: SetaBaixo
+      value: 
+      objectReference: {fileID: 1132414231}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: retangulo
+      value: 
+      objectReference: {fileID: 1086106613}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: SetaDireita
+      value: 
+      objectReference: {fileID: 627782522}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: SetaEsquerda
+      value: 
+      objectReference: {fileID: 1820863751}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: TutorialTexto
+      value: 
+      objectReference: {fileID: 1346376766}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: vidaDosPlayers
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: "metaDePontua\xE7\xE3oText"
+      value: 
+      objectReference: {fileID: 1342924523}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: pontuacaoParaInvocarCarta
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2335692777243255426, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_Name
@@ -3488,7 +3528,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8016660509267652405, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+    - {fileID: 293733275480175486, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caa5dfbd112cba146ab98dc117569264, type: 3}

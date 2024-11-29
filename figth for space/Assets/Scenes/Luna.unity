@@ -381,7 +381,7 @@ MonoBehaviour:
   alvo: {fileID: 0}
   vidaMaximaZarak: 500
   vidaAtualZarak: 0
-  balasPorSegundo: 10
+  balasPorSegundo: 6
   variacaoangulo: 3
   temEscudo: 0
   jamorreu: 0
@@ -1331,6 +1331,8 @@ MonoBehaviour:
   - {fileID: 559807345}
   - {fileID: 743811187}
   - {fileID: 326560204}
+  - {fileID: 537891509}
+  - {fileID: 1059254079}
   tempoMaximoEntreOsSpawns: 1
   tempoAtualDosSpawns: 0
 --- !u!4 &454871967
@@ -1350,6 +1352,8 @@ Transform:
   - {fileID: 410581875}
   - {fileID: 1699054693}
   - {fileID: 559807345}
+  - {fileID: 537891509}
+  - {fileID: 1059254079}
   - {fileID: 743811187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1555,6 +1559,37 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &537891508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537891509}
+  m_Layer: 0
+  m_Name: Ponto 2 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &537891509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537891508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.77, y: -3.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 454871967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559807344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Meta de pontua\xE7\xE3o: 4500\n"
+  m_text: "Meta de pontua\xE7\xE3o: 600\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
   m_sharedMaterial: {fileID: 313683185369447982, guid: 4a49ac10ca4ec6a4a91168f4d87b19e9, type: 2}
@@ -2415,6 +2450,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059254078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059254079}
+  m_Layer: 0
+  m_Name: Ponto 2 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059254079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059254078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.77, y: -9.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 454871967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145872273
 GameObject:
@@ -3003,6 +3069,10 @@ PrefabInstance:
       propertyPath: "metaDePontua\xE7\xE3oText"
       value: 
       objectReference: {fileID: 885444194}
+    - target: {fileID: 2136542779646158034, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+      propertyPath: pontuacaoParaInvocarZarak
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 2335692777243255426, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -3056,7 +3126,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8016660509267652405, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
+    - {fileID: 293733275480175486, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caa5dfbd112cba146ab98dc117569264, type: 3}
@@ -4516,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2235063372694501691, guid: 38fbc0e81fb4d4b458f31c6b51e3422d, type: 3}
       propertyPath: vidaMaximaDoJogador
-      value: 150
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2235063372694501691, guid: 38fbc0e81fb4d4b458f31c6b51e3422d, type: 3}
       propertyPath: barraDeVidaDoJogador

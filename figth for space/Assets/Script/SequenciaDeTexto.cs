@@ -35,20 +35,16 @@ public class SequenciaDeTexto : MonoBehaviour
     private IEnumerator ShowTextSequence()
     {
         string[] texts = {
-            "Em uma galáxia distante, além das estrelas mais brilhantes, existe um planeta de riquezas incomparáveis e beleza indescritível: Astrion. " +
-            "Localizado na majestosa Galáxia de Andrômeda, Astrion é governado pelo poderoso Império Celestial, " +
-            "que explorou durante séculos as vastas fronteiras do espaço, protegendo seus habitantes das ameaças do cosmos.",
-            "Mas uma nova escuridão se aproxima. Os temidos Devoradores do Caos, liderados pelo implacável general Zarak, " +
-            "emergiram das sombras com um único objetivo: dominar toda a galáxia de Andrômeda e subjugar os pacíficos povos de Astrion. " +
-            "As forças do mal avançam, espalhando caos e destruição, e a esperança começa a vacilar.",
-            "Em meio à desesperança, surgem três heróis destinados a virar a maré da guerra. Luna, a pilota destemida e precisa, filha de um lendário comandante. " +
-            "Luca, o engenheiro brilhante, mestre das tecnologias avançadas e estrategista nato. " +
-            "E Ruby, a atiradora de elite, cuja mira impecável é conhecida por toda a galáxia de Andrômeda. " +
-            "Juntos, eles formam o Esquadrão Estelar, a última linha de defesa contra os Devoradores do Caos.",
-            "Você está prestes a embarcar em uma jornada épica ao lado desses corajosos pilotos. " +
-            "Enfrente hordas de inimigos em batalhas espaciais eletrizantes, derrote os comandantes do caos e desafie o temível general Zarak em um confronto decisivo. " +
-            "O destino de Astrion, e de toda a galáxia de Andrômeda, está em suas mãos.",
-            "Prepare-se. A batalha por Andrômeda começa agora.",
+            "Em uma galáxia distante, além das estrelas mais brilhantes, existe um planeta de riquezas incomparáveis: Astrion. " +
+            "Localizado na Galáxia de Andrômeda, Astrion é governado pelo poderoso Império Celestial, " +
+            "que protege seus habitantes das ameaças do cosmos.",
+            "Mas uma nova escuridão se aproxima. Os Devoradores do Caos, liderados pelo general Zarak, " +
+            "emergem das sombras para dominar a galáxia e subjugar Astrion.",
+            "Em meio à desesperança, surgem três heróis: Luna, a pilota destemida, Luca, o engenheiro brilhante, " +
+            "e Ruby, a atiradora de elite. Juntos, eles formam o Esquadrão Estelar, a última linha de defesa.",
+            "Prepare-se para batalhas espaciais, enfrente hordas de inimigos e desafie o general Zarak. " +
+            "O destino de Astrion e de Andrômeda está em suas mãos.",
+            "Prepare-se. A batalha pela defesa de Andrômeda começa agora.",
         };
 
         // Iterando sobre cada texto

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossZarak : MonoBehaviour
 {
@@ -183,6 +184,7 @@ public class BossZarak : MonoBehaviour
         Debug.Log("Chamou o destroy");
         
         Destroy(gameObject);
+        SceneManager.LoadScene("Final");
 
         // Chama a lógica do GameManager para finalizar o jogo (ou qualquer outro comportamento necessário)
         //GameManager.instance.GameOver();

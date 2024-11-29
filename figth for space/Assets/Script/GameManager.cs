@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     public GameObject ButtonPause;
     public GameObject lixoEspacial;
     public GameObject carta;
+    public GameObject SetaDireita;
+    public GameObject SetaEsquerda;
+    public GameObject SetaBaixo;
+    public GameObject SetaCima;
+    public GameObject TeclaX;
+    public GameObject TeclaZ;
 
     public bool gameOver;
     public int pontuacaoParaInvocarDracon; // Pontuação para invocar Dracon
@@ -43,6 +49,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI contadorLixoText;
     public TextMeshProUGUI pontuacaoAtualText;
     public TextMeshProUGUI metaDePontuaçãoText;
+    public TextMeshProUGUI TutorialTexto;
 
     public Image retangulo;
 
@@ -225,6 +232,13 @@ public class GameManager : MonoBehaviour
         Escudo.SetActive(false);
         ButtonPause.SetActive(false);
         retangulo.gameObject.SetActive(false);
+        SetaDireita.SetActive(false);
+        SetaEsquerda.SetActive(false);
+        SetaCima.SetActive(false);
+        SetaBaixo.SetActive(false);
+        TeclaX.SetActive(false);
+        TeclaZ.SetActive(false);
+        TutorialTexto.gameObject.SetActive(false);
         
     }
 
@@ -243,6 +257,13 @@ public class GameManager : MonoBehaviour
             Coracao.SetActive(false);
             retangulo.gameObject.SetActive(false);
             metaDePontuaçãoText.gameObject.SetActive(false);
+            SetaDireita.SetActive(false);
+            SetaEsquerda.SetActive(false);
+            SetaCima.SetActive(false);
+            SetaBaixo.SetActive(false);
+            TeclaX.SetActive(false);
+            TeclaZ.SetActive(false);
+            TutorialTexto.gameObject.SetActive(false);
         }
         else
         {

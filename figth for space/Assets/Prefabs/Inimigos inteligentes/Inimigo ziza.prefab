@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -196763898, guid: 93862807038c89a409e479baaa9012be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   velocidadeDoInimigo: 0
   vidaMaximaDoInimigo: 0
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 0
+  chanceParaDropar: 100
   pontosParaDar: 0
   tempoMaximoEntreOsLasers: 0
   tempoAtualDosLasers: 0
@@ -244,14 +244,14 @@ MonoBehaviour:
   velocidadeDoInimigo: 8
   vidaMaximaDoInimigo: 10
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 95
+  chanceParaDropar: 100
   angulo: 0
   cooldownTiro: 0
   balasPorSegundo: 3
   alturaOriginal: 0
   amplitude: 3
   velocidadeDaOscilacao: 10
-  pontosParaDar: 30
+  pontosParaDar: 15
   inimigoAtirador: 1
   inimigoAtivado: 1
 --- !u!1 &6862438781105308597

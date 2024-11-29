@@ -182,8 +182,8 @@ MonoBehaviour:
   danoParaDar: 3
   vidaMaximaDoInimigo: 5
   vidaAtualDoInimigo: 0
-  chanceParaDropar: 40
-  pontosParaDar: 20
+  chanceParaDropar: 55
+  pontosParaDar: 10
 --- !u!95 &4909052886155864091
 Animator:
   serializedVersion: 5
